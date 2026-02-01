@@ -2,7 +2,7 @@
 body,
 html {
   margin: 0;
-  background-color: rgb(5, 14, 26);
+  background-color: rgb(0, 0, 0);
   width: 100%;
   color: white;
   font-family: sans-serif;
@@ -61,7 +61,7 @@ h1 {
 }
 
 nav a:hover {
-  color: #ffffff;
+  color: rgb(161, 110, 255);
   text-decoration: underline;
 }
 
@@ -73,4 +73,48 @@ nav ul:hover li {
 nav ul li:hover {
   opacity: 1;
 }
+/* #endregion */
+
+/* #region Welcome Container */
+.welcome-container {
+  background: linear-gradient(to right, rgb(40, 28, 63), black 70%);
+  height: 500px;
+  width: 1440px;
+  margin: 0 auto;
+  margin-top: 40px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid rgb(40, 28, 63);
+}
+
+.welcome-container-inner {
+  padding: 16px 16px 16px 16px;
+  height: 50px;
+  width: 550px;
+}
+
+h2 {
+  font-size: 56px;
+  margin: 0;
+  margin-bottom: 16px;
+}
+
+.welcome-container-inner span {
+  font-size: 32px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.welcome-container-inner p {
+  margin-top: 48px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 20px;
+  margin-bottom: 100px;
+}
+
+.profile-img img {
+  height: 500px;
+  width: 500px;
+}
+
 /* #endregion */
