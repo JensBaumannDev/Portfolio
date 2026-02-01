@@ -62,6 +62,7 @@ h1 {
 
 nav a:hover {
   color: #ffffff;
+  text-decoration: underline;
 }
 
 nav ul:hover li {
