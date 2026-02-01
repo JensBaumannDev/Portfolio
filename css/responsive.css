@@ -1,0 +1,32 @@
+/* #region RESPONSIVE 1024px */
+@media (max-width: 1024px) {
+  .welcome-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 40px 24px;
+  }
+
+  .welcome-container-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  nav ul {
+    gap: 24px;
+  }
+}
+/* #endregion */
