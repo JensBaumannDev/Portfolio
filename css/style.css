@@ -130,7 +130,6 @@ main {
   gap: 40px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 40px 80px -24px rgba(0, 0, 0, 0.9);
 }
 
 .welcome-container::before {
@@ -212,7 +211,6 @@ h2 {
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 24px;
   padding: 64px;
-  box-shadow: 0 40px 80px -24px rgba(0, 0, 0, 0.9);
 }
 
 .skills-container h2 {
