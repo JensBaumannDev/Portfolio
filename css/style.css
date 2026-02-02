@@ -178,6 +178,48 @@ h2 {
 }
 /* #endregion */
 
+/* #region CONTENT HEADLINES */
+.content-headline {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.content-headline h3 {
+  margin: 0;
+}
+
+.content-separator {
+  flex-grow: 1;
+  border-top: 5px solid rgba(161, 110, 255);
+}
+/* #endregion */
+
+/* #region CONTENT SKILLS */
+.skills-container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  background-color: rgba(10, 10, 12, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 64px;
+  gap: 40px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 40px 80px -24px rgba(0, 0, 0, 0.9);
+}
+.skills-container-innner {
+  z-index: 1;
+  position: relative;
+}
+/* #endregion */
+
 /* #region IMAGES */
 .profile-img {
   display: flex;
