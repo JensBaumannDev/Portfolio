@@ -1,32 +1,55 @@
-/* #region RESPONSIVE 1024px */
+/* #region RESPONSIVE 1024px (Tablets / Small Laptops) */
 @media (max-width: 1024px) {
+  header {
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 16px;
+  }
+
+  h1 {
+    font-size: 48px;
+    text-align: center;
+  }
+
+  header span {
+    text-align: center;
+  }
+
+  nav ul {
+    gap: 24px;
+    justify-content: center;
+  }
+
   .welcome-container {
     grid-template-columns: 1fr;
     text-align: center;
     padding: 40px 24px;
+    margin-top: 20px;
   }
 
   .welcome-container-inner {
     display: flex;
     flex-direction: column;
     align-items: center;
+    order: 2;
   }
 
-  header {
-    flex-direction: column;
-    gap: 24px;
+  .profile-img {
+    order: 1;
+    margin-bottom: 24px;
   }
 
-  h1 {
-    font-size: 40px;
+  .profile-img img {
+    max-width: 300px;
   }
 
   h2 {
-    font-size: 32px;
+    font-size: 38px;
   }
 
-  nav ul {
-    gap: 24px;
+  .welcome-container-inner p {
+    font-size: 18px;
+    margin-bottom: 32px;
   }
 
   .skills-container {
@@ -35,12 +58,104 @@
 }
 /* #endregion */
 
-/* #region RESPONSIVE 768 */
+/* #region RESPONSIVE 768px (Tablets Portrait) */
 @media (max-width: 768px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  nav a {
+    font-size: 18px;
+  }
+
+  .welcome-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+  }
+
+  .learnmore-button,
+  .download-cv-button {
+    width: 100%;
+  }
+
   .footer-container-inner {
     flex-direction: column-reverse;
     gap: 24px;
     text-align: center;
+    padding: 32px 16px;
+  }
+
+  .footer-links {
+    gap: 20px;
+  }
+}
+/* #endregion */
+
+/* #region RESPONSIVE 480px (Smartphones) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  header span {
+    font-size: 14px;
+  }
+
+  nav ul {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  nav li {
+    font-size: 12px;
+  }
+
+  nav a {
+    font-size: 16px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .welcome-container {
+    padding: 32px 16px;
+  }
+
+  .skills-container h2 {
+    font-size: 32px;
+    margin-bottom: 32px;
+  }
+
+  .skill-name {
+    font-size: 18px;
+  }
+}
+/* #endregion */
+
+/* #region RESPONSIVE 320px (Small Smartphones) */
+@media (max-width: 320px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  .welcome-container-inner > span {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .welcome-container-inner p {
+    font-size: 16px;
+  }
+
+  .progress-track {
+    height: 12px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 12px;
   }
 }
 /* #endregion */
