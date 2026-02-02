@@ -241,6 +241,9 @@ h2 {
   font-weight: 700;
   color: #ffffff;
   letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .skill-percent {
@@ -278,7 +281,6 @@ h2 {
   width: 70%;
 }
 /* #endregion */
-/* #endregion */
 
 /* #region IMAGES */
 .profile-img {
@@ -303,6 +305,11 @@ h2 {
 .download-cv-button img {
   height: 20px;
   width: 20px;
+}
+
+.skill-logo {
+  width: 25px;
+  height: 25px;
 }
 /* #endregion */
 
