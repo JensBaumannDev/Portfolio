@@ -34,3 +34,13 @@
   }
 }
 /* #endregion */
+
+/* #region RESPONSIVE 768 */
+@media (max-width: 768px) {
+  .footer-container-inner {
+    flex-direction: column-reverse;
+    gap: 24px;
+    text-align: center;
+  }
+}
+/* #endregion */
