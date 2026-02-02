@@ -28,5 +28,9 @@
   nav ul {
     gap: 24px;
   }
+
+  .skills-container {
+    padding: 40px 24px;
+  }
 }
 /* #endregion */
