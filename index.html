@@ -15,7 +15,15 @@
   <body>
     <header class="header">
       <div class="header-inner">
-        <a href="#" class="brand">JENS BAUMANN</a>
+        <a
+          href="#"
+          onclick="
+            showHome();
+            return false;
+          "
+          class="brand"
+          >JENS BAUMANN</a
+        >
 
         <nav class="nav-socials">
           <a href="https://www.linkedin.com/in/jens-baumann-7a6866315/" target="_blank"
@@ -46,7 +54,7 @@
             <a href="#" class="inactive-lang">EN</a>
           </div>
 
-          <a href="#contact" class="contact-button">
+          <a href="#contact" onclick="showHome()" class="contact-button">
             <span class="btn-text">Kontakt</span>
             <i class="fa-regular fa-envelope btn-icon-mobile"></i>
           </a>
@@ -54,7 +62,7 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="hero">
         <div class="hero-grid">
           <div class="hero-text-content">
@@ -260,6 +268,112 @@
       </section>
     </main>
 
+    <section id="impressum-content" class="legal-section d-none">
+      <div class="legal-container">
+        <div class="legal-header">
+          <button onclick="showHome()" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i> Zurück zur Startseite
+          </button>
+        </div>
+
+        <div class="legal-body">
+          <h1>Impressum</h1>
+
+          <div class="legal-block">
+            <h3>Angaben gemäß § 5 TMG</h3>
+            <p>
+              Jens Baumann<br />
+              Musterstraße 1<br />
+              12345 Musterstadt
+            </p>
+          </div>
+
+          <div class="legal-block">
+            <h3>Kontakt</h3>
+            <p>
+              Telefon: +49 (0) 123 44 55 66<br />
+              E-Mail: <a href="mailto:baumannjens@outlook.de">baumannjens@outlook.de</a>
+            </p>
+          </div>
+
+          <div class="legal-block">
+            <h3>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
+            <p>
+              Jens Baumann<br />
+              Musterstraße 1<br />
+              12345 Musterstadt
+            </p>
+          </div>
+
+          <div class="legal-block">
+            <h3>Haftung für Inhalte</h3>
+            <p>
+              Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen
+              Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet,
+              übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf
+              eine rechtswidrige Tätigkeit hinweisen.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="datenschutz-content" class="legal-section d-none">
+      <div class="legal-container">
+        <div class="legal-header">
+          <button onclick="showHome()" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i> Zurück zur Startseite
+          </button>
+        </div>
+
+        <div class="legal-body">
+          <h1>Datenschutzerklärung</h1>
+
+          <div class="legal-block">
+            <h3>1. Datenschutz auf einen Blick</h3>
+            <p>
+              <strong>Allgemeine Hinweise</strong><br />
+              Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten
+              passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie
+              persönlich identifiziert werden können.
+            </p>
+          </div>
+
+          <div class="legal-block">
+            <h3>2. Hosting</h3>
+            <p>
+              Wir hosten die Inhalte unserer Website bei folgendem Anbieter:<br />
+              <strong>GitHub Pages</strong><br />
+              Anbieter ist die GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA. Wenn Sie unsere
+              Website besuchen, erfasst GitHub Ihre IP-Adresse sowie Informationen über den verwendeten Browser und das
+              Betriebssystem, um die Sicherheit und den Betrieb der Website zu gewährleisten.
+            </p>
+          </div>
+
+          <div class="legal-block">
+            <h3>3. Allgemeine Hinweise und Pflichtinformationen</h3>
+            <p>
+              <strong>Verantwortlicher</strong><br />
+              Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:<br /><br />
+              Jens Baumann<br />
+              Musterstraße 1<br />
+              12345 Musterstadt<br />
+              E-Mail: baumannjens@outlook.de
+            </p>
+          </div>
+
+          <div class="legal-block">
+            <h3>Widerruf Ihrer Einwilligung zur Datenverarbeitung</h3>
+            <p>
+              Viele Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen Einwilligung möglich. Sie können eine
+              bereits erteilte Einwilligung jederzeit widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten
+              Datenverarbeitung bleibt vom Widerruf unberührt.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <footer id="contact" class="footer">
       <div class="footer-content-grid">
         <div class="footer-cta">
@@ -294,12 +408,29 @@
           <span>&copy; 2026 Jens Baumann</span>
         </div>
         <div class="footer-legal">
-          <a href="./impressum.html" class="legal-link">Impressum</a>
+          <a
+            href="#"
+            onclick="
+              showLegal('impressum');
+              return false;
+            "
+            class="legal-link"
+            >Impressum</a
+          >
           <span class="divider">|</span>
-          <a href="./datenschutz.html" class="legal-link">Datenschutz</a>
+          <a
+            href="#"
+            onclick="
+              showLegal('datenschutz');
+              return false;
+            "
+            class="legal-link"
+            >Datenschutz</a
+          >
         </div>
         <span class="location-badge">Based in Germany</span>
       </div>
     </footer>
+    <script src="./js/main.js"></script>
   </body>
 </html>
