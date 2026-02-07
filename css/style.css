@@ -405,10 +405,4 @@ section:last-of-type {
     transform: translateY(0);
   }
 }
-
-@media (max-width: 768px) {
-  .legal-body h1 {
-    font-size: 32px;
-  }
-}
 /* #endregion */

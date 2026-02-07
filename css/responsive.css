@@ -146,6 +146,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .legal-body h1 {
+    font-size: 32px;
+  }
+}
+
 @media (max-width: 480px) {
   section {
     padding: 40px 0;
