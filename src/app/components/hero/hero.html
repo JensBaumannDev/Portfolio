@@ -1,1 +1,19 @@
-<p>hero works!</p>
+<div class="hero-container">
+    <img class="hero-img" src="assets/01_Background/Design_Size_Relation/01_Hero.png" alt="Hero Hintergrundbild">
+    <div class="headline-text">
+        <h1>
+            @for (item of headlineText.fullstack; track $index) {
+            <span class="letter" [class.is-uppercase]="isUppercase(item)" [class.is-lowercase]="!isUppercase(item)">
+                {{ item }}
+            </span>
+            }
+            <div class="letter-wrapper">
+                @for (item of headlineText.developer; track $index) {
+                <span class="letter" [class.is-uppercase]="isUppercase(item)" [class.is-lowercase]="!isUppercase(item)">
+                    {{ item }}
+                </span>
+                }
+            </div>
+        </h1>
+    </div>
+</div>
