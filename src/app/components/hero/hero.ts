@@ -1,20 +1,16 @@
-import { Component, computed, signal } from '@angular/core';
-import { Navigation } from "../navigation/navigation";
-import {TranslatePipe} from '@ngx-translate/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
+import { Navigation } from '../navigation/navigation';
 
 @Component({
   selector: 'app-hero',
-  standalone: true,
-  imports: [Navigation,TranslatePipe],
+  imports: [Navigation, TranslatePipe],
   templateUrl: './hero.html',
   styleUrl: './hero.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Hero {
   readonly isRightHovered = signal(false);
-  readonly isNameHovered = signal(false);
-  readonly nameLabelKey = computed(() =>
-    this.isNameHovered() ? 'hero.nameHover' : 'hero.nameDefault'
-  );
 
   headlineText = {
     fullstack: ['F', 'u', 'l', 'l', 's', 't', 'a', 'c', 'k'],
@@ -27,10 +23,6 @@ export class Hero {
 
   setRightHoverState(isHovered: boolean): void {
     this.isRightHovered.set(isHovered);
-  }
-
-  setNameHoverState(isHovered: boolean): void {
-    this.isNameHovered.set(isHovered);
   }
 }
 

@@ -5,10 +5,14 @@
             <div class="hero-top">
                 <div class="hero-top__left">
                     <div class="hero-top__inner">
-                        <div class="show-name" (mouseenter)="setNameHoverState(true)" (mouseleave)="setNameHoverState(false)">
+                        <button type="button" class="btn-pill btn-pill--hero"
+                            [attr.aria-label]="'hero.nameHover' | translate">
                             <img class="show-name__waving-hand" src="/icons/waving_hand.png" alt="" aria-hidden="true">
-                            <p>{{ nameLabelKey() | translate }}</p>
-                        </div>
+                            <span class="hero-labels" aria-hidden="true">
+                                <span class="hero-label hero-label--default">{{ 'hero.nameDefault' | translate }}</span>
+                                <span class="hero-label hero-label--hover">{{ 'hero.nameHover' | translate }}</span>
+                            </span>
+                        </button>
                         <h1>
                             @for (item of headlineText.fullstack; track $index) {
                             <span class="letter" [class.is-uppercase]="isUppercase(item)"
@@ -34,7 +38,7 @@
                     </span>
                     }
                 </h1>
-                <button>{{'hero.buttonText' | translate}}</button>
+                <button type="button" class="btn-pill">{{'hero.buttonText' | translate}}</button>
             </div>
 
         </div>

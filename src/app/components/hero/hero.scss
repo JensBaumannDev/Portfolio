@@ -37,21 +37,40 @@
   &__inner {
     @include flex($flex-direction: column, $justify-content: flex-end);
 
-    .show-name {
-      @include flex($justify-content: flex-start, $align-items: center);
-      position: relative;
-      font-size: clamp(14px, 1.1vw, 18px);
-      border: 1px solid $primary-bg-color;
-      border-radius: 30px;
-      box-sizing: border-box;
-      padding: clamp(8px, 0.8vw, 12px) clamp(14px, 1.2vw, 20px);
-      width: clamp(120px, 9vw, 150px);
-      overflow: visible;
-      transition: width 420ms ease, background-color 420ms ease;
+    .btn-pill--hero {
+      .hero-labels {
+        display: inline-grid;
+      }
+
+      .hero-label {
+        grid-area: 1 / 1;
+        justify-self: start;
+        white-space: nowrap;
+        transition: opacity 120ms ease;
+      }
+
+      .hero-label--default {
+        opacity: 1;
+      }
+
+      .hero-label--hover {
+        opacity: 0;
+        clip-path: inset(0 100% 0 0);
+        transition: clip-path 320ms ease 120ms, opacity 120ms ease 120ms;
+      }
 
       &:hover {
         width: clamp(170px, 14vw, 220px);
         background-color: $highlight2;
+
+        .hero-label--default {
+          opacity: 0;
+        }
+
+        .hero-label--hover {
+          opacity: 1;
+          clip-path: inset(0 0 0 0);
+        }
 
         .show-name__waving-hand {
           opacity: 1;
@@ -59,7 +78,13 @@
         }
       }
 
-      &__waving-hand {
+      &:not(:hover) {
+        .hero-label--hover {
+          transition-delay: 0ms;
+        }
+      }
+
+      .show-name__waving-hand {
         position: absolute;
         top: -40px;
         right: 12px;
@@ -72,14 +97,7 @@
         pointer-events: none;
         z-index: 1;
       }
-
-      >p {
-        margin: 0;
-        line-height: 1;
-        white-space: nowrap;
-      }
     }
-
   }
 
   &__right {
