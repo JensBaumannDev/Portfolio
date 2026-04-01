@@ -20,14 +20,14 @@
 .hero-title {
   @include flex($flex-direction: column, $align-items: center);
   width: 100%;
-  padding-right: 220px;
-  padding-left: 220px;
+  padding-right: clamp(32px, 15vw, 220px);
+  padding-left: clamp(32px, 15vw, 220px);
 
 }
 
 .hero-top {
   width: 100%;
-  @include flex($justify-content: space-between);
+  @include flex($flex-wrap: nowrap, $justify-content: space-between);
 
   &__left {
     @include flex();
@@ -40,17 +40,17 @@
     .show-name {
       @include flex($justify-content: flex-start, $align-items: center);
       position: relative;
-      font-size: 18px;
+      font-size: clamp(14px, 1.1vw, 18px);
       border: 1px solid $primary-bg-color;
       border-radius: 30px;
       box-sizing: border-box;
-      padding: 12px 20px;
-      width: 150px;
+      padding: clamp(8px, 0.8vw, 12px) clamp(14px, 1.2vw, 20px);
+      width: clamp(120px, 9vw, 150px);
       overflow: visible;
       transition: width 420ms ease, background-color 420ms ease;
 
       &:hover {
-        width: 220px;
+        width: clamp(170px, 14vw, 220px);
         background-color: $highlight2;
 
         .show-name__waving-hand {
@@ -83,15 +83,15 @@
   }
 
   &__right {
-    margin-bottom: 45px;
-    margin-right: 80px;
+    margin-bottom: clamp(18px, 2.8vw, 45px);
+    margin-right: clamp(20px, 5vw, 80px);
     transform: rotate(10deg);
-    margin-left: 40px;
+    margin-left: clamp(12px, 2.5vw, 40px);
     background-image: url('/img/05_Profil/profilepicture.jpg');
     filter: grayscale(100%);
     background-position: bottom;
     background-size: cover;
-    width: 250px;
+    width: clamp(150px, 16vw, 250px);
     height: auto;
 
     &:hover {
@@ -105,7 +105,7 @@
     &>span {
       font-family: 'Kalam-Bold';
       font-weight: 700;
-      font-size: 24px;
+      font-size: clamp(16px, 1.4vw, 24px);
       color: black;
       position: absolute;
       transform: translateY(-140%)translateX(120%);
@@ -114,18 +114,18 @@
 }
 
 h1 {
-  font-size: 128px;
+  font-size: clamp(72px, 8.8vw, 128px);
   font-weight: 700;
 }
 
 .hero-bottom {
   width: 100%;
-  padding-right: 70px;
+  padding-right: clamp(20px, 4.4vw, 70px);
   @include flex($flex-direction: column, $justify-content: flex-end, $align-items: flex-end);
 }
 
 .letter {
-  letter-spacing: -10px;
+  letter-spacing: clamp(-10px, -0.5vw, -4px);
 }
 
 .letter:hover.is-lowercase {
@@ -139,7 +139,7 @@ h1 {
 }
 
 img {
-  width: 250px;
+  width: clamp(150px, 16vw, 250px);
   height: auto;
 }
 
