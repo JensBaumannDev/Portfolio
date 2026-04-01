@@ -40,6 +40,11 @@
                 "output": "/icons"
               },
               {
+                "glob": "**/*",
+                "input": "public/i18n",
+                "output": "/i18n"
+              },
+              {
                 "glob": "favicon.ico",
                 "input": "public",
                 "output": "/"

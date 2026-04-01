@@ -1,10 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { Navigation } from "../navigation/navigation";
+import {TranslatePipe, TranslateDirective} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [Navigation],
+  imports: [Navigation,TranslatePipe,TranslateDirective],
   templateUrl: './hero.html',
   styleUrl: './hero.scss',
 })
@@ -24,3 +25,5 @@ export class Hero {
     this.isRightHovered.set(isHovered);
   }
 }
+
+
