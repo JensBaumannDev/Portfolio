@@ -1,8 +1,8 @@
 <nav class="navigation">
     <ul>
         <li class="logo-container">
-            <img src="../../../assets/04_Logo/logo2.png" alt="brandlogo" class="logo-default">
-            <img src="../../../assets/04_Logo/logo1.png" alt="brandlogo hover" class="logo-hover">
+            <img src="/img/04_Logo/logo2.png" alt="brandlogo" class="logo-default">
+            <img src="/img/04_Logo/logo1.png" alt="brandlogo hover" class="logo-hover">
         </li>
 
         @for (link of navLinks; track link; let i = $index) {
@@ -16,7 +16,7 @@
             <span class="language__item" [class.language__item--active]="activeLangCode === 'EN'"
                 (click)="setLanguage('EN')">
                 <span class="language__label">EN</span>
-                <img src="assets/00_Hand-drawn-lines/00_Header/Color_option_2/Toggle.png" alt="hover sprache"
+                <img src="/img/00_Hand-drawn-lines/00_Header/Color_option_2/Toggle.png" alt="hover sprache"
                     class="language__hover-img">
             </span>
             <div class="toggle" [class.toggle--en]="activeLangCode === 'EN'" [class.toggle--de]="activeLangCode === 'DE'">
@@ -26,7 +26,7 @@
             <span class="language__item" [class.language__item--active]="activeLangCode === 'DE'"
                 (click)="setLanguage('DE')">
                 <span class="language__label">DE</span>
-                <img src="assets/00_Hand-drawn-lines/00_Header/Color_option_2/Toggle.png" alt="hover sprache"
+                <img src="/img/00_Hand-drawn-lines/00_Header/Color_option_2/Toggle.png" alt="hover sprache"
                     class="language__hover-img">
             </span>
         </li>

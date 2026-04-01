@@ -1,7 +1,6 @@
 @use '../../../styles/abstracts/' as *;
 
 .navigation {
-  position: absolute;
   width: 100%;
   height: 80px;
   @include maxContent();
@@ -52,8 +51,8 @@
     display: inline-block;
     font-weight: 700;
     font-size: 18px;
-    color:  $primary-bg-color;
-
+    color: $primary-bg-color;
+    cursor: pointer;
   }
 
   img {
@@ -72,6 +71,7 @@
 
   &:not(.nav-hover0):hover img {
     animation: revealFromLeft 0.4s ease-out forwards;
+
   }
 }
 
