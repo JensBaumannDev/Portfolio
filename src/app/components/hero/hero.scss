@@ -9,15 +9,12 @@
   height: 100vh;
   background-position: bottom;
   background-size: cover;
-
 }
 
 .title-wrapper {
   @include flex($flex-direction: column, $align-items: center);
   @include maxContent();
   color: $primary-bg-color;
-
-
 }
 
 .hero-title {
@@ -69,11 +66,8 @@
       color: black;
       position: absolute;
       transform: translateY(-140%)translateX(120%);
-
-
     }
   }
-
 }
 
 h1 {
@@ -92,15 +86,13 @@ h1 {
 }
 
 .letter:hover.is-lowercase {
-  color: #bae011;
+  color: $highlight1;
   text-transform: uppercase;
-
 }
 
 .letter:hover.is-uppercase {
-  color: #bae011;
+  color: $highlight1;
   text-transform: lowercase;
-
 }
 
 img {
@@ -113,20 +105,20 @@ img {
   gap: 6px;
   @include maxContent();
   margin-bottom: 200px;
-  color: white;
+  color: $primary-bg-color;
 
   &>a {
     @include flex($align-items: center, $justify-content: center);
     display: inline-flex;
     height: 45px;
     width: 45px;
-    border: 1px solid white;
+    border: 1px solid $primary-bg-color;
     border-radius: 50%;
     cursor: pointer;
     text-decoration: none;
 
     &:hover {
-      background-color: #bae011;
+      background-color: $highlight2;
     }
 
     &>svg {

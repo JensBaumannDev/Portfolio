@@ -104,7 +104,7 @@
     position: relative;
     cursor: pointer;
     font-size: 16px;
-    color: rgb(255, 255, 255);
+    color: $primary-bg-color;
     transition: color 0.3s ease;
     display: flex;
     align-items: center;
@@ -123,7 +123,7 @@
     }
 
     &:not(.language__item--active):hover {
-      color: #ffffff;
+      color: $primary-bg-color;
 
       .language__hover-img {
         clip-path: inset(0 0 0 0);
@@ -131,7 +131,7 @@
     }
 
     &--active {
-      color: #e08c05;
+      color: $highlight1;
       cursor: default;
 
       &::after {
@@ -153,7 +153,7 @@
   align-items: center;
 
   &__circle {
-    background-color: #7e4ae7;
+    background-color: $highlight2;
     min-width: 17px;
     min-height: 17px;
     top: 50%;
@@ -167,7 +167,7 @@
 
   &__line {
     position: absolute;
-    background-color: #e08c05;
+    background-color: $highlight3;
     height: 8px;
     width: 40px;
     top: 50%;

@@ -12,10 +12,10 @@ import { CommonModule } from '@angular/common';
 export class Navigation {
 
   navLinks = [
-    { label: 'About me', img: '/img/00_Hand-drawn-lines/00_Header/Color_option_2/1.png' },
-    { label: 'Skills', img: '/img/00_Hand-drawn-lines/00_Header/Color_option_2/2.png' },
-    { label: 'Projects', img: '/img/00_Hand-drawn-lines/00_Header/Color_option_2/4.png' },
-    { label: 'Contact', img: '/img/00_Hand-drawn-lines/00_Header/Color_option_2/3.png' },
+    { label: 'About me', img: '/img/00_Hand-drawn-lines/00_Header/Color_option_3/1.png' },
+    { label: 'Skills', img: '/img/00_Hand-drawn-lines/00_Header/Color_option_3/2.png' },
+    { label: 'Projects', img: '/img/00_Hand-drawn-lines/00_Header/Color_option_3/4.png' },
+    { label: 'Contact', img: '/img/00_Hand-drawn-lines/00_Header/Color_option_3/3.png' },
   ];
 
 
