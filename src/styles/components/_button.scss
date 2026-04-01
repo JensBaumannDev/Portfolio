@@ -2,15 +2,18 @@
 
 .btn-pill {
 	@include flex($justify-content: flex-start, $align-items: center);
+	display: inline-flex;
 	position: relative;
 	font-size: clamp(14px, 1.1vw, 18px);
 	border: 1px solid $primary-bg-color;
 	border-radius: 30px;
 	box-sizing: border-box;
 	padding: clamp(8px, 0.8vw, 12px) clamp(14px, 1.2vw, 20px);
-	width: clamp(120px, 9vw, 150px);
+	width: fit-content;
+	max-width: 100%;
+	min-width: max-content;
 	overflow: visible;
-	transition: width 420ms ease, background-color 420ms ease;
+	transition: background-color 420ms ease;
 	background: transparent;
 	color: inherit;
 	cursor: pointer;

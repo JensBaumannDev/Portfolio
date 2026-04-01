@@ -38,13 +38,16 @@
     @include flex($flex-direction: column, $justify-content: flex-end);
 
     .btn-pill--hero {
+      width: clamp(120px, 9vw, 150px);
+      transition: width 420ms ease, background-color 420ms ease;
+
       .hero-labels {
-        display: inline-grid;
+        display: inline-block;
+        position: relative;
       }
 
       .hero-label {
-        grid-area: 1 / 1;
-        justify-self: start;
+        display: block;
         white-space: nowrap;
         transition: opacity 120ms ease;
       }
@@ -54,6 +57,8 @@
       }
 
       .hero-label--hover {
+        position: absolute;
+        inset: 0 auto auto 0;
         opacity: 0;
         clip-path: inset(0 100% 0 0);
         transition: clip-path 320ms ease 120ms, opacity 120ms ease 120ms;
@@ -134,6 +139,17 @@
 h1 {
   font-size: clamp(72px, 8.8vw, 128px);
   font-weight: 700;
+}
+
+.contact-button {
+  box-shadow: 3px 6px 1px $primary-bg-color;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+
+  &:hover {
+    transform: translate(3px, 6px);
+    box-shadow: 0 0 1px $primary-bg-color;
+    background-color: $highlight3;
+  }
 }
 
 .hero-bottom {
