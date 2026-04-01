@@ -3,17 +3,22 @@
 @use '../../../styles/base/' as*;
 
 .hero-container {
-  @include flex($flex-direction: column, $justify-content: space-between);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 
   background-image: url('/img/01_Background/Img_Original_Size/Hero.png');
-  height: 100vh;
+  min-height: 100svh;
+  height: 100svh;
   background-position: bottom;
   background-size: cover;
 }
 
 .title-wrapper {
-  @include flex($flex-direction: column, $align-items: center);
+  @include flex($flex-direction: column, $flex-wrap: nowrap, $justify-content: center, $align-items: center);
   @include maxContent();
+  flex: 1 1 auto;
+  width: 100%;
+  align-self: center;
   color: $primary-bg-color;
 }
 
@@ -180,8 +185,10 @@ img {
 .social-media {
   @include flex($flex-direction: column, $align-items: unset);
   gap: 6px;
+  width: 100%;
   @include maxContent();
-  margin-bottom: 200px;
+  align-self: end;
+  padding-bottom: 200px;
   color: $primary-bg-color;
 
   &>a {
