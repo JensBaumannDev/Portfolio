@@ -5,7 +5,10 @@
             <div class="hero-top">
                 <div class="hero-top__left">
                     <div class="hero-top__inner">
-                        <p>Hello World</p>
+                        <div class="show-name" (mouseenter)="setNameHoverState(true)" (mouseleave)="setNameHoverState(false)">
+                            <img class="show-name__waving-hand" src="/icons/waving_hand.png" alt="" aria-hidden="true">
+                            <p>{{ nameLabelKey() | translate }}</p>
+                        </div>
                         <h1>
                             @for (item of headlineText.fullstack; track $index) {
                             <span class="letter" [class.is-uppercase]="isUppercase(item)"
@@ -50,8 +53,8 @@
                     </g>
                 </g>
             </svg></a>
-        <a target="_blank" href="https://www.linkedin.com/in/jens-baumann-7a6866315/"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35"
-                viewBox="0,0,256,256">
+        <a target="_blank" href="https://www.linkedin.com/in/jens-baumann-7a6866315/"><svg
+                xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" viewBox="0,0,256,256">
                 <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
                     stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
                     font-family="none" font-weight="none" font-size="none" text-anchor="none"
@@ -63,8 +66,8 @@
                     </g>
                 </g>
             </svg></a>
-        <a target="_blank" href="https://www.youtube.com/@jensbaumann_music"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35"
-                viewBox="0,0,256,256">
+        <a target="_blank" href="https://www.youtube.com/@jensbaumann_music"><svg xmlns="http://www.w3.org/2000/svg"
+                x="0px" y="0px" width="35" height="35" viewBox="0,0,256,256">
                 <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
                     stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
                     font-family="none" font-weight="none" font-size="none" text-anchor="none"

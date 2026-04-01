@@ -1,5 +1,7 @@
 {
     "hero":{
-        "buttonText":"Kontakiere mich"
+        "buttonText":"Kontakiere mich",
+        "nameDefault":"Hello World",
+        "nameHover":"Ich bin Jens Baumann"
     }
 }

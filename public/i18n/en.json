@@ -1,5 +1,7 @@
 {
     "hero":{
-        "buttonText":"Get in touch"
+        "buttonText":"Get in touch",
+        "nameDefault":"Hello World",
+        "nameHover":"I'am Jens Baumann"
     }
 }

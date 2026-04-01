@@ -37,6 +37,49 @@
   &__inner {
     @include flex($flex-direction: column, $justify-content: flex-end);
 
+    .show-name {
+      @include flex($justify-content: flex-start, $align-items: center);
+      position: relative;
+      font-size: 18px;
+      border: 1px solid $primary-bg-color;
+      border-radius: 30px;
+      box-sizing: border-box;
+      padding: 12px 20px;
+      width: 150px;
+      overflow: visible;
+      transition: width 420ms ease, background-color 420ms ease;
+
+      &:hover {
+        width: 220px;
+        background-color: $highlight2;
+
+        .show-name__waving-hand {
+          opacity: 1;
+          transform: rotate(1turn);
+        }
+      }
+
+      &__waving-hand {
+        position: absolute;
+        top: -40px;
+        right: 12px;
+        width: 35px;
+        height: auto;
+        opacity: 0;
+        transform: rotate(-12deg);
+        transform-origin: center center;
+        transition: transform 420ms ease, opacity 220ms ease;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      >p {
+        margin: 0;
+        line-height: 1;
+        white-space: nowrap;
+      }
+    }
+
   }
 
   &__right {
