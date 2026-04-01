@@ -117,13 +117,20 @@ img {
 
   &>a {
     @include flex($align-items: center, $justify-content: center);
+    display: inline-flex;
     height: 45px;
     width: 45px;
     border: 1px solid white;
     border-radius: 50%;
+    cursor: pointer;
+    text-decoration: none;
 
     &:hover {
       background-color: #bae011;
+    }
+
+    &>svg {
+      pointer-events: none;
     }
   }
 }
