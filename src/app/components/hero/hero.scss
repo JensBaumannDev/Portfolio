@@ -72,6 +72,7 @@
       &:hover {
         width: clamp(170px, 14vw, 220px);
         background-color: $highlight2;
+        cursor: default;
 
         .hero-label--default {
           opacity: 0;
