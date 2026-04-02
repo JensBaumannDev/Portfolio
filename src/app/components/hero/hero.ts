@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { Navigation } from '../navigation/navigation';
+import { SOCIAL_LINKS } from '../social-links/social-links.data';
 
 @Component({
   selector: 'app-hero',
@@ -11,10 +12,11 @@ import { Navigation } from '../navigation/navigation';
 })
 export class Hero {
   readonly isRightHovered = signal(false);
+  readonly socialLinks = SOCIAL_LINKS;
 
-  headlineText = {
+  readonly headlineText = {
     fullstack: ['F', 'u', 'l', 'l', 's', 't', 'a', 'c', 'k'],
-     developer: ['D', 'E', 'V', 'E', 'L', 'O', 'P', 'E', 'R'],
+    developer: ['D', 'E', 'V', 'E', 'L', 'O', 'P', 'E', 'R'],
   };
 
   isUppercase(letter: string): boolean {
@@ -25,5 +27,6 @@ export class Hero {
     this.isRightHovered.set(isHovered);
   }
 }
+
 
 

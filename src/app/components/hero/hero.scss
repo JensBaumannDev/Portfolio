@@ -186,7 +186,7 @@ h1 {
   text-transform: lowercase;
 }
 
-img {
+.hero-top__right > img {
   width: clamp(150px, 16vw, 250px);
   height: auto;
 }
@@ -200,21 +200,25 @@ img {
   padding-bottom: 200px;
   color: $primary-bg-color;
 
-  &>a {
+  a {
     @include flex($align-items: center, $justify-content: center);
     display: inline-flex;
-    height: 45px;
     width: 45px;
+    height: 45px;
     border: 1px solid $primary-bg-color;
     border-radius: 50%;
-    cursor: pointer;
+    color: $primary-bg-color;
     text-decoration: none;
+    cursor: pointer;
 
     &:hover {
       background-color: $highlight2;
     }
 
-    &>svg {
+    svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
       pointer-events: none;
     }
   }
@@ -334,12 +338,6 @@ img {
 
   .social-media {
     padding-bottom: clamp(16px, 6vw, 40px);
-    gap: 10px;
-
-    &>a {
-      height: 38px;
-      width: 38px;
-    }
   }
 }
 
