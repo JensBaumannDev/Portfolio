@@ -105,7 +105,7 @@
 
 .hero-top__inner {
   .btn-pill--hero {
-    width: 130px;
+    width: var(--btn-default-width, 130px);
     transition: width 420ms ease, background-color 420ms ease;
 
     .hero-labels {
@@ -132,7 +132,7 @@
     }
 
     &:hover {
-      width: 200px;
+      width: var(--btn-hover-width, 200px);
       background-color: $highlight2;
       cursor: default;
 
@@ -237,11 +237,7 @@
   }
 
   .hero-top__inner .btn-pill--hero {
-    width: 120px;
-
-    &:hover {
-      width: 170px;
-    }
+    max-width: 100%;
   }
 }
 
