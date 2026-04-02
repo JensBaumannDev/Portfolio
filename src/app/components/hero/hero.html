@@ -1,15 +1,17 @@
 <section class="hero-container">
     <app-navigation></app-navigation>
-    <div class="title-wrapper">
-        <div class="hero-title">
-            <div class="hero-top">
-                <div class="hero-top__left">
+    <div class="hero-container-inner">
+        <div class="title-wrapper">
+            <div class="hero-title">
+                <div class="hero-top">
                     <div class="hero-top__inner">
                         <button type="button" class="btn-pill btn-pill--hero"
                             [attr.aria-label]="'hero.nameHover' | translate">
-                            <img class="show-name__waving-hand" src="/icons/waving_hand.png" alt="" aria-hidden="true">
+                            <img class="show-name__waving-hand" src="icons/waving_hand.png" alt=""
+                                aria-hidden="true">
                             <span class="hero-labels" aria-hidden="true">
-                                <span class="hero-label hero-label--default">{{ 'hero.nameDefault' | translate }}</span>
+                                <span class="hero-label hero-label--default">{{ 'hero.nameDefault' | translate
+                                    }}</span>
                                 <span class="hero-label hero-label--hover">{{ 'hero.nameHover' | translate }}</span>
                             </span>
                         </button>
@@ -22,35 +24,34 @@
                             }
                         </h1>
                     </div>
+                    <div class="hero-top__right" (mouseenter)="setRightHoverState(true)"
+                        (mouseleave)="setRightHoverState(false)">
+                        <img src="img/03_Stickers/Polaroid_Frame.png" alt="Profilbild">
+                        <span>{{ isRightHovered() ? 'Jens :D' : 'Jens :)' }}</span>
+                    </div>
+                </div>
+                <div class="hero-bottom">
+                    <h1>
+                        @for (item of headlineText.developer; track $index) {
+                        <span class="letter" [class.is-uppercase]="isUppercase(item)"
+                            [class.is-lowercase]="!isUppercase(item)">
+                            {{ item }}
+                        </span>
+                        }
+                    </h1>
+                    <button type="button" class="contact-button btn-pill">{{'hero.buttonText' | translate}}</button>
                 </div>
             </div>
-            <div class="hero-bottom">
-                <h1>
-                    @for (item of headlineText.developer; track $index) {
-                    <span class="letter" [class.is-uppercase]="isUppercase(item)"
-                        [class.is-lowercase]="!isUppercase(item)">
-                        {{ item }}
-                    </span>
-                    }
-                </h1>
-                <button type="button" class="contact-button btn-pill">{{'hero.buttonText' | translate}}</button>
-            </div>
-            <div class="hero-top__right" (mouseenter)="setRightHoverState(true)"
-                (mouseleave)="setRightHoverState(false)">
-                <img src="/img/03_Stickers/Polaroid_Frame.png" alt="Profilbild">
-                <span>{{ isRightHovered() ? 'Jens :D' : 'Jens :)' }}</span>
-            </div>
-
         </div>
-    </div>
-    <div class="social-media">
-        @for (social of socialLinks; track social.label) {
-        <a [href]="social.href" [attr.target]="social.isExternal ? '_blank' : null"
-            [attr.rel]="social.isExternal ? 'noreferrer' : null" [attr.aria-label]="social.label">
-            <svg [attr.viewBox]="social.viewBox ?? '0 0 24 24'" aria-hidden="true">
-                <path [attr.d]="social.path" />
-            </svg>
-        </a>
-        }
+        <div class="social-media">
+            @for (social of socialLinks; track social.label) {
+            <a [href]="social.href" [attr.target]="social.isExternal ? '_blank' : null"
+                [attr.rel]="social.isExternal ? 'noreferrer' : null" [attr.aria-label]="social.label">
+                <svg [attr.viewBox]="social.viewBox ?? '0 0 24 24'" aria-hidden="true">
+                    <path [attr.d]="social.path" />
+                </svg>
+            </a>
+            }
+        </div>
     </div>
 </section>

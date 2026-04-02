@@ -16,17 +16,17 @@ export class Navigation {
   readonly socialLinks = SOCIAL_LINKS;
 
   readonly navLinksDE = [
-    { label: 'Über Mich', img: '/img/00_Hand-drawn-lines/00_Header/Color_option_3/1.png' },
-    { label: 'Skills', img: '/img/00_Hand-drawn-lines/00_Header/Color_option_3/2.png' },
-    { label: 'Projekte', img: '/img/00_Hand-drawn-lines/00_Header/Color_option_3/4.png' },
-    { label: 'Kontakt', img: '/img/00_Hand-drawn-lines/00_Header/Color_option_3/3.png' },
+    { label: 'Über Mich', img: 'img/00_Hand-drawn-lines/00_Header/Color_option_3/1.png' },
+    { label: 'Skills', img: 'img/00_Hand-drawn-lines/00_Header/Color_option_3/2.png' },
+    { label: 'Projekte', img: 'img/00_Hand-drawn-lines/00_Header/Color_option_3/4.png' },
+    { label: 'Kontakt', img: 'img/00_Hand-drawn-lines/00_Header/Color_option_3/3.png' },
   ];
 
   readonly navLinksEN = [
-    { label: 'About me', img: '/img/00_Hand-drawn-lines/00_Header/Color_option_3/1.png' },
-    { label: 'Skills', img: '/img/00_Hand-drawn-lines/00_Header/Color_option_3/2.png' },
-    { label: 'Projects', img: '/img/00_Hand-drawn-lines/00_Header/Color_option_3/4.png' },
-    { label: 'Contact', img: '/img/00_Hand-drawn-lines/00_Header/Color_option_3/3.png' },
+    { label: 'About me', img: 'img/00_Hand-drawn-lines/00_Header/Color_option_3/1.png' },
+    { label: 'Skills', img: 'img/00_Hand-drawn-lines/00_Header/Color_option_3/2.png' },
+    { label: 'Projects', img: 'img/00_Hand-drawn-lines/00_Header/Color_option_3/4.png' },
+    { label: 'Contact', img: 'img/00_Hand-drawn-lines/00_Header/Color_option_3/3.png' },
   ];
 
   readonly isMenuOpen = signal(false);
