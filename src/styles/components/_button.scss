@@ -23,4 +23,29 @@
 		line-height: 1;
 		white-space: nowrap;
 	}
+
+	&--secondary {
+		border: 1px solid $secondary-bg-color;
+	}
+}
+
+.btn-push {
+	box-shadow: 3px 6px 1px $primary-bg-color;
+	transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+
+	&:hover {
+		transform: translate(3px, 6px);
+		box-shadow: 0 0 1px $primary-bg-color;
+		background-color: $highlight3;
+	}
+
+	&--dark {
+		border-color: $secondary-bg-color;
+		box-shadow: 3px 6px 1px $secondary-bg-color;
+		color: $secondary-bg-color;
+
+		&:hover {
+			box-shadow: 0 0 1px $secondary-bg-color;
+		}
+	}
 }

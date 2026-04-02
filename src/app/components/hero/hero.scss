@@ -173,17 +173,6 @@
   }
 }
 
-.contact-button {
-  box-shadow: 3px 6px 1px $primary-bg-color;
-  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
-
-  &:hover {
-    transform: translate(3px, 6px);
-    box-shadow: 0 0 1px $primary-bg-color;
-    background-color: $highlight3;
-  }
-}
-
 .social-media {
   @include flex($flex-direction: column, $align-items: unset);
   gap: 6px;
@@ -299,7 +288,7 @@
     margin-top: 10px;
   }
 
-  .contact-button {
+  .btn-push {
     align-self: flex-end;
     margin-top: 20px;
   }
