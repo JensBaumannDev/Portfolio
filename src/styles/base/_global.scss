@@ -6,3 +6,20 @@ body {
     cursor: default;
 }
 
+/* #region ANIMATIONS */
+
+@keyframes draw-line {
+    0%      { clip-path: inset(0 100% 0 0); }
+    15.5%  { clip-path: inset(0 0% 0 0); }
+    50%     { clip-path: inset(0 0% 0 0); }
+    65.5%  { clip-path: inset(0 100% 0 0); }
+    100%    { clip-path: inset(0 100% 0 0); }
+}
+
+.draw-line {
+    display: block;
+    animation: draw-line 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* #endregion */
+

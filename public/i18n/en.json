@@ -1,7 +1,16 @@
 {
-    "hero":{
-        "buttonText":"Get in touch",
-        "nameDefault":"Hello World",
-        "nameHover":"I'am Jens Baumann"
+    "aboutMe": {
+        "subline": "Who's Jens?",
+        "headline": "About me",
+        "text": "Hey, I'm Jens! I'm a passionate frontend developer who loves turning ideas into real digital experiences. I see every challenge as a chance to think more efficiently and find elegant solutions. Curiosity drives me — whether it's new technologies, cleaner code, or more thoughtful design. Let's collaborate and build something remarkable together!",
+        "buttonText": "Let's talk",
+        "cardtext1": "Based in Emden, Ostfriesland",
+        "cardtext2": "Open to office presence",
+        "cardtext3": "Open for home office"
+    },
+    "hero": {
+        "buttonText": "Get in touch",
+        "nameDefault": "Hello World",
+        "nameHover": "I'am Jens Baumann"
     }
 }

@@ -1,4 +1,14 @@
 {
+    "aboutMe":{
+        "subline":"Wer ist Jens?",
+        "headline":"Über mich",
+        "text":"Hey, ich bin Jens! Ich bin leidenschaftlicher Frontend-Entwickler und begeistert davon, aus Ideen echte digitale Erlebnisse zu machen. Jede Herausforderung sehe ich als Chance, effizienter und eleganter zu denken. Neugier treibt mich an – ob neue Technologien, besserer Code oder durchdachteres Design. Lass uns gemeinsam etwas Großartiges bauen!",
+        "buttonText": "Lass uns schnacken",
+        "cardtext1":"Wohnhaft in Emden, Ostfriesland",
+        "cardtext2":"Offen für Büropräsenz",
+        "cardtext3":"Offen für Homeoffice"
+
+    },
     "hero":{
         "buttonText":"Kontakiere mich",
         "nameDefault":"Hello World",

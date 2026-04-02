@@ -1,0 +1,140 @@
+@use '../../../../src/styles/abstracts/' as*;
+@use '../../../../src/styles/components/' as*;
+
+/* #region LAYOUT */
+
+.about-container {
+    @include flex($flex-direction: row, $flex-wrap: nowrap, $align-items: center, $justify-content: center);
+    @include maxWidth();
+    padding: clamp(64px, 10vw, 144px) 0;
+    gap: clamp(32px, 5.5vw, 80px);
+}
+
+/* #endregion */
+
+/* #region CARDS */
+
+.card-content {
+    @include flex($flex-direction: column, $align-items: center);
+
+    &__collor1,
+    &__collor2,
+    &__color3 {
+        position: relative;
+        width: clamp(320px, 38.9vw, 560px);
+        color: $primary-bg-color;
+        font-size: clamp(16px, 1.67vw, 24px);
+
+        >img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .card-label {
+            @include flex($flex-wrap: nowrap, $align-items: center);
+            gap: 8px;
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+
+            img {
+                width: clamp(14px, 2vw, 36px);
+                height: auto;
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+    }
+
+    &__collor1 {
+        transform: rotate(-4deg);
+        z-index: 3;
+
+        .card-label {
+            bottom: 45%;
+            transform: translateX(-50%) rotate(-1deg);
+        }
+    }
+
+    &__collor2 {
+        transform: rotate(0deg);
+        margin-top: -7%;
+        z-index: 2;
+
+        .card-label {
+            bottom: 40%;
+        }
+    }
+
+    &__color3 {
+        transform: rotate(4deg);
+        margin-top: -7%;
+        z-index: 1;
+
+        .card-label {
+            bottom: 40%;
+            transform: translateX(-50%) rotate(3deg);
+        }
+    }
+}
+
+/* #endregion */
+
+/* #region INFO CONTENT */
+
+.info-content {
+    width: clamp(280px, 38.9vw, 560px);
+
+    &__head {
+        margin-bottom: 16px;
+    }
+
+    &__headline {
+        text-align: left;
+        margin-bottom: 48px;
+
+        img {
+            width: 300px;
+            height: auto;
+        }
+    }
+
+    div:last-child {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 48px;
+    }
+}
+
+/* #endregion */
+
+/* #region RESPONSIVE (768px)*/
+
+@media (max-width: $breakpoint-mobile) {
+    .about-container {
+        flex-direction: column;
+        padding: 64px 16px;
+    }
+
+    .card-content {
+        order: 2;
+        width: 100%;
+        margin-top: 44px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .info-content {
+        order: 1;
+        width: 100%;
+    }
+}
+
+/* #endregion */

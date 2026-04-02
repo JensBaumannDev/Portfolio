@@ -25,7 +25,7 @@
         </li>
         @for (link of currentNavLinks(); track link.label; let i = $index) {
         <li class="nav-item nav-hover{{ i }}">
-            <a [routerLink]="['/']" (click)="closeMenu()">{{ link.label }}</a>
+            <a [routerLink]="['/']" [fragment]="link.fragment" (click)="closeMenu()">{{ link.label }}</a>
             <img [src]="link.img" alt="hover bild">
         </li>
         }
@@ -49,7 +49,7 @@
         <div class="mobile-menu__content">
             <div class="mobile-menu__links">
                 @for (link of currentNavLinks(); track link.label) {
-                <a [routerLink]="['/']" class="mobile-menu__link" (click)="closeMenu()">{{ link.label }}</a>
+                <a [routerLink]="['/']" [fragment]="link.fragment" class="mobile-menu__link" (click)="closeMenu()">{{ link.label }}</a>
                 }
             </div>
 
