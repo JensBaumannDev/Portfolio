@@ -18,6 +18,7 @@
     src: url('/fonts/Kalam-Bold.ttf');
 }
 
-
-
-
+h1 {
+    font-size: clamp(54px, 8.8vw, 128px);
+    font-weight: 700;
+}

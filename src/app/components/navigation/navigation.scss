@@ -232,7 +232,7 @@
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: $breakpoint-mobile) {
   .navigation {
     position: relative;
     height: auto;
@@ -339,8 +339,8 @@
       text-decoration: none;
 
       svg {
-        width: 22px;
-        height: 22px;
+        width: $icon-svg-size;
+        height: $icon-svg-size;
         fill: currentColor;
       }
     }
