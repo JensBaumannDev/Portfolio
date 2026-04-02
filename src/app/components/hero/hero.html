@@ -23,11 +23,6 @@
                         </h1>
                     </div>
                 </div>
-                <div class="hero-top__right" (mouseenter)="setRightHoverState(true)"
-                    (mouseleave)="setRightHoverState(false)">
-                    <img src="/img/03_Stickers/Polaroid_Frame.png" alt="Profilbild">
-                    <span>{{ isRightHovered() ? 'Jens :D' : 'Jens :)' }}</span>
-                </div>
             </div>
             <div class="hero-bottom">
                 <h1>
@@ -39,6 +34,11 @@
                     }
                 </h1>
                 <button type="button" class="contact-button btn-pill">{{'hero.buttonText' | translate}}</button>
+            </div>
+            <div class="hero-top__right" (mouseenter)="setRightHoverState(true)"
+                (mouseleave)="setRightHoverState(false)">
+                <img src="/img/03_Stickers/Polaroid_Frame.png" alt="Profilbild">
+                <span>{{ isRightHovered() ? 'Jens :D' : 'Jens :)' }}</span>
             </div>
 
         </div>
