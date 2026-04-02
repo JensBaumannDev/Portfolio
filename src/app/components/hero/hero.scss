@@ -1,11 +1,12 @@
-@use '../../../styles/abstracts' as *;
+﻿@use '../../../styles/abstracts' as *;
 @use '../../../styles/base/typography';
 @use '../../../styles/base/' as*;
+
+/* #region LAYOUT */
 
 .hero-container {
   display: grid;
   grid-template-rows: auto 1fr auto;
-
   background-image: url('/img/01_Background/Img_Original_Size/Hero.png');
   min-height: 100svh;
   height: 100svh;
@@ -40,7 +41,6 @@
 
   &__left {
     @include flex();
-
   }
 
   &__inner {
@@ -148,22 +148,20 @@
   }
 }
 
-.contact-button {
-  box-shadow: 3px 6px 1px $primary-bg-color;
-  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
-
-  &:hover {
-    transform: translate(3px, 6px);
-    box-shadow: 0 0 1px $primary-bg-color;
-    background-color: $highlight3;
-  }
-}
-
 .hero-bottom {
   grid-area: bottom;
   width: 100%;
   padding-right: clamp(20px, 4.4vw, 70px);
   @include flex($flex-direction: column, $justify-content: flex-end, $align-items: flex-end);
+}
+
+/* #endregion */
+
+/* #region COMPONENTS */
+
+.hero-top__right > img {
+  width: clamp(150px, 16vw, 250px);
+  height: auto;
 }
 
 .letter {
@@ -180,9 +178,15 @@
   text-transform: lowercase;
 }
 
-.hero-top__right > img {
-  width: clamp(150px, 16vw, 250px);
-  height: auto;
+.contact-button {
+  box-shadow: 3px 6px 1px $primary-bg-color;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+
+  &:hover {
+    transform: translate(3px, 6px);
+    box-shadow: 0 0 1px $primary-bg-color;
+    background-color: $highlight3;
+  }
 }
 
 .social-media {
@@ -218,20 +222,19 @@
   }
 }
 
-/* #region RESPONSIVE*/
+/* #endregion */
 
-// ----------------- Tablet ----------------- \\
+/* #region RESPONSIVE */
 
+// Tablet (1024px)
 @media (max-width: $breakpoint-tablet) {
   .social-media {
     padding-bottom: clamp(80px, 10vw, 120px);
   }
 }
 
-// ----------------- Mobile (768 px)----------------- \
-
+// Mobile (768px)
 @media (max-width: $breakpoint-mobile) {
-
   .hero-container {
     height: auto;
     min-height: 100svh;
@@ -306,12 +309,11 @@
   }
 
   .social-media {
- display:none;
+    display: none;
   }
 }
 
-// ----------------- Mobile S (480 px) ----------------- \\
-
+// Mobile S (480px)
 @media (max-width: 480px) {
   .title-wrapper {
     padding: 84px 16px 100px;
