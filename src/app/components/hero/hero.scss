@@ -30,7 +30,8 @@
     "top    photo"
     "bottom bottom";
   width: 100%;
-  padding-inline: clamp(32px, 10vw, 220px);
+  padding-left: clamp(32px, 15vw, 216px);
+  padding-right: clamp(16px, 5vw, 72px);
   color: $primary-bg-color;
 }
 
@@ -117,9 +118,10 @@
 
   &__right {
     grid-area: photo;
+    position: relative;
     align-self: center;
     margin-bottom: clamp(18px, 2.8vw, 45px);
-    margin-right: clamp(20px, 5vw, 80px);
+    margin-right: clamp(20px, 14vw, 270px);
     transform: rotate(10deg);
     margin-left: clamp(12px, 2.5vw, 40px);
     background-image: url('/img/05_Profil/profilepicture_small.png');
@@ -131,19 +133,18 @@
 
     &:hover {
       filter: grayscale(0%);
-
-      &>span {
-        transform: translateY(-140%)translateX(115%);
-      }
     }
 
     &>span {
       font-family: 'Kalam-Bold';
       font-weight: 700;
-      font-size: clamp(16px, 1.4vw, 24px);
+      font-size: clamp(8px, 1.4vw, 24px);
       color: black;
       position: absolute;
-      transform: translateY(-140%)translateX(120%);
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
     }
   }
 }
@@ -151,7 +152,7 @@
 .hero-bottom {
   grid-area: bottom;
   width: 100%;
-  padding-right: clamp(20px, 4.4vw, 70px);
+  padding-right: clamp(20px, 14vw, 250px);
   @include flex($flex-direction: column, $justify-content: flex-end, $align-items: flex-end);
 }
 
@@ -193,7 +194,9 @@
   @include flex($flex-direction: column, $align-items: unset);
   gap: 6px;
   width: 100%;
-  @include maxContent();
+  padding-left: max(16px, calc((100% - 1440px) / 2));
+  padding-right: max(16px, calc((100% - 1440px) / 2));
+  box-sizing: border-box;
   align-self: end;
   padding-bottom: 200px;
   color: $primary-bg-color;
@@ -227,11 +230,7 @@
 /* #region RESPONSIVE */
 
 // Tablet (1024px)
-@media (max-width: $breakpoint-tablet) {
-  .social-media {
-    padding-bottom: clamp(80px, 10vw, 120px);
-  }
-}
+
 
 // Mobile (768px)
 @media (max-width: $breakpoint-mobile) {
