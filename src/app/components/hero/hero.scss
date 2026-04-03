@@ -211,10 +211,24 @@
 
 /* #region RESPONSIVE */
 
+// special sizes for centered contend
+@media (max-width: 1379px) {
+  .hero-title {
+    padding: 0 190px 0 190px;
+  }
+}
+
+@media (max-width: 1120px) {
+  .hero-title {
+    padding: 0 150px 0 150px;
+  }
+
+}
+
 // Tablet (1024px)
 @media (max-width: $breakpoint-tablet) {
   .hero-title {
-    padding: 0 60px 0 80px;
+    padding: 0 200px 0 200px;
   }
 
   .hero-top {
@@ -230,6 +244,21 @@
   }
 }
 
+
+@media (max-width: 990px) {
+  .hero-title {
+    padding: 0 160px 0 160px;
+  }
+
+}
+
+@media (max-width: 850px) {
+  .hero-title {
+    padding: 0 140px 0 140px;
+  }
+
+}
+
 // Mobile (768px)
 @media (max-width: $breakpoint-mobile) {
   .hero-container {
@@ -238,7 +267,6 @@
   }
 
   .title-wrapper {
-    justify-content: flex-start;
     padding: 100px 16px;
     box-sizing: border-box;
   }
@@ -271,8 +299,8 @@
 
   .hero-top__right {
     order: 3;
-    width: 220px;
-    margin: 48px auto 0;
+    width: 260px;
+    margin: 72px auto 0;
   }
 
   h1 {
@@ -309,8 +337,8 @@
   }
 
   .hero-top__right {
-    width: 190px;
-    margin-top: 32px;
+    width: 260px;
+    margin-top: 60px;
   }
 
   h1 {
