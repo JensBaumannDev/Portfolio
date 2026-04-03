@@ -6,12 +6,16 @@
         "buttonText": "Lass uns schnacken",
         "cardtext1":"Wohnhaft in Emden, Ostfriesland",
         "cardtext2":"Offen für Büropräsenz",
-        "cardtext3":"Offen für Homeoffice"
+        "cardtext3":"Offen für Homeoffice",
+        "cardImgAlt1": "Dekorative Zettelkarte Standort",
+        "cardImgAlt2": "Dekorative Zettelkarte Büro",
+        "cardImgAlt3": "Dekorative Zettelkarte Homeoffice"
 
     },
     "hero":{
         "buttonText":"Kontakiere mich",
         "nameDefault":"Hello World",
-        "nameHover":"Ich bin Jens Baumann"
+        "nameHover":"Ich bin Jens Baumann",
+        "profileImgAlt": "Profilbild von Jens Baumann"
     }
 }

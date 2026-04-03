@@ -6,11 +6,15 @@
         "buttonText": "Let's talk",
         "cardtext1": "Based in Emden, Ostfriesland",
         "cardtext2": "Open to office presence",
-        "cardtext3": "Open for home office"
+        "cardtext3": "Open for home office",
+        "cardImgAlt1": "Decorative torn paper card location",
+        "cardImgAlt2": "Decorative torn paper card office",
+        "cardImgAlt3": "Decorative torn paper card home office"
     },
     "hero": {
         "buttonText": "Get in touch",
         "nameDefault": "Hello World",
-        "nameHover": "I'am Jens Baumann"
+        "nameHover": "I'am Jens Baumann",
+        "profileImgAlt": "Profile picture of Jens Baumann"
     }
 }

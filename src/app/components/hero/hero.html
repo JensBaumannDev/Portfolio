@@ -26,7 +26,7 @@
                     </div>
                     <div class="hero-top__right" (mouseenter)="setRightHoverState(true)"
                         (mouseleave)="setRightHoverState(false)">
-                        <img src="img/03_Stickers/Polaroid_Frame.png" alt="Profilbild">
+                        <img src="img/03_Stickers/Polaroid_Frame.png" [attr.alt]="'hero.profileImgAlt' | translate">
                         <span>{{ isRightHovered() ? 'Jens :D' : 'Jens :)' }}</span>
                     </div>
                 </div>

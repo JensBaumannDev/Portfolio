@@ -2,36 +2,36 @@
     <div class="card-content">
         <div class="card-content__collor1">
             @if (isMobile()) {
-                <img src="img/02_Ripped_Paper/Option3/Mobile/About_me_4.png" alt="">
+                <img src="img/02_Ripped_Paper/Option3/Mobile/About_me_4.png" [attr.alt]="'aboutMe.cardImgAlt1' | translate">
             } @else {
-                <img src="img/02_Ripped_Paper/Option3/1.png" alt="">
+                <img src="img/02_Ripped_Paper/Option3/1.png" [attr.alt]="'aboutMe.cardImgAlt1' | translate">
             }
             <div class="card-label">
-                <img src="icons/based_icon.png" alt="">
+                <img src="icons/based_icon.png" alt="" aria-hidden="true">
                 <p>{{ 'aboutMe.cardtext1' | translate }}</p>
             </div>
         </div>
 
         <div class="card-content__collor2">
             @if (isMobile()) {
-                <img src="img/02_Ripped_Paper/Option3/Mobile/About_me_5.png" alt="">
+                <img src="img/02_Ripped_Paper/Option3/Mobile/About_me_5.png" [attr.alt]="'aboutMe.cardImgAlt2' | translate">
             } @else {
-                <img src="img/02_Ripped_Paper/Option3/3.png" alt="">
+                <img src="img/02_Ripped_Paper/Option3/3.png" [attr.alt]="'aboutMe.cardImgAlt2' | translate">
             }
             <div class="card-label">
-                <img src="icons/location_icon.png" alt="">
+                <img src="icons/location_icon.png" alt="" aria-hidden="true">
                 <p>{{ 'aboutMe.cardtext2' | translate }}</p>
             </div>
         </div>
 
         <div class="card-content__color3">
             @if (isMobile()) {
-                <img src="img/02_Ripped_Paper/Option3/Mobile/About_me_6.png" alt="">
+                <img src="img/02_Ripped_Paper/Option3/Mobile/About_me_6.png" [attr.alt]="'aboutMe.cardImgAlt3' | translate">
             } @else {
-                <img src="img/02_Ripped_Paper/Option3/2.png" alt="">
+                <img src="img/02_Ripped_Paper/Option3/2.png" [attr.alt]="'aboutMe.cardImgAlt3' | translate">
             }
             <div class="card-label">
-                <img src="icons/homeoffice_icon.png" alt="">
+                <img src="icons/homeoffice_icon.png" alt="" aria-hidden="true">
                 <p>{{ 'aboutMe.cardtext3' | translate }}</p>
             </div>
         </div>
