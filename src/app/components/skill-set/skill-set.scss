@@ -6,14 +6,14 @@
     background-image: url('../../../../public/img/01_Background/Design_Size_Relation/03_Skills.png');
     background-position: bottom;
     background-size: cover;
-    height: 70vh;
+    height: auto;
 }
 
 .skills-content {
     @include maxWidth();
     @include flex($flex-direction: column);
 
-    padding: 170px 120px;
+    padding: 170px 120px 400px;
 }
 
 
