@@ -1,0 +1,85 @@
+@use '../../../../src/styles/abstracts/' as*;
+@use '../../../../src/styles/components/' as*;
+
+
+.skills-container {
+    background-image: url('../../../../public/img/01_Background/Design_Size_Relation/03_Skills.png');
+    background-position: bottom;
+    background-size: cover;
+    height: 70vh;
+}
+
+.skills-content {
+    @include maxWidth();
+    @include flex($flex-direction: column);
+
+    padding: 170px 120px;
+}
+
+
+.top-content {
+    @include flex($flex-wrap: nowrap, $justify-content: flex-start, $align-items: center);
+    gap: 48px;
+    width: 100%;
+
+    &__headline {
+        color: $primary-bg-color;
+    }
+
+    &__headline-row {
+        @include flex($flex-direction: column, $align-items: flex-end);
+        gap: 16px;
+    }
+
+    &__img {
+        width: 650px;
+        position: relative;
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        &-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            text-align: center;
+        }
+    }
+}
+
+
+.bottom-content {
+    @include flex($flex-direction: row, $align-items: flex-end, $justify-content: flex-end);
+    gap: 50px;
+}
+
+.skill-icons {
+    display: grid;
+    grid-template-columns: repeat(5, 72px);
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+    justify-content: end;
+    margin-top: 48px;
+
+    &__item>img {
+        width: 72px;
+        height: 72px;
+        filter: grayscale(1);
+        transition: filter 0.1s ease, transform 0.1s ease;
+        transform-origin: bottom center;
+
+        &:hover {
+            filter: grayscale(0);
+            transform: scale(0.8);
+        }
+    }
+}
+
+.pull-picture {
+    @include flex($align-items: flex-end);
+    width: 200px;
+}

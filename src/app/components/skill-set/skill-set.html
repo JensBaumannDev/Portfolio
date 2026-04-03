@@ -1,1 +1,30 @@
-<p>skill-set works!</p>
+<section class="skills-container">
+    <div class="skills-content">
+        <div class="top-content">
+            <div class="top-content__headline">
+                <div class="top-content__headline-row">
+                    <p>my stack</p>
+                    <h2>Skill set</h2>
+                </div>
+            </div>
+            <div class="top-content__img">
+                <img src="img/02_Ripped_Paper/1.Skills_description.png" alt="Skills description background">
+                <p class="top-content__img-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore explicabo esse mollitia quibusdam sit
+                    dignissimos, commodi dolorem consectetur voluptas asperiores at rem animi quae ipsam accusantium
+                    eligendi vero culpa ex.</p>
+            </div>
+        </div>
+        <div class="bottom-content">
+            <div class="skill-icons">
+                @for (skill of skills; track skill.name) {
+                    <div class="skill-icons__item">
+                        <img [src]="skill.icon" [alt]="skill.name">
+                    </div>
+                }
+            </div>
+            <div class="pull-picture">
+                <img src="img/03_Stickers/01_Skills - Peel off/Color option 3/A.png" alt="">
+            </div>
+        </div>
+    </div>
+</section>
