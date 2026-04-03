@@ -1,7 +1,11 @@
 <section id="about-me" class="about-container">
     <div class="card-content">
         <div class="card-content__collor1">
-            <img src="img/02_Ripped Paper/Option 3/1.png" alt="">
+            @if (isMobile()) {
+                <img src="img/02_Ripped_Paper/Option3/Mobile/About_me_4.png" alt="">
+            } @else {
+                <img src="img/02_Ripped_Paper/Option3/1.png" alt="">
+            }
             <div class="card-label">
                 <img src="icons/based_icon.png" alt="">
                 <p>{{ 'aboutMe.cardtext1' | translate }}</p>
@@ -9,7 +13,11 @@
         </div>
 
         <div class="card-content__collor2">
-            <img src="img/02_Ripped Paper/Option 3/3.png" alt="">
+            @if (isMobile()) {
+                <img src="img/02_Ripped_Paper/Option3/Mobile/About_me_5.png" alt="">
+            } @else {
+                <img src="img/02_Ripped_Paper/Option3/3.png" alt="">
+            }
             <div class="card-label">
                 <img src="icons/location_icon.png" alt="">
                 <p>{{ 'aboutMe.cardtext2' | translate }}</p>
@@ -17,7 +25,11 @@
         </div>
 
         <div class="card-content__color3">
-            <img src="img/02_Ripped Paper/Option 3/2.png" alt="">
+            @if (isMobile()) {
+                <img src="img/02_Ripped_Paper/Option3/Mobile/About_me_6.png" alt="">
+            } @else {
+                <img src="img/02_Ripped_Paper/Option3/2.png" alt="">
+            }
             <div class="card-label">
                 <img src="icons/homeoffice_icon.png" alt="">
                 <p>{{ 'aboutMe.cardtext3' | translate }}</p>
