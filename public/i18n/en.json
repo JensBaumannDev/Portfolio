@@ -1,20 +1,44 @@
 {
-    "aboutMe": {
-        "subline": "Who's Jens?",
-        "headline": "About me",
-        "text": "Hey, I'm Jens! I'm a passionate frontend developer who loves turning ideas into real digital experiences. I see every challenge as a chance to think more efficiently and find elegant solutions. Curiosity drives me — whether it's new technologies, cleaner code, or more thoughtful design. Let's collaborate and build something remarkable together!",
-        "buttonText": "Let's talk",
-        "cardtext1": "Based in Emden, Ostfriesland",
-        "cardtext2": "Open to office presence",
-        "cardtext3": "Open for home office",
-        "cardImgAlt1": "Decorative torn paper card location",
-        "cardImgAlt2": "Decorative torn paper card office",
-        "cardImgAlt3": "Decorative torn paper card home office"
+  "aboutMe": {
+    "subline": "Who's Jens?",
+    "headline": "About me",
+    "text": "Hey, I'm Jens! I'm a passionate frontend developer who loves turning ideas into real digital experiences. I see every challenge as a chance to think more efficiently and find elegant solutions. Curiosity drives me — whether it's new technologies, cleaner code, or more thoughtful design. Let's collaborate and build something remarkable together!",
+    "buttonText": "Let's talk",
+    "cardtext1": "Based in Emden, Ostfriesland",
+    "cardtext2": "Open to office presence",
+    "cardtext3": "Open for home office",
+    "cardImgAlt1": "Decorative torn paper card location",
+    "cardImgAlt2": "Decorative torn paper card office",
+    "cardImgAlt3": "Decorative torn paper card home office"
+  },
+  "hero": {
+    "buttonText": "Get in touch",
+    "nameDefault": "Hello World",
+    "nameHover": "I'am Jens Baumann",
+    "profileImgAlt": "Profile picture of Jens Baumann"
+  },
+  "skills": {
+    "head": "My Stack",
+    "cardtext": "Extensive expertise in modern web technologies, versatile from UI design to backend development.",
+    "cardImgAlt": "Decorative torn paper for skills section",
+    "cardImgAltMobile": "Decorative torn paper for skills section (mobile)",
+    "stickerAlt": "Sticker with letter A",
+    "iconAlt": {
+      "HTML": "HTML icon",
+      "CSS": "CSS icon",
+      "JavaScript": "JavaScript icon",
+      "TypeScript": "TypeScript icon",
+      "Angular": "Angular icon",
+      "Supabase": "Supabase icon",
+      "Git": "Git icon",
+      "REST-API": "REST-API icon",
+      "Scrum": "Scrum icon",
+      "Material Design": "Material Design icon",
+      "Python": "Python icon",
+      "Django": "Django icon"
     },
-    "hero": {
-        "buttonText": "Get in touch",
-        "nameDefault": "Hello World",
-        "nameHover": "I'am Jens Baumann",
-        "profileImgAlt": "Profile picture of Jens Baumann"
-    }
+    "buttonpull": "Pull to peel",
+    "currentlearning": "Right now, I'm actively learning:",
+    "arrowAlt": "Arrow pointing down"
+  }
 }

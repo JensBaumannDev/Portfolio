@@ -1,21 +1,45 @@
 {
-    "aboutMe":{
-        "subline":"Wer ist Jens?",
-        "headline":"Über mich",
-        "text":"Hey, ich bin Jens! Ich bin leidenschaftlicher Frontend-Entwickler und begeistert davon, aus Ideen echte digitale Erlebnisse zu machen. Jede Herausforderung sehe ich als Chance, effizienter und eleganter zu denken. Neugier treibt mich an – ob neue Technologien, besserer Code oder durchdachteres Design. Lass uns gemeinsam etwas Großartiges bauen!",
-        "buttonText": "Lass uns schnacken",
-        "cardtext1":"Wohnhaft in Emden, Ostfriesland",
-        "cardtext2":"Offen für Büropräsenz",
-        "cardtext3":"Offen für Homeoffice",
-        "cardImgAlt1": "Dekorative Zettelkarte Standort",
-        "cardImgAlt2": "Dekorative Zettelkarte Büro",
-        "cardImgAlt3": "Dekorative Zettelkarte Homeoffice"
+  "aboutMe": {
+    "subline": "Wer ist Jens?",
+    "headline": "Über mich",
+    "text": "Hey, ich bin Jens! Ich bin leidenschaftlicher Frontend-Entwickler und begeistert davon, aus Ideen echte digitale Erlebnisse zu machen. Jede Herausforderung sehe ich als Chance, effizienter und eleganter zu denken. Neugier treibt mich an – ob neue Technologien, besserer Code oder durchdachteres Design. Lass uns gemeinsam etwas Großartiges bauen!",
+    "buttonText": "Lass uns schnacken",
+    "cardtext1": "Wohnhaft in Emden, Ostfriesland",
+    "cardtext2": "Offen für Büropräsenz",
+    "cardtext3": "Offen für Homeoffice",
+    "cardImgAlt1": "Dekorative Zettelkarte Standort",
+    "cardImgAlt2": "Dekorative Zettelkarte Büro",
+    "cardImgAlt3": "Dekorative Zettelkarte Homeoffice"
+  },
+  "hero": {
+    "buttonText": "Kontakiere mich",
+    "nameDefault": "Hello World",
+    "nameHover": "Ich bin Jens Baumann",
+    "profileImgAlt": "Profilbild von Jens Baumann"
+  },
 
+  "skills": {
+    "head": "Meine Sammlung",
+    "cardtext": "Fundierte Kenntnisse in aktuellen Webtechnologien, vielseitig einsetzbar von UI-Design bis Backend-Entwicklung.",
+    "cardImgAlt": "Dekoratives zerrissenes Papier für Skills-Bereich",
+    "cardImgAltMobile": "Dekoratives zerrissenes Papier für Skills-Bereich (mobil)",
+    "stickerAlt": "Sticker mit Buchstabe A",
+    "iconAlt": {
+      "Material Design": "Material Design Icon",
+      "HTML": "HTML Icon",
+      "CSS": "CSS Icon",
+      "JavaScript": "JavaScript Icon",
+      "TypeScript": "TypeScript Icon",
+      "Angular": "Angular Icon",
+      "Supabase": "Supabase Icon",
+      "Git": "Git Icon",
+      "REST-API": "REST-API Icon",
+      "Scrum": "Scrum Icon",
+      "Python": "Python Icon",
+      "Django": "Django Icon"
     },
-    "hero":{
-        "buttonText":"Kontakiere mich",
-        "nameDefault":"Hello World",
-        "nameHover":"Ich bin Jens Baumann",
-        "profileImgAlt": "Profilbild von Jens Baumann"
-    }
+    "buttonpull": "Hier ziehen",
+    "currentlearning": "Außerdem lerne ich gerade:",
+    "arrowAlt": "Pfeil nach unten"
+  }
 }
