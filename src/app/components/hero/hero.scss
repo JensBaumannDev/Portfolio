@@ -187,11 +187,11 @@
 .social-media {
   position: absolute;
   bottom: 110px;
-  left: 72px;
+  left: unset;
   @include flex($flex-direction: column, $align-items: unset);
   gap: 6px;
-  padding-left: max(16px, calc((100% - 1440px) / 2));
-  padding-right: max(16px, calc((100% - 1440px) / 2));
+  padding-left: max(75px, calc((100% - 1440px) / 2));
+  padding-right: 0;
   padding-bottom: 48px;
   box-sizing: border-box;
   color: $primary-bg-color;
