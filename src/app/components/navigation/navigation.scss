@@ -1,4 +1,4 @@
-﻿@use '../../../styles/abstracts/' as *;
+@use '../../../styles/abstracts/' as *;
 
 /* #region DESKTOP NAV */
 
@@ -6,8 +6,8 @@
   position: relative;
   width: 100%;
   height: 80px;
-  padding-left: max(16px, calc((100% - 1440px) / 2));
-  padding-right: max(16px, calc((100% - 1440px) / 2));
+  padding-left: max(75px, calc((100% - 1440px) / 2));
+  padding-right: max(75px, calc((100% - 1440px) / 2));
   box-sizing: border-box;
   @include flex($justify-content: space-between, $align-items: center);
 
@@ -25,7 +25,6 @@
       img {
         width: 50px;
         height: auto;
-        transition: opacity 1s;
         position: absolute;
         top: 0;
         left: 0;
@@ -192,7 +191,9 @@
     height: 3px;
     border-radius: 999px;
     background-color: $primary-bg-color;
-    transition: transform 220ms ease, opacity 220ms ease;
+    transition:
+      transform 220ms ease,
+      opacity 220ms ease;
   }
 
   &--open {
@@ -306,23 +307,29 @@
 
   .mobile-menu {
     position: fixed;
-    height: 85%;
-    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 21;
-    @include flex($flex-direction: column, $justify-content: space-between, $align-items: center);
-    padding: 132px 28px 86px;
-    background: url('../../../../public/img/01_Background/Design_Size_Relation/01_Hero.png') top center / cover no-repeat;
+    @include flex(
+      $flex-direction: column,
+      $justify-content: flex-start,
+      $align-items: center,
+      $flex-wrap: nowrap
+    );
+    padding: 130px 28px 100px;
+    background: url('../../../../public/img/01_Background/Design_Size_Relation/01_Hero.png') top
+      center / cover no-repeat;
     animation: slideDown 0.2s ease-out forwards;
 
     &__content {
       @include flex($flex-direction: column, $align-items: center);
       width: 100%;
-      margin-top: 18px;
     }
 
     &__links {
       @include flex($flex-direction: column, $align-items: center);
-      gap: 44px;
+      gap: 30px;
     }
 
     &__link {
@@ -335,18 +342,19 @@
 
     &__language {
       justify-content: center;
-      margin-top: 56px;
+      margin-top: 30px;
     }
 
     &__socials {
       width: 100%;
       @include flex($align-items: center, $justify-content: center);
       gap: 12px;
+      margin-top: 65px;
     }
 
     &__social-link {
-      width: 44px;
-      height: 44px;
+      width: 40px;
+      height: 40px;
       @include flex($align-items: center, $justify-content: center);
       border-radius: 50%;
       border: 1px solid rgba(248, 249, 250, 0.9);

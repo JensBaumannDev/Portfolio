@@ -1,74 +1,107 @@
 <nav class="navigation" [class.navigation--menu-open]="isMenuOpen()">
-    <ng-template #languageSwitcherTemplate>
-        <span class="language__item" [class.language__item--active]="activeLangCode === 'EN'"
-            (click)="setLanguage('EN')">
-            <span class="language__label">EN</span>
-            <img src="img/00_Hand-drawn-lines/00_Header/Color_option_3/Toggle.png" alt="hover sprache"
-                class="language__hover-img">
-        </span>
-        <div class="toggle" [class.toggle--en]="activeLangCode === 'EN'" [class.toggle--de]="activeLangCode === 'DE'">
-            <div class="toggle__line"></div>
-            <button type="button" class="toggle__circle" aria-hidden="true" tabindex="-1"></button>
-        </div>
-        <span class="language__item" [class.language__item--active]="activeLangCode === 'DE'"
-            (click)="setLanguage('DE')">
-            <span class="language__label">DE</span>
-            <img src="img/00_Hand-drawn-lines/00_Header/Color_option_3/Toggle.png" alt="hover sprache"
-                class="language__hover-img">
-        </span>
-    </ng-template>
-
-    <ul>
-        <li class="logo-container">
-            <img src="img/04_Logo/logo2.png" alt="brandlogo" class="logo-default">
-            <img src="img/04_Logo/logo1.png" alt="brandlogo hover" class="logo-hover">
-        </li>
-        @for (link of currentNavLinks(); track link.label; let i = $index) {
-        <li class="nav-item nav-hover{{ i }}">
-            <a [routerLink]="['/']" [fragment]="link.fragment" (click)="closeMenu()">{{ link.label }}</a>
-            <img [src]="link.img" alt="hover bild">
-        </li>
-        }
-        <li class="language">
-            <ng-container [ngTemplateOutlet]="languageSwitcherTemplate"></ng-container>
-        </li>
-        <li class="burger-entry">
-            <button type="button" class="burger-button" [class.burger-button--open]="isMenuOpen()"
-                [attr.aria-expanded]="isMenuOpen()" aria-controls="mobile-navigation-panel"
-                [attr.aria-label]="isMenuOpen() ? 'Close navigation menu' : 'Open navigation menu'"
-                (click)="toggleMenu()">
-                <span class="burger-button__line"></span>
-                <span class="burger-button__line"></span>
-                <span class="burger-button__line"></span>
-            </button>
-        </li>
-    </ul>
-
-    @if (isMenuOpen()) {
-    <div id="mobile-navigation-panel" class="mobile-menu">
-        <div class="mobile-menu__content">
-            <div class="mobile-menu__links">
-                @for (link of currentNavLinks(); track link.label) {
-                <a [routerLink]="['/']" [fragment]="link.fragment" class="mobile-menu__link" (click)="closeMenu()">{{ link.label }}</a>
-                }
-            </div>
-
-            <div class="mobile-menu__language language language--mobile">
-                <ng-container [ngTemplateOutlet]="languageSwitcherTemplate"></ng-container>
-            </div>
-        </div>
-
-        <div class="mobile-menu__socials">
-            @for (social of socialLinks; track social.label) {
-            <a [href]="social.href" class="mobile-menu__social-link"
-                [attr.target]="social.isExternal ? '_blank' : null"
-                [attr.rel]="social.isExternal ? 'noreferrer' : null" [attr.aria-label]="social.label">
-                <svg [attr.viewBox]="social.viewBox ?? '0 0 24 24'" aria-hidden="true">
-                    <path [attr.d]="social.path" />
-                </svg>
-            </a>
-            }
-        </div>
+  <ng-template #languageSwitcherTemplate>
+    <span
+      class="language__item"
+      [class.language__item--active]="activeLangCode === 'EN'"
+      (click)="setLanguage('EN')"
+    >
+      <span class="language__label">EN</span>
+      <img
+        src="img/00_Hand-drawn-lines/00_Header/Color_option_3/Toggle.png"
+        alt="hover sprache"
+        class="language__hover-img"
+      />
+    </span>
+    <div
+      class="toggle"
+      [class.toggle--en]="activeLangCode === 'EN'"
+      [class.toggle--de]="activeLangCode === 'DE'"
+    >
+      <div class="toggle__line"></div>
+      <button type="button" class="toggle__circle" aria-hidden="true" tabindex="-1"></button>
     </div>
+    <span
+      class="language__item"
+      [class.language__item--active]="activeLangCode === 'DE'"
+      (click)="setLanguage('DE')"
+    >
+      <span class="language__label">DE</span>
+      <img
+        src="img/00_Hand-drawn-lines/00_Header/Color_option_3/Toggle.png"
+        alt="hover sprache"
+        class="language__hover-img"
+      />
+    </span>
+  </ng-template>
+
+  <ul>
+    <li class="logo-container">
+      <img src="img/04_Logo/logo2.png" alt="brandlogo" class="logo-default" />
+      <img src="img/04_Logo/logo1.png" alt="brandlogo hover" class="logo-hover" />
+    </li>
+    @for (link of currentNavLinks(); track link.label; let i = $index) {
+      <li class="nav-item nav-hover{{ i }}">
+        <a [routerLink]="['/']" [fragment]="link.fragment" (click)="closeMenu()">{{
+          link.label
+        }}</a>
+        <img [src]="link.img" alt="hover bild" />
+      </li>
     }
+    <li class="language">
+      <ng-container [ngTemplateOutlet]="languageSwitcherTemplate"></ng-container>
+    </li>
+    <li class="burger-entry">
+      <button
+        type="button"
+        class="burger-button"
+        [class.burger-button--open]="isMenuOpen()"
+        [attr.aria-expanded]="isMenuOpen()"
+        aria-controls="mobile-navigation-panel"
+        [attr.aria-label]="isMenuOpen() ? 'Close navigation menu' : 'Open navigation menu'"
+        (click)="toggleMenu()"
+      >
+        <span class="burger-button__line"></span>
+        <span class="burger-button__line"></span>
+        <span class="burger-button__line"></span>
+      </button>
+    </li>
+  </ul>
+
+  @if (isMenuOpen()) {
+    <div id="mobile-navigation-panel" class="mobile-menu">
+      <div class="mobile-menu__content">
+        <div class="mobile-menu__links">
+          @for (link of currentNavLinks(); track link.label) {
+            <a
+              [routerLink]="['/']"
+              [fragment]="link.fragment"
+              class="mobile-menu__link"
+              (click)="closeMenu()"
+              >{{ link.label }}</a
+            >
+          }
+        </div>
+
+        <div class="mobile-menu__language language language--mobile">
+          <ng-container [ngTemplateOutlet]="languageSwitcherTemplate"></ng-container>
+        </div>
+      </div>
+
+      <div class="mobile-menu__socials">
+        @for (social of socialLinks; track social.label) {
+          <a
+            [href]="social.href"
+            class="mobile-menu__social-link"
+            [attr.target]="social.isExternal ? '_blank' : null"
+            [attr.rel]="social.isExternal ? 'noreferrer' : null"
+            [attr.aria-label]="social.label"
+          >
+            <svg [attr.viewBox]="social.viewBox ?? '0 0 24 24'" aria-hidden="true">
+              <path [attr.d]="social.path" />
+            </svg>
+          </a>
+        }
+      </div>
+    </div>
+  }
 </nav>

@@ -26,4 +26,8 @@ export class AboutMe implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.mobileQuery.removeEventListener('change', this.listener);
   }
+
+  isMobileView() {
+    return this.isMobile();
+  }
 }

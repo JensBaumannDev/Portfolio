@@ -45,11 +45,18 @@ export class Navigation {
   }
 
   toggleMenu(): void {
-    this.isMenuOpen.update((isOpen) => !isOpen);
+    const nextState = !this.isMenuOpen();
+    this.isMenuOpen.set(nextState);
+    if (nextState) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
   }
 
   closeMenu(): void {
     this.isMenuOpen.set(false);
+    document.body.style.overflow = '';
   }
 
   setLanguage(langCode: string): void {

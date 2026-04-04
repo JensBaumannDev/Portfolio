@@ -1,6 +1,6 @@
-﻿@use '../../../styles/abstracts' as *;
+@use '../../../styles/abstracts' as *;
 @use '../../../styles/base/typography';
-@use '../../../styles/base/' as*;
+@use '../../../styles/base/' as *;
 
 /* #region LAYOUT */
 
@@ -17,7 +17,7 @@
 .hero-container-inner {
   @include flex($flex-direction: column, $justify-content: center);
   gap: 48px;
-  padding-bottom: 48px;
+  padding-bottom: 220px;
   width: 100%;
 }
 
@@ -50,11 +50,15 @@
 .hero-bottom {
   @include flex($flex-direction: column, $align-items: flex-end);
 
+  .btn-push {
+    margin-top: 30px;
+  }
 }
 
 .hero-top__right {
   position: relative;
   flex: 0 0 auto;
+  margin-bottom: 24px;
   transform: rotate(10deg);
   background-image: url('../../../../public/img/05_Profil/profilepicture_small.png');
   filter: grayscale(100%);
@@ -66,7 +70,7 @@
     filter: grayscale(0%);
   }
 
-  &>span {
+  & > span {
     font-family: 'Kalam-Bold';
     font-weight: 700;
     font-size: 16px;
@@ -83,7 +87,7 @@
 
 /* #region COMPONENTS */
 
-.hero-top__right>img {
+.hero-top__right > img {
   width: 100%;
   height: auto;
   display: block;
@@ -106,7 +110,10 @@
 .hero-top__inner {
   .btn-pill--hero {
     width: var(--btn-default-width, 130px);
-    transition: width 420ms ease, background-color 420ms ease;
+    margin-bottom: 30px;
+    transition:
+      width 420ms ease,
+      background-color 420ms ease;
 
     .hero-labels {
       display: inline-block;
@@ -128,7 +135,9 @@
       inset: 0 auto auto 0;
       opacity: 0;
       clip-path: inset(0 100% 0 0);
-      transition: clip-path 320ms ease 120ms, opacity 120ms ease 120ms;
+      transition:
+        clip-path 320ms ease 120ms,
+        opacity 120ms ease 120ms;
     }
 
     &:hover {
@@ -166,7 +175,9 @@
       opacity: 0;
       transform: rotate(-12deg);
       transform-origin: center center;
-      transition: transform 420ms ease, opacity 220ms ease;
+      transition:
+        transform 420ms ease,
+        opacity 220ms ease;
       pointer-events: none;
       z-index: 1;
     }
@@ -174,9 +185,11 @@
 }
 
 .social-media {
+  position: absolute;
+  bottom: 110px;
+  left: 72px;
   @include flex($flex-direction: column, $align-items: unset);
   gap: 6px;
-  width: 100%;
   padding-left: max(16px, calc((100% - 1440px) / 2));
   padding-right: max(16px, calc((100% - 1440px) / 2));
   padding-bottom: 48px;
@@ -214,7 +227,7 @@
 // special sizes for centered contend
 @media (max-width: 1379px) {
   .hero-title {
-    padding: 0 190px 0 190px;
+    padding: 64px 190px 64px 190px;
   }
 }
 
@@ -222,7 +235,6 @@
   .hero-title {
     padding: 0 150px 0 150px;
   }
-
 }
 
 // Tablet (1024px)
@@ -244,19 +256,16 @@
   }
 }
 
-
 @media (max-width: 990px) {
   .hero-title {
     padding: 0 160px 0 160px;
   }
-
 }
 
 @media (max-width: 850px) {
   .hero-title {
     padding: 0 140px 0 140px;
   }
-
 }
 
 // Mobile (768px)
@@ -289,7 +298,7 @@
 
     .btn-pill--hero {
       align-self: flex-start;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
   }
 
