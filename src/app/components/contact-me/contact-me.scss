@@ -1,0 +1,113 @@
+@use '../../../../src/styles/abstracts/' as *;
+@use '../../../../src/styles/components/' as *;
+
+.contact-container {
+    @include flex($flex-direction: column);
+
+    background-image: url(../../../../public/img/01_Background/Design_Size_Relation/06_Contact.png);
+    background-position: top;
+    background-size: cover;
+    height: 900px;
+}
+
+.contact-content {
+    @include maxWidth();
+    @include flex();
+    padding: 144px 120px 0 120px;
+    height: 560px;
+}
+
+.contact-headline {
+    width: 560px;
+    color: $primary-bg-color;
+
+    position: relative;
+
+    .headline-intro-text {
+        padding-top: 16px;
+    }
+
+    &>p {
+        padding-top: 40px;
+        text-align: justify;
+    }
+}
+
+.contact-intro-img {
+    @include flex($justify-content: flex-end);
+    width: 280px;
+    margin-top: 48px;
+    margin-left: auto;
+}
+
+/* #region Responsive*/
+
+@media (max-width: 1024px) {
+    .contact-container {
+       min-height: 100vh;
+    }
+}
+
+@media (max-width: 900px) {
+    .contact-content {
+        height: auto;
+        flex-direction: column;
+    }
+
+    .contact-headline {
+        width: 100%;
+        padding: 0 0 16px 0;
+
+        &>p {
+            padding-top: 24px;
+            font-size: 1.1rem;
+        }
+
+        .headline-intro-text {
+            padding-top: 8px;
+            font-size: 1.1rem;
+        }
+    }
+
+    .contact-intro-img {
+        width: 100%;
+        margin-top: 24px;
+        margin-left: 0;
+        justify-content: center;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .contact-container {
+        height: auto;
+        background-size: cover;
+        background-position: top;
+        padding-top: 90px;
+    }
+
+    .contact-content {
+        padding: 32px 16px 0 16px;
+    }
+
+    .contact-headline {
+
+        &>p,
+        .headline-intro-text {
+            font-size: 1rem;
+        }
+    }
+}
+
+@media (max-width: 569px) {
+    h2 {
+        font-size: 48px;
+    }
+}
+
+
+
+@media (max-width: 449px) {}
+
+/* #endregion */

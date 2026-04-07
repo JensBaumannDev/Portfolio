@@ -40,5 +40,11 @@
     "buttonpull": "Pull to peel",
     "currentlearning": "Right now, I'm actively learning:",
     "arrowAlt": "Arrow pointing down"
+  },
+  "contact": {
+    "subline": "CONTACT ME",
+    "headline": "Ready to work together?",
+    "texttop": "I look forward to hearing from you! Let me know what role you see me in within your team. With my experience, passion for modern web technologies, and constant willingness to learn, I am confident that I can provide real added value.",
+    "textbottom": "I am open to new projects and challenges and bring not only technical expertise but also team spirit and creativity. Let’s create something great together!"
   }
 }
