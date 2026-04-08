@@ -4,16 +4,21 @@
 .footer-container {
     @include maxWidth();
     color: $primary-bg-color;
+    height: 130px;
+    padding-top: 130px;
+    padding-top: 130px;
 }
 
 .footer-wrapper {
     @include flex($justify-content: space-between, $align-items: flex-end);
     width: 100%;
-    height: 130px;
     gap: 40px;
+
 }
 
 .footer-content-left {
+    width: 130px;
+
     .footer-logo {
         width: 40px;
     }
@@ -29,10 +34,14 @@
     }
 }
 
+.footer-link-social {
+    display: contents;
+}
+
 .footer-link-social__github,
 .footer-link-social__linkedin,
 .footer-link-social__email {
-    @include flex($align-items: flex-end);
+    @include flex($align-items: flex-end, $justify-content:center);
 
     &>a {
         color: $primary-bg-color;
@@ -127,7 +136,7 @@
             justify-content: center;
         }
 
-        &__email{
+        &__email {
             justify-content: flex-end;
         }
 
