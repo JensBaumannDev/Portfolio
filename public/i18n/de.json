@@ -46,5 +46,8 @@
     "headline": "Bereit zur Zusammen&shy;arbeit?",
     "texttop": "Ich freue mich darauf, von dir zu hören! Sag mir gerne, für welche Rolle du mich in deinem Team siehst. Mit meiner Erfahrung, meiner Begeisterung für moderne Webtechnologien und meinem stetigen Lernwillen bin ich überzeugt, einen echten Mehrwert zu bieten.",
     "textbottom": "Ich bin offen für neue Projekte und Herausforderungen und bringe neben technischem Know-how auch Teamgeist und Kreativität mit. Lass uns gemeinsam etwas Großartiges schaffen!"
+  },
+  "footer":{
+    "legaltext":"Impressum"
   }
 }
