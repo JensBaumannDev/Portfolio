@@ -1,5 +1,4 @@
-@use '../../../../src/styles/abstracts/' as*;
-@use '../../../../src/styles/components/' as*;
+@use '../../../../src/styles/abstracts/' as *;
 
 /* #region LAYOUT */
 
@@ -21,7 +20,7 @@
     &__collor2,
     &__color3 {
         position: relative;
-        width: clamp(280px, 38.9vw, 560px);
+        width: clamp(260px, 38.9vw, 560px);
         color: $primary-bg-color;
         font-size: clamp(14px, 1.67vw, 24px);
 
@@ -88,7 +87,7 @@
 /* #region INFO CONTENT */
 
 .info-content {
-    width: clamp(280px, 38.9vw, 560px);
+    width: clamp(260px, 38.9vw, 560px);
 
     &__head {
         margin-bottom: 16px;
@@ -99,6 +98,7 @@
         margin-bottom: 48px;
 
         img {
+            max-width: 100%;
             width: 300px;
             height: auto;
         }
@@ -118,7 +118,8 @@
 @media (max-width: $breakpoint-mobile) {
     .about-container {
         flex-direction: column;
-        padding: 64px 16px;
+        padding: 64px 24px;
+        gap: 44px;
     }
 
     .card-content {
@@ -128,6 +129,13 @@
 
         img {
             width: 100%;
+        }
+
+        &__collor1,
+        &__collor2,
+        &__color3 {
+           width: 100%;
+           max-width: 400px;
         }
 
         &__collor2 {
@@ -145,8 +153,8 @@
 
         &__headline {
             img {
-                max-width: 100%;
-                width: 260px;
+                max-width: 240px;
+                width: 100%;
             }
         }
     }
@@ -154,14 +162,13 @@
 
 @media (max-width: 360px) {
     .about-container {
-        padding: 48px 12px;
+        padding: 48px 20px;
     }
 
     .card-content {
         &__collor1,
         &__collor2,
         &__color3 {
-            width: 100%;
             font-size: 13px;
         }
     }
@@ -170,7 +177,7 @@
         &__headline {
             margin-bottom: 32px;
             img {
-                width: 220px;
+                max-width: 200px;
             }
         }
         div:last-child {

@@ -1,6 +1,5 @@
 @use '../../../styles/abstracts' as *;
-@use '../../../styles/base/typography';
-@use '../../../styles/base/' as *;
+
 
 /* #region LAYOUT */
 
@@ -191,8 +190,11 @@
   left: unset;
   @include flex($flex-direction: column, $align-items: unset);
   gap: 6px;
-  padding-left: max(75px, calc((100% - 1440px) / 2));
-  padding-right: 0;
+  padding-left: 16px;
+  padding-right: 16px;
+  @media (min-width: 768px) {
+    padding-left: max(75px, calc((100% - 1440px) / 2));
+  }
   padding-bottom: 48px;
   box-sizing: border-box;
   color: $primary-bg-color;
@@ -317,7 +319,7 @@
     font-size: 64px;
     line-height: 0.95;
     text-align: left;
-    white-space: nowrap;
+    white-space: normal;
   }
 
   .hero-bottom {

@@ -3,7 +3,16 @@
 }
 
 body {
-    cursor: default;
+    margin: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+    font-size: 18px;
+    font-weight: 400;
+    overflow-x: hidden;
+}
+
+html {
+    overflow-x: hidden;
 }
 
 /* #region ANIMATIONS */
@@ -30,5 +39,17 @@ body {
     animation: fade-in-page 0.5s ease-out forwards;
 }
 
-/* #endregion */
+@keyframes draw-line-reverse {
+    0% { clip-path: inset(0 0 0 100%); }
+    15.5% { clip-path: inset(0 0 0 0); }
+    50% { clip-path: inset(0 0 0 0); }
+    65.5% { clip-path: inset(0 0 0 100%); }
+    100% { clip-path: inset(0 0 0 100%); }
+}
 
+.draw-line-reverse {
+    display: block;
+    animation: draw-line-reverse 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* #endregion */

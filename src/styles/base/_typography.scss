@@ -24,21 +24,21 @@ h1 {
 }
 
 h2 {
-  font-size: 64px;
+  font-size: clamp(32px, 8vw, 64px);
   font-weight: 700;
 }
 
 h3 {
-  font-size: 24px;
+  font-size: clamp(20px, 4vw, 24px);
   font-weight: 700;
 }
 
 h4 {
-  font-size: 16px;
+  font-size: clamp(14px, 2.5vw, 16px);
   font-weight: 400;
 }
 
 .headline-intro-text {
-  font-size: 20px;
+  font-size: clamp(16px, 3vw, 20px);
   font-weight: 500;
 }

@@ -1,11 +1,11 @@
 import { Component, signal, OnInit, OnDestroy, NgZone } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
-import { Footer } from "../footer/footer";
+
 
 @Component({
   selector: 'app-skill-set',
   standalone: true,
-  imports: [TranslatePipe, Footer],
+  imports: [TranslatePipe],
   templateUrl: './skill-set.html',
   styleUrl: './skill-set.scss',
 })
