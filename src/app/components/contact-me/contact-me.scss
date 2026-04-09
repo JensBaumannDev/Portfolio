@@ -15,6 +15,7 @@
     @include flex();
     padding: 144px 120px 0 120px;
     height: 560px;
+    margin-bottom: 180px;
 }
 
 .contact-headline {
@@ -44,7 +45,7 @@
 
 @media (max-width: 1024px) {
     .contact-container {
-       min-height: 100vh;
+        min-height: 100vh;
     }
 }
 

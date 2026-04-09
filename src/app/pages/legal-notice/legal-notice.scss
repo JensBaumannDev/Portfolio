@@ -1,5 +1,58 @@
-img {
-  width: 100%;
-  height: auto;
-  display: block;
+@use '../../../styles/abstracts/' as *;
+@use '../../../styles/components/' as *;
+
+
+.legal-hero {
+  background: url('../../../../public/img/01_Background/Img_Original_Size/Skills\ BG.png');
+  background-position: bottom;
+  background-size: cover;
+  height: 430px;
+
+  &__headline {
+    @include maxWidth();
+    padding-top: 120px;
+    color: $primary-bg-color;
+  }
+}
+
+.legal-footer {
+
+  ::ng-deep .footer-container,
+  ::ng-deep .footer-container *,
+  ::ng-deep .footer-link a,
+  ::ng-deep .footer-link-social__github a,
+  ::ng-deep .footer-link-social__linkedin a,
+  ::ng-deep .footer-link-social__email a {
+    color: black !important;
+  }
+}
+
+.legal-content {
+  @include maxWidth();
+  margin-top: 80px;
+
+  &__head {
+    margin-bottom: 24px;
+
+    &>h3,
+    h4 {
+      color: #3355ff;
+    }
+  }
+}
+
+.legal-content p {
+  font-size: 16px;
+}
+
+.legal-content__bottom{
+  margin-bottom: 80px;
+}
+
+.legal-content__bottom>div {
+  margin-bottom: 16px;
+
+  &>h4 {
+    color: #3355ff;
+  }
 }
