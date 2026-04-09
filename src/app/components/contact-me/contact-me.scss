@@ -8,6 +8,8 @@
     background-position: top;
     background-size: cover;
     height: 900px;
+    content-visibility: auto;
+    contain-intrinsic-size: 900px;
 }
 
 .contact-content {

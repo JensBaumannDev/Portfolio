@@ -8,6 +8,8 @@
   background-position: bottom;
   background-size: cover;
   height: auto;
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
 }
 
 .skills-content {
@@ -155,7 +157,7 @@
   }
 
   &__a {
-    background-image: url('../../../../public/img/03_Stickers/01_Skills_Peel_off/Color_option_3/a.png');
+    background-image: url('../../../../public/img/03_Stickers/01_Skills_Peel_off/Color_option_3/A.png');
     z-index: 3;
 
     & > p {
