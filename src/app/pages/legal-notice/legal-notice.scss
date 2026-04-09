@@ -1,7 +1,6 @@
 @use '../../../styles/abstracts/' as *;
 @use '../../../styles/components/' as *;
 
-
 .legal-hero {
   background: url('../../../../public/img/01_Background/Img_Original_Size/Skills\ BG.png');
   background-position: bottom;
@@ -15,18 +14,6 @@
   }
 }
 
-.legal-footer {
-
-  ::ng-deep .footer-container,
-  ::ng-deep .footer-container *,
-  ::ng-deep .footer-link a,
-  ::ng-deep .footer-link-social__github a,
-  ::ng-deep .footer-link-social__linkedin a,
-  ::ng-deep .footer-link-social__email a {
-    color: black !important;
-  }
-}
-
 .legal-content {
   @include maxWidth();
   margin-top: 80px;
@@ -34,9 +21,10 @@
   &__head {
     margin-bottom: 24px;
 
-    &>h3,
+    & > h3,
     h4 {
       color: #3355ff;
+      margin-top: 8px;
     }
   }
 }
@@ -45,14 +33,70 @@
   font-size: 16px;
 }
 
-.legal-content__bottom{
+.legal-content__bottom {
   margin-bottom: 80px;
 }
 
-.legal-content__bottom>div {
+.legal-content__bottom > div {
   margin-bottom: 16px;
 
-  &>h4 {
+  & > h4 {
     color: #3355ff;
   }
 }
+
+/* #region Responsive */
+@media (max-width: 1024px) {
+  .legal-content {
+    padding: 0 16px;
+  }
+
+  .legal-hero {
+    height: 350px;
+    &__headline {
+      padding-top: 100px;
+
+      h2 {
+        padding-left: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .legal-hero {
+    height: 280px;
+    &__headline {
+      padding-top: 80px;
+      h2 {
+        font-size: 40px;
+      }
+    }
+  }
+
+  .legal-content {
+    margin-top: 40px;
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .legal-hero {
+    height: 220px;
+    &__headline {
+      padding-top: 60px;
+      h2 {
+        font-size: 32px;
+      }
+    }
+  }
+
+  .legal-content {
+    margin-top: 32px;
+
+    p {
+      font-size: 15px;
+    }
+  }
+}
+/* #endregion */

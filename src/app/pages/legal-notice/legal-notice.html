@@ -44,12 +44,16 @@
                 <h4>{{ 'legalNotice.indemnityHeadline' | translate }}</h4>
                 <p>{{ 'legalNotice.indemnityText' | translate }}</p>
             </div>
-            <p>{{ 'legalNotice.contact' | translate }}</p>
-            <p>{{ 'legalNotice.date' | translate }}</p>
+            <div>
+                <p>{{ 'legalNotice.contact' | translate }}</p>
+            </div>
+            <div>
+                <p>{{ 'legalNotice.date' | translate }}</p>
+            </div>
         </div>
     </main>
 
     <section class="legal-footer">
-        <app-footer class="footer-black"></app-footer>
+        <app-footer [isBlackMode]="true"></app-footer>
     </section>
 </div>
