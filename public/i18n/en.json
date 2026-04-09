@@ -73,5 +73,13 @@
     "indemnityText": "This disclaimer is to be regarded as part of my online offer. If parts or individual formulations of this text do not, no longer or not completely correspond to the current legal situation, the remaining parts of the document remain unaffected in their content and validity.",
     "contact": "For any questions or notices, please contact me at the email address provided above.",
     "date": "Status: April 9, 2026"
+  },
+  "colleagues": {
+    "intro": "IN THEIR WORDS:",
+    "headline": "Colleagues' Thoughts",
+    "testimonial1": "Jens is a dedicated developer who always goes the extra mile. His technical expertise was a huge asset to our project.",
+    "testimonial2": "Collaborating with Jens was a fantastic experience. He has a unique talent for solving complex problems with elegant code.",
+    "testimonial3": "Highly recommended! Jens is a reliable professional who brings both creativity and technical precision to the team.",
+    "profile": "Profile"
   }
 }

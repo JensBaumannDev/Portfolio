@@ -73,5 +73,13 @@
     "indemnityText": "Dieser Haftungsausschluss ist als Teil meines Internetangebotes zu betrachten. Sofern Teile oder einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht mehr oder nicht vollständig entsprechen sollten, bleiben die übrigen Teile des Dokumentes in ihrem Inhalt und ihrer Gültigkeit davon unberührt.",
     "contact": "Für Fragen oder Hinweise kontaktiere mich bitte unter der oben genannten E-Mail-Adresse.",
     "date": "Stand: 9. April 2026"
+  },
+  "colleagues": {
+    "intro": "WAS ANDERE SAGEN:",
+    "headline": "Meinungen von Kollegen",
+    "testimonial1": "Jens ist ein engagierter Entwickler, der immer einen Schritt weiter geht. Seine technische Expertise war eine enorme Bereicherung für unser Projekt.",
+    "testimonial2": "Die Zusammenarbeit mit Jens war eine fantastische Erfahrung. Er hat ein einzigartiges Talent, komplexe Probleme mit elegantem Code zu lösen.",
+    "testimonial3": "Sehr empfehlenswert! Jens ist ein verlässlicher Profi, der sowohl Kreativität als auch technische Präzision in das Team einbringt.",
+    "profile": "Profil"
   }
 }

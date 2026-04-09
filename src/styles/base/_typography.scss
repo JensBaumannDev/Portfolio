@@ -1,44 +1,44 @@
 @font-face {
-    font-family: Bricolage-Grotesque;
-    src: url('../../../public/fonts/Bricolage-Grotesque.ttf');
+  font-family: Bricolage-Grotesque;
+  src: url('../../../public/fonts/Bricolage-Grotesque.ttf');
 }
 
 @font-face {
-    font-family: Kalam-Light;
-    src: url('../../../public/fonts/Kalam-Light.ttf');
+  font-family: Kalam-Light;
+  src: url('../../../public/fonts/Kalam-Light.ttf');
 }
 
 @font-face {
-    font-family: Kalam-Regular;
-    src: url('../../../public/fonts/Kalam-Regular.ttf');
+  font-family: Kalam-Regular;
+  src: url('../../../public/fonts/Kalam-Regular.ttf');
 }
 
 @font-face {
-    font-family: Kalam-Bold;
-    src: url('../../../public/fonts/Kalam-Bold.ttf');
+  font-family: Kalam-Bold;
+  src: url('../../../public/fonts/Kalam-Bold.ttf');
 }
 
 h1 {
-    font-size: clamp(54px, 8.8vw, 128px);
-    font-weight: 700;
+  font-size: clamp(54px, 8.8vw, 128px);
+  font-weight: 700;
 }
 
 h2 {
-    font-size: 64px;
-    font-weight: 700;
+  font-size: 64px;
+  font-weight: 700;
 }
 
 h3 {
-    font: 24px;
-    font-weight: 700;
+  font-size: 24px;
+  font-weight: 700;
 }
 
-h4{
-    font-size: 16px;
-    font-weight: 400;
+h4 {
+  font-size: 16px;
+  font-weight: 400;
 }
 
-.headline-intro-text{
-    font-size: 20px;
-    font-weight: 500;
+.headline-intro-text {
+  font-size: 20px;
+  font-weight: 500;
 }
