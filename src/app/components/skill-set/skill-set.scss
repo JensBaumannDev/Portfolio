@@ -327,9 +327,32 @@
   }
 }
 
-@media (max-width: 79px) {
+@media (max-width: 370px) {
+  .skills-content {
+    padding: 60px 12px 150px;
+  }
+
   .top-content {
     width: 100%;
+  }
+
+  .bottom-content {
+    gap: 16px;
+    margin-top: 24px;
+    flex-direction: column;
+  }
+
+  .pull-picture {
+    position: relative;
+    transform: translateY(0);
+    margin: 40px auto 0;
+  }
+
+  .skill-icons {
+    grid-column-gap: 10px;
+    grid-row-gap: 20px;
+    justify-content: center;
+    padding-bottom: 0px;
   }
 }
 
