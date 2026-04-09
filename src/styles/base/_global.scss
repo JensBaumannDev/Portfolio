@@ -21,5 +21,14 @@ body {
     animation: draw-line 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
+@keyframes fade-in-page {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in-page {
+    animation: fade-in-page 0.5s ease-out forwards;
+}
+
 /* #endregion */
 

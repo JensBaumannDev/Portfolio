@@ -5,6 +5,7 @@
 /* #region LAYOUT */
 
 .hero-container {
+  position: relative;
   display: grid;
   grid-template-rows: auto 1fr;
   background-image: url('../../../../public/img/01_Background/Design_Size_Relation/01_Hero.png');
