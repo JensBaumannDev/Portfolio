@@ -31,8 +31,9 @@
 
   .footer-content-left {
     .footer-content-left-row {
-      @include flex($flex-direction: row, $justify-content: space-between, $align-items: center);
+      @include flex($flex-direction: column, $align-items: flex-start);
       width: 100%;
+      gap: 12px;
     }
 
     .footer-logo {
@@ -65,9 +66,7 @@
     &__linkedin,
     &__email {
       position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      @include flex($flex-direction: column, $align-items: flex-start);
       height: auto;
       width: fit-content;
       padding: 0;
@@ -168,8 +167,7 @@
     height: auto;
 
     .footer-wrapper {
-      flex-direction: column;
-      align-items: stretch;
+      @include flex($flex-direction: column, $align-items: stretch);
       gap: 0;
       padding: 0 16px;
       height: auto;
@@ -180,6 +178,10 @@
       width: 100%;
       margin-top: 8px;
       position: relative;
+
+      .footer-content-left-row {
+        @include flex($flex-direction: row, $justify-content: space-between, $align-items: center);
+      }
 
       .footer-copyright {
         margin-left: auto;
@@ -196,8 +198,7 @@
     }
 
     .footer-link-social {
-      display: flex;
-      justify-content: space-between;
+      @include flex($justify-content: space-between);
       max-width: 600px;
       margin-top: 15px;
 
