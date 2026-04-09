@@ -48,7 +48,7 @@
             {{ 'aboutMe.text' | translate }}
         </div>
         <div>
-            <button class="btn-pill btn-push btn-push--dark">{{ 'aboutMe.buttonText' | translate }}</button>
+            <button class="btn-pill btn-push btn-push--dark" [routerLink]="['/']" fragment="contact">{{ 'aboutMe.buttonText' | translate }}</button>
         </div>
     </div>
 </section>

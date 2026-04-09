@@ -10,13 +10,14 @@ import {
   signal,
 } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { RouterLink } from '@angular/router';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { Navigation } from '../navigation/navigation';
 import { SOCIAL_LINKS } from '../social-links/social-links.data';
 
 @Component({
   selector: 'app-hero',
-  imports: [Navigation, TranslatePipe],
+  imports: [Navigation, TranslatePipe, RouterLink],
   templateUrl: './hero.html',
   styleUrl: './hero.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
