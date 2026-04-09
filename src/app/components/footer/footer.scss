@@ -52,9 +52,25 @@
       margin-top: 22px;
 
       a {
+        position: relative;
         font-weight: 700;
         color: $primary-bg-color;
         text-decoration: none;
+
+        .legal-hover-img {
+          position: absolute;
+          height: 55px;
+          top: -15px;
+          left: 50%;
+          transform: translateX(-50%);
+          pointer-events: none;
+          clip-path: inset(0 100% 0 0);
+          z-index: 2;
+        }
+
+        &:hover .legal-hover-img {
+          animation: revealFromLeft 0.4s ease-out forwards;
+        }
       }
     }
   }
@@ -210,6 +226,15 @@
         justify-content: flex-end;
       }
     }
+  }
+}
+@keyframes revealFromLeft {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
   }
 }
 /* #endregion */
