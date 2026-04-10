@@ -1,13 +1,101 @@
 <section id="contact" class="contact-container">
   <div class="contact-content">
     <div class="contact-headline">
-      <p class="headline-intro-text">{{'contact.subline'| translate}}</p>
+      <img class="mobile-sticker" src="img/03_Stickers/00_Round/08_Color_option_3-C.png" alt="Sticker" />
+      <p class="headline-intro-text">{{ 'contact.subline' | translate }}</p>
       <h2 [innerHTML]="'contact.headline' | translate"></h2>
-      <p>{{'contact.texttop' | translate}}</p>
-      <p>{{'contact.textbottom' | translate}}</p>
-      <div class="contact-intro-img">
-        <img class="draw-line" src="img/00_Hand-drawn-lines/05_Contact/Color_option_3.png" alt="">
+      <p>{{ 'contact.texttop' | translate }}</p>
+      <p>{{ 'contact.textbottom' | translate }}</p>
+      <div class="desktop-arrow">
+        <img class="draw-line" src="img/00_Hand-drawn-lines/05_Contact/Color_option_3.png" alt="" />
       </div>
+    </div>
+    <div class="contact-form">
+      <img class="desktop-sticker" src="img/03_Stickers/00_Round/08_Color_option_3-C.png" alt="Sticker" />
+      <form [formGroup]="userform" (ngSubmit)="formSubmit()">
+        <div class="form-name field-container">
+          <p
+            class="form-headline"
+            [class.label-error]="userform.get('name')?.invalid && userform.get('name')?.touched"
+          >
+            {{ 'contact.form.nameLabel' | translate }}
+          </p>
+          <input
+            id="name"
+            type="text"
+            formControlName="name"
+            [placeholder]="
+              userform.get('name')?.invalid && userform.get('name')?.touched && !userform.get('name')?.value
+                ? ('contact.form.nameErrorRequired' | translate)
+                : ('contact.form.namePlaceholder' | translate)
+            "
+            [class.input-error]="userform.get('name')?.invalid && userform.get('name')?.touched"
+          />
+          @if (userform.get('name')?.hasError('minlength') && userform.get('name')?.touched) {
+            <span class="error-message">{{ 'contact.form.nameErrorLength' | translate }}</span>
+          }
+        </div>
+        <div class="form-email field-container">
+          <p
+            class="form-headline"
+            [class.label-error]="userform.get('email')?.invalid && userform.get('email')?.touched"
+          >
+            {{ 'contact.form.emailLabel' | translate }}
+          </p>
+          <input
+            id="email"
+            type="text"
+            formControlName="email"
+            [placeholder]="
+              userform.get('email')?.invalid && userform.get('email')?.touched && !userform.get('email')?.value
+                ? ('contact.form.emailErrorRequired' | translate)
+                : ('contact.form.emailPlaceholder' | translate)
+            "
+            [class.input-error]="userform.get('email')?.invalid && userform.get('email')?.touched"
+          />
+          @if (userform.get('email')?.hasError('email') && userform.get('email')?.touched && userform.get('email')?.value) {
+            <span class="error-message">{{ 'contact.form.emailErrorFormat' | translate }}</span>
+          }
+        </div>
+        <div class="form-request field-container">
+          <p
+            class="form-headline"
+            [class.label-error]="userform.get('request')?.invalid && userform.get('request')?.touched"
+          >
+            {{ 'contact.form.requestLabel' | translate }}
+          </p>
+          <input
+            id="request"
+            type="text"
+            formControlName="request"
+            [placeholder]="
+              userform.get('request')?.invalid && userform.get('request')?.touched && !userform.get('request')?.value
+                ? ('contact.form.requestErrorRequired' | translate)
+                : ('contact.form.requestPlaceholder' | translate)
+            "
+            [class.input-error]="userform.get('request')?.invalid && userform.get('request')?.touched"
+          />
+        </div>
+        <div class="form-privacy">
+          <label>
+            <input type="checkbox" formControlName="privacyPolicy" />
+            <span class="privacy-policy"
+              >{{ 'contact.form.privacyText' | translate }}<span class="policy-link">{{ 'contact.form.privacyLink' | translate }}</span>{{ 'contact.form.privacyTextEnd' | translate }}</span
+            >
+          </label>
+          @if (userform.get('privacyPolicy')?.invalid && userform.get('privacyPolicy')?.touched) {
+            <span class="privacy-error">{{ 'contact.form.privacyError' | translate }}</span>
+          }
+        </div>
+        <div class="button-row">
+          <div class="mobile-arrow">
+            <img class="draw-line" src="img/00_Hand-drawn-lines/05_Contact/Color_option_3.png" alt="" />
+          </div>
+          <button type="submit" class="btn-pill btn-push" [disabled]="!userform.valid">
+            {{ 'contact.form.submitBtn' | translate }}
+          </button>
+        </div>
+      </form>
     </div>
   </div>
   <app-footer></app-footer>

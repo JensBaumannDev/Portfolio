@@ -23,6 +23,13 @@
 		line-height: 1;
 		white-space: nowrap;
 	}
+	&:disabled,
+	&[disabled],
+	&.is-disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+		pointer-events: none;
+	}
 
 	&--secondary {
 		border: 1px solid $secondary-bg-color;
@@ -37,6 +44,13 @@
 		transform: translate(3px, 6px);
 		box-shadow: 0 0 1px $primary-bg-color;
 		background-color: $highlight3;
+	}
+	&:disabled,
+	&[disabled],
+	&.is-disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+		pointer-events: none;
 	}
 
 	&--dark {

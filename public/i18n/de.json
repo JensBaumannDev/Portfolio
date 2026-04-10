@@ -45,7 +45,25 @@
     "subline": "KONTAKTIERE MICH",
     "headline": "Bereit zur Zusammen&shy;arbeit?",
     "texttop": "Ich freue mich darauf, von dir zu hören! Sag mir gerne, für welche Rolle du mich in deinem Team siehst. Mit meiner Erfahrung, meiner Begeisterung für moderne Webtechnologien und meinem stetigen Lernwillen bin ich überzeugt, einen echten Mehrwert zu bieten.",
-    "textbottom": "Ich bin offen für neue Projekte und Herausforderungen und bringe neben technischem Know-how auch Teamgeist und Kreativität mit. Lass uns gemeinsam etwas Großartiges schaffen!"
+    "textbottom": "Ich bin offen für neue Projekte und Herausforderungen und bringe neben technischem Know-how auch Teamgeist und Kreativität mit.",
+    "form": {
+      "nameLabel": "Wie lautet dein Name?",
+      "nameErrorRequired": "Ups! Dein Name fehlt.",
+      "nameErrorLength": "Dein Name muss mindestens 4 Zeichen lang sein!",
+      "namePlaceholder": "Deine Name kommt hier hin",
+      "emailLabel": "Wie lautet deine Email-Adresse?",
+      "emailErrorRequired": "Hoppla! Wir benötigen deine Email.",
+      "emailErrorFormat": "Bitte nutze ein richtiges Email-Format!",
+      "emailPlaceholder": "deine.email@email.com",
+      "requestLabel": "Wie kann ich helfen?",
+      "requestErrorRequired": "Was kann ich für dich entwickeln?",
+      "requestPlaceholder": "Hallo Jens, ich bin interessiert an...",
+      "privacyText": "Ich habe die ",
+      "privacyLink": "Datenschutzerklärung",
+      "privacyTextEnd": " gelesen und stimme der Verarbeitung meiner Daten zu.",
+      "privacyError": "Bitte akzeptiere die Datenschutzerklärung.",
+      "submitBtn": "Senden"
+    }
   },
   "footer": {
     "legaltext": "Impressum"

@@ -45,7 +45,25 @@
     "subline": "CONTACT ME",
     "headline": "Ready to work together?",
     "texttop": "I look forward to hearing from you! Let me know what role you see me in within your team. With my experience, passion for modern web technologies, and constant willingness to learn, I am confident that I can provide real added value.",
-    "textbottom": "I am open to new projects and challenges and bring not only technical expertise but also team spirit and creativity. Let’s create something great together!"
+    "textbottom": "I am open to new projects and challenges and bring not only technical expertise but also team spirit and creativity.",
+    "form": {
+      "nameLabel": "What's your name?",
+      "nameErrorRequired": "Oops! it seems your name is missing",
+      "nameErrorLength": "Your name must be at least 4 characters long!",
+      "namePlaceholder": "Your name goes here",
+      "emailLabel": "What's your email?",
+      "emailErrorRequired": "Hoppla! your email is required",
+      "emailErrorFormat": "Please enter a valid email address!",
+      "emailPlaceholder": "youremail@email.com",
+      "requestLabel": "How can I help you?",
+      "requestErrorRequired": "What do you need to develop?",
+      "requestPlaceholder": "Hello Jens, I am interested in...",
+      "privacyText": "I've read the ",
+      "privacyLink": "privacy policy",
+      "privacyTextEnd": " and agree to the processing of my data as outlined.",
+      "privacyError": "Please accept the privacy policy.",
+      "submitBtn": "Send message"
+    }
   },
   "footer": {
     "legaltext": "Legal Notice"
