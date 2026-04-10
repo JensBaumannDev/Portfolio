@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 
@@ -7,6 +7,7 @@ import { TranslatePipe } from '@ngx-translate/core';
   imports: [TranslatePipe, RouterLink],
   templateUrl: './footer.html',
   styleUrl: './footer.scss',
+  encapsulation: ViewEncapsulation.None,
 })
 export class Footer {
   @Input() isBlackMode = false;

@@ -1,55 +1,79 @@
 * {
-    font-family: 'Bricolage-Grotesque', Arial, sans-serif;
+  font-family: 'Bricolage-Grotesque', Arial, sans-serif;
 }
 
 body {
-    margin: 0;
-    min-height: 100vh;
-    min-height: 100dvh;
-    font-size: 18px;
-    font-weight: 400;
-    overflow-x: hidden;
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  font-size: 18px;
+  font-weight: 400;
+  overflow-x: hidden;
 }
 
 html {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 /* #region ANIMATIONS */
 
 @keyframes draw-line {
-    0%      { clip-path: inset(0 100% 0 0); }
-    15.5%  { clip-path: inset(0 0% 0 0); }
-    50%     { clip-path: inset(0 0% 0 0); }
-    65.5%  { clip-path: inset(0 100% 0 0); }
-    100%    { clip-path: inset(0 100% 0 0); }
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  15.5% {
+    clip-path: inset(0 0% 0 0);
+  }
+  50% {
+    clip-path: inset(0 0% 0 0);
+  }
+  65.5% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 100% 0 0);
+  }
 }
 
 .draw-line {
-    display: block;
-    animation: draw-line 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  display: block;
+  animation: draw-line 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 @keyframes fade-in-page {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .fade-in-page {
-    animation: fade-in-page 0.5s ease-out forwards;
+  animation: fade-in-page 0.5s ease-out forwards;
 }
 
 @keyframes draw-line-reverse {
-    0% { clip-path: inset(0 0 0 100%); }
-    15.5% { clip-path: inset(0 0 0 0); }
-    50% { clip-path: inset(0 0 0 0); }
-    65.5% { clip-path: inset(0 0 0 100%); }
-    100% { clip-path: inset(0 0 0 100%); }
+  0% {
+    clip-path: inset(0 0 0 100%);
+  }
+  15.5% {
+    clip-path: inset(0 0 0 0);
+  }
+  50% {
+    clip-path: inset(0 0 0 0);
+  }
+  65.5% {
+    clip-path: inset(0 0 0 100%);
+  }
+  100% {
+    clip-path: inset(0 0 0 100%);
+  }
 }
 
 .draw-line-reverse {
-    display: block;
-    animation: draw-line-reverse 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  display: block;
+  animation: draw-line-reverse 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 /* #endregion */
