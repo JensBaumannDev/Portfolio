@@ -1,25 +1,30 @@
 @use '../../../../src/styles/abstracts/' as *;
 
-
 .footer-container {
   --footer-main-color: #{$primary-bg-color};
 
   @include maxWidth();
   color: var(--footer-main-color);
   height: 130px;
+  overflow: hidden;
+  margin-bottom: 55px;
 
   /* Black mode for legal notice page */
   &.footer-black {
     --footer-main-color: black;
+
+    .footer-social-icon {
+      filter: brightness(0);
+    }
   }
 
   .footer-wrapper {
     @include flex($justify-content: space-between, $align-items: flex-end);
     width: 100%;
-    gap: 40px;
   }
 
   .footer-content-left {
+    width: 25%;
     .footer-content-left-row {
       @include flex($flex-direction: column, $align-items: flex-start);
       width: 100%;
@@ -97,9 +102,11 @@
   }
 
   .footer-link-social {
-    @include flex($justify-content: flex-start);
+    @include flex($justify-content: space-between);
+    flex: 1;
     @media (max-width: 600px) {
       display: flex;
+      flex: unset;
     }
 
     &__github,
@@ -118,7 +125,7 @@
         padding: 10px 25px;
         position: relative;
         display: inline-block;
-        transition: color 0.3s ease;
+        transition: color 0.2s ease;
 
         &::before {
           content: '';
@@ -128,20 +135,20 @@
           border-radius: 20px;
           opacity: 0;
           z-index: -1;
-          transition: opacity 0.3s ease-in-out;
+          transition: opacity 0.2s ease-in-out;
         }
       }
 
       .footer-social-icon {
-        width: 30px;
-        height: 30px;
+        width: 24px;
+        height: 24px;
         display: block;
-        fill: var(--footer-main-color);
+        object-fit: contain;
         opacity: 0;
         position: absolute;
-        top: -30px;
+        top: -29px;
         left: 0;
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         pointer-events: none;
       }
 
@@ -152,8 +159,8 @@
 
         .footer-social-icon {
           opacity: 1;
-          left: calc(100% - 30px);
-          transform: rotate(360deg);
+          left: calc(100% - 24px);
+          animation: iconRoll 0.5s ease forwards;
         }
       }
     }
@@ -275,6 +282,21 @@
 
   to {
     clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes iconRoll {
+  0% {
+    transform: rotate(0deg);
+  }
+  70% {
+    transform: rotate(380deg);
+  }
+  85% {
+    transform: rotate(355deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 /* #endregion */
