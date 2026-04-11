@@ -24,6 +24,7 @@
         @for (skill of skills; track skill.name) {
         <div class="skill-icons__item">
           <img [src]="skill.icon" [attr.alt]="'skills.iconAlt.' + skill.name | translate" />
+          <span>{{ skill.name }}</span>
         </div>
         }
       </div>
