@@ -1,8 +1,8 @@
 @use '../../../../src/styles/abstracts/' as *;
 
+/* #region General & Layout */
 .contact-container {
   @include flex($flex-direction: column);
-
   background-image: url(../../../../public/img/01_Background/Design_Size_Relation/06_Contact.png);
   background-position: top;
   background-size: cover;
@@ -18,22 +18,17 @@
   padding: 200px 120px 0 120px;
   min-height: 560px;
 }
+/* #endregion */
 
+/* #region Headline & Decoration */
 .contact-headline {
   flex: 1 1 50%;
   max-width: 560px;
   color: $primary-bg-color;
   position: relative;
 
-  .mobile-sticker {
-    position: absolute;
-    top: -65px; 
-    right: 0; 
-    width: clamp(100px, 30vw, 160px); 
-    height: auto;
-    z-index: 10;
-    pointer-events: none;
-    display: none;
+  h2 {
+    transition: font-size 0.2s;
   }
 
   .headline-intro-text {
@@ -45,13 +40,23 @@
     text-align: justify;
   }
 
+  .mobile-sticker {
+    position: absolute;
+    top: -65px;
+    right: 0;
+    width: clamp(100px, 30vw, 160px);
+    height: auto;
+    z-index: 10;
+    pointer-events: none;
+    display: none;
+  }
+
   .desktop-arrow {
     position: absolute;
     bottom: 72px;
     right: 0;
     width: clamp(200px, 25vw, 320px);
     pointer-events: none;
-    display: block;
 
     img {
       width: 100%;
@@ -59,27 +64,142 @@
     }
   }
 }
+/* #endregion */
 
+/* #region Contact Form */
 .contact-form {
-  color: $primary-bg-color;
   @include flex($flex-direction: column);
-  padding-top: 16px;
   flex: 1 1 50%;
   max-width: 480px;
-  position: relative;
+  padding-top: 16px;
   margin-top: 160px;
+  color: $primary-bg-color;
+  position: relative;
+
+  .field-container {
+    position: relative;
+    border-top: 2px solid transparent;
+    transition: border-top-color 0.2s;
+
+    &:hover {
+      border-top-color: $highlight2;
+      .form-headline { color: $highlight3; }
+      input[type='text'] { border-bottom-color: $highlight2; }
+    }
+
+    &:focus-within {
+      border-top-color: $highlight3;
+      .form-headline { color: $highlight3; }
+      input[type='text'] { border-bottom-color: $highlight3; }
+    }
+  }
+
+  .form-name { padding-top: 16px; }
+  .form-email, .form-request {
+    margin-top: -18px;
+    padding-top: 16px;
+  }
+
+  .form-headline {
+    font-size: clamp(14px, 4vw, 18px);
+    padding-left: 16px;
+    transition: color 0.2s;
+    &.label-error { color: $highlight3; }
+  }
+
+  input[type='text'] {
+    width: 100%;
+    padding: 8px 16px 16px 16px;
+    margin-bottom: 16px;
+    font-size: clamp(14px, 4vw, 18px);
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid $highlight1;
+    color: $primary-bg-color;
+    outline: none;
+    box-shadow: none;
+    transition: border-color 0.2s, color 0.2s;
+
+    &::placeholder {
+      color: rgba($primary-bg-color, 0.7);
+      opacity: 1;
+      transition: color 0.2s;
+    }
+
+    &.input-error {
+      border-bottom-color: #555;
+      color: $highlight3;
+      &::placeholder { color: $highlight3; }
+    }
+  }
+
+  .error-message {
+    position: absolute;
+    bottom: 30px;
+    right: 16px;
+    color: $highlight3;
+    font-size: clamp(10px, 3vw, 12px);
+    pointer-events: none;
+  }
+
+  .form-privacy {
+    width: 100%;
+    margin-bottom: 24px;
+    padding-left: 16px;
+    position: relative;
+
+    label {
+      @include flex($align-items: center);
+      gap: 16px;
+      cursor: pointer;
+      line-height: 1.4;
+    }
+
+    .policy-link {
+      color: $highlight3;
+      text-decoration: none;
+      transition: color 0.2s;
+      &:hover { color: $highlight1; }
+    }
+
+    input[type='checkbox'] {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      appearance: none;
+      border: 2px solid $highlight3;
+      border-radius: 4px;
+      background-color: transparent;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+
+      &:checked {
+        border-color: $highlight3;
+        & + .privacy-policy .policy-link { color: $highlight1; }
+        &::after {
+          content: '✔';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: $highlight1;
+          font-size: 19px;
+          line-height: 1;
+        }
+      }
+    }
+  }
 
   .button-row {
-    @include flex($justify-content: flex-end);
-    align-items: center;
+    @include flex($justify-content: flex-end, $align-items: center);
     width: 100%;
     gap: 24px;
 
     .mobile-arrow {
+      display: none;
       width: clamp(80px, 20vw, 160px);
       margin: 0;
-      justify-content: flex-end;
-      display: none;
     }
   }
 
@@ -91,181 +211,28 @@
     height: auto;
     z-index: 10;
     pointer-events: none;
-    display: block;
-  }
-
-  .field-container {
-    position: relative;
-    border-top: 2px solid transparent;
-    transition: border-top-color 0.2s;
-
-    &:hover {
-      border-top-color: $highlight2;
-      .form-headline {
-        color: $highlight3;
-      }
-      input[type='text'] {
-        border-bottom-color: $highlight2;
-      }
-    }
-
-    &:focus-within {
-      border-top-color: $highlight3;
-      .form-headline {
-        color: $highlight3;
-      }
-      input[type='text'] {
-        border-bottom-color: $highlight3;
-      }
-    }
-  }
-
-  .form-name {
-    padding-top: 16px;
-  }
-
-  .form-email,
-  .form-request {
-    margin-top: -18px;
-    padding-top: 16px;
-  }
-
-  .form-headline {
-    font-size: clamp(14px, 4vw, 18px);
-    padding-left: 16px;
-    transition: color 0.2s;
-    &.label-error {
-      color: $highlight3;
-    }
-  }
-
-  input[type='text'] {
-    font-size: clamp(14px, 4vw, 18px);
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid $highlight1;
-    color: $primary-bg-color;
-    width: 100%;
-    padding: 8px 0 16px 0;
-    margin-bottom: 16px;
-    outline: none;
-    box-shadow: none;
-    transition:
-      border-color 0.2s,
-      color 0.2s;
-    padding-left: 16px;
-
-    &.input-error {
-      border-bottom-color: #555;
-      color: $highlight3;
-      &::placeholder {
-        color: $highlight3;
-        opacity: 1;
-      }
-    }
-  }
-
-  input[type='text']::placeholder {
-    color: rgba($primary-bg-color, 0.7);
-    opacity: 1;
-    transition: color 0.2s;
-  }
-
-  .error-message {
-    display: block;
-    position: absolute;
-    bottom: 30px;
-    right: 16px;
-    color: $highlight3;
-    font-size: clamp(10px, 3vw, 12px);
-    margin: 0;
-    pointer-events: none;
-  }
-
-  .form-privacy {
-    width: 100%;
-    margin-bottom: 24px;
-    padding-left: 16px;
-    position: relative;
-
-    label {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      cursor: pointer;
-      line-height: 1.4;
-    }
-
-    .policy-link {
-      color: $highlight3;
-      text-decoration: none;
-      transition: color 0.2s;
-
-      &:hover {
-        color: $highlight1;
-      }
-    }
-
-    input[type='checkbox'] {
-      cursor: pointer;
-      width: 20px;
-      height: 20px;
-      flex-shrink: 0;
-      appearance: none;
-      border: 2px solid $highlight3;
-      border-radius: 4px;
-      background-color: transparent;
-      position: relative;
-      transition: all 0.2s ease-in-out;
-
-      &:checked {
-        border-color: $highlight3;
-
-        & + .privacy-policy .policy-link {
-          color: $highlight1;
-        }
-        &::after {
-          content: '✔';
-          color: $highlight1;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          font-size: 19px;
-          line-height: 1;
-        }
-      }
-    }
   }
 }
+/* #endregion */
 
-/* #region Responsive*/
-
+/* #region Responsive */
 @media (max-width: 1300px) {
   .contact-content {
     flex-direction: column;
     align-items: center;
     gap: 24px;
   }
+
+  .contact-headline {
+    .mobile-sticker { display: block; }
+    .desktop-arrow { display: none; }
+  }
+
   .contact-form {
     max-width: 560px;
     margin-top: 0;
-
-    .desktop-sticker {
-      display: none;
-    }
-    .button-row .mobile-arrow {
-      display: block;
-    }
-  }
-
-  .contact-headline {
-    .mobile-sticker {
-      display: block;
-    }
-    .desktop-arrow {
-      display: none;
-    }
+    .desktop-sticker { display: none; }
+    .button-row .mobile-arrow { display: block; }
   }
 }
 
@@ -279,27 +246,16 @@
 @media (max-width: 900px) {
   .contact-content {
     height: auto;
-    flex-direction: column;
     margin-bottom: 40px;
   }
 
   .contact-headline {
     width: 100%;
-    padding: 0 0 16px 0;
-
-    h2 {
-      padding-right: 15%;
-    }
-
-    & > p {
-      padding-top: 24px;
-      font-size: 20px;
-    }
-
-    .headline-intro-text {
-      padding-top: 8px;
-      font-size: 20px;
-    }
+    padding-bottom: 16px;
+    h2 { padding-right: 15%; }
+    & > p, .headline-intro-text { font-size: 20px; }
+    & > p { padding-top: 24px; }
+    .headline-intro-text { padding-top: 8px; }
   }
 }
 
@@ -307,30 +263,15 @@
   .contact-container {
     height: auto;
     min-height: auto;
-    background-size: cover;
-    background-position: top;
     padding-top: 180px;
   }
 
-  .contact-content {
-    padding: 40px 16px 0 16px;
-  }
-
-  .contact-headline {
-    & > p,
-    .headline-intro-text {
-      font-size: 18px;
-    }
-  }
+  .contact-content { padding: 40px 16px 0; }
+  .contact-headline > p, 
+  .contact-headline .headline-intro-text { font-size: 18px; }
 }
 
 @media (max-width: 569px) {
-  h2 {
-    font-size: 48px;
-  }
+  h2 { font-size: 48px; }
 }
-
-@media (max-width: 449px) {
-}
-
 /* #endregion */
