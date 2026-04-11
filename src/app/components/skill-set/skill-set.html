@@ -27,26 +27,26 @@
           <span>{{ skill.name }}</span>
         </div>
         }
-      </div>
-      <div class="pull-picture" (click)="triggerPeel()" style="cursor: pointer">
-        <button class="pull-picture__a" [class.peel-a]="peeled() === 'out'" [class.peel-back]="peeled() === 'in'">
-          <img class="pull-picture__b-arrow" src="img/03_Stickers/Arrow.png"
-            [attr.alt]="'skills.arrowAlt' | translate" />
-          <p>{{ 'skills.buttonpull' | translate }}</p>
-        </button>
-        <button class="pull-picture__c">
-          <div class="pull-picture__c-content" [class.pull-picture__c-content--visible]="peeled() === 'out'">
-            <p>{{ 'skills.currentlearning' | translate }}</p>
-            <div class="pull-picture__c-icons">
-              @for (skill of interestedSkills; track skill.name) {
-              <div class="pull-picture__c-icon">
-                <img [src]="skill.icon" [attr.alt]="'skills.iconAlt.' + skill.name | translate" />
-                <span>{{ skill.name }}</span>
+        <div class="pull-picture" (click)="triggerPeel()" style="cursor: pointer">
+          <button class="pull-picture__a" [class.peel-a]="peeled() === 'out'" [class.peel-back]="peeled() === 'in'">
+            <img class="pull-picture__b-arrow" src="img/03_Stickers/Arrow.png"
+              [attr.alt]="'skills.arrowAlt' | translate" />
+            <p>{{ 'skills.buttonpull' | translate }}</p>
+          </button>
+          <button class="pull-picture__c">
+            <div class="pull-picture__c-content" [class.pull-picture__c-content--visible]="peeled() === 'out'">
+              <p>{{ 'skills.currentlearning' | translate }}</p>
+              <div class="pull-picture__c-icons">
+                @for (skill of interestedSkills; track skill.name) {
+                <div class="pull-picture__c-icon">
+                  <img [src]="skill.icon" [attr.alt]="'skills.iconAlt.' + skill.name | translate" />
+                  <span>{{ skill.name }}</span>
+                </div>
+                }
               </div>
-              }
             </div>
-          </div>
-        </button>
+          </button>
+        </div>
       </div>
     </div>
   </div>

@@ -98,16 +98,24 @@
 
 .skill-icons {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 72px) 200px;
   grid-column-gap: 50px;
   grid-row-gap: 50px;
+  align-items: end;
   justify-content: end;
   margin-top: 48px;
   text-align: center;
 
+  .pull-picture {
+    grid-column: 6;
+    grid-row: 1 / 3;
+    rotate: 8deg;
+  }
+
   &__item {
     @include flex($flex-direction: column, $align-items: center);
     gap: 12px;
+    height: 100%;
 
     & > img {
       width: 72px;
@@ -130,6 +138,11 @@
       color: $primary-bg-color;
     }
   }
+}
+
+.bottom-content {
+  @include flex($flex-direction: row, $align-items: flex-end, $justify-content: flex-end);
+  gap: 50px;
 }
 
 .pull-picture {
@@ -321,22 +334,32 @@
   }
 
   .pull-picture {
-    position: absolute;
-    transform: translateY(25px);
+    position: relative;
+    transform: none;
+    rotate: 8deg;
   }
 
   .bottom-content {
-    flex-direction: column;
-    gap: 32px;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 70px;
   }
 
   .skill-icons {
     grid-template-columns: repeat(3, 1fr);
-    justify-content: start;
-    padding-bottom: 100px;
+    justify-content: center;
+    padding-bottom: 20px;
+    grid-column-gap: clamp(10px, 5vw, 70px);
 
-    &__item > img {
-      filter: none;
+    .pull-picture {
+      grid-column: 2 / 4;
+      grid-row: 4;
+      rotate: 8deg;
+      width: clamp(140px, 20vw, 200px);
+      height: auto;
+      transform: none;
+      position: relative;
     }
   }
 }
@@ -379,6 +402,14 @@
     grid-row-gap: 20px;
     justify-content: center;
     padding-bottom: 0px;
+
+    .pull-picture {
+      grid-column: 1 / 4;
+      grid-row: auto;
+      justify-self: center;
+      margin-top: 40px;
+      transform: translateX(-15px);
+    }
   }
 }
 
