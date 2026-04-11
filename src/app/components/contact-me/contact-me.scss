@@ -141,6 +141,14 @@
       transition: color 0.2s;
     }
 
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      -webkit-text-fill-color: $primary-bg-color;
+      -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+
     &.input-error {
       border-bottom-color: #555;
       color: $highlight3;
