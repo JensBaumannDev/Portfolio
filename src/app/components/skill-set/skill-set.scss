@@ -99,7 +99,7 @@
 .skill-icons {
   display: grid;
   grid-template-columns: repeat(5, 72px) 200px;
-  grid-column-gap: 50px;
+  grid-column-gap: 80px;
   grid-row-gap: 50px;
   align-items: end;
   justify-content: end;
@@ -351,6 +351,10 @@
     justify-content: center;
     padding-bottom: 20px;
     grid-column-gap: clamp(10px, 5vw, 70px);
+
+    &__item > img {
+      filter: none;
+    }
 
     .pull-picture {
       grid-column: 2 / 4;
