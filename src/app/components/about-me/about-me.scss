@@ -25,24 +25,27 @@
   &__collor2,
   &__color3 {
     position: relative;
+    display: grid;
+    grid-template-areas: 'card-stack';
     width: clamp(260px, 38.9vw, 560px);
     color: $primary-bg-color;
     font-size: clamp(14px, 1.67vw, 24px);
 
     > img {
+      grid-area: card-stack;
       display: block;
       width: 100%;
       height: auto;
     }
 
     .card-label {
-      @include flex($flex-wrap: nowrap, $align-items: center);
+      grid-area: card-stack;
+      @include flex($justify-content: center, $align-items: center);
       gap: 8px;
-      position: absolute;
-      bottom: 50%;
-      left: 50%;
-      transform: translateX(-50%);
       white-space: nowrap;
+      pointer-events: none;
+      z-index: 5;
+      transform: translateY(var(--label-offset, 0));
 
       img {
         width: clamp(14px, 2vw, 36px);
@@ -58,10 +61,9 @@
   &__collor1 {
     transform: rotate(-4deg);
     z-index: 3;
-
+    --label-offset: -8%;
     .card-label {
-      bottom: 45%;
-      transform: translateX(-50%) rotate(-1deg);
+      transform: translateY(var(--label-offset)) rotate(-1deg);
     }
   }
 
@@ -69,20 +71,16 @@
     transform: rotate(0deg);
     margin-top: -7%;
     z-index: 2;
-
-    .card-label {
-      bottom: 40%;
-    }
+    --label-offset: -2%;
   }
 
   &__color3 {
     transform: rotate(4deg);
     margin-top: -7%;
     z-index: 1;
-
+    --label-offset: -3%;
     .card-label {
-      bottom: 40%;
-      transform: translateX(-50%) rotate(3deg);
+      transform: translateY(var(--label-offset)) rotate(3deg);
     }
   }
 }
@@ -137,23 +135,17 @@
     }
 
     &__collor1 {
-      .card-label {
-        bottom: 52%;
-      }
+      --label-offset: -10%;
     }
 
     &__collor2 {
       margin-top: -40px;
-      .card-label {
-        bottom: 45%;
-      }
+      --label-offset: 0%;
     }
 
     &__color3 {
-      margin-top: -40px;
-      .card-label {
-        bottom: 50%;
-      }
+      margin-top: -30px;
+      --label-offset: -3%;
     }
   }
 
