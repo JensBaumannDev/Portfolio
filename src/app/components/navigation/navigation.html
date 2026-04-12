@@ -7,8 +7,10 @@
     >
       <span class="language__label">EN</span>
       <img
-        src="img/00_Hand-drawn-lines/00_Header/Color_option_3/Toggle.png"
-        alt="hover sprache"
+        ngSrc="img/00_Hand-drawn-lines/00_Header/Color_option_3/Toggle.png"
+        width="35" height="35"
+        alt=""
+        aria-hidden="true"
         class="language__hover-img"
       />
     </span>
@@ -28,8 +30,10 @@
     >
       <span class="language__label">DE</span>
       <img
-        src="img/00_Hand-drawn-lines/00_Header/Color_option_3/Toggle.png"
-        alt="hover sprache"
+        ngSrc="img/00_Hand-drawn-lines/00_Header/Color_option_3/Toggle.png"
+        width="35" height="35"
+        alt=""
+        aria-hidden="true"
         class="language__hover-img"
       />
     </span>
@@ -38,8 +42,8 @@
   <ul>
     <li class="logo-container">
       <a routerLink="/" (click)="closeMenu()">
-        <img src="img/04_Logo/logo2.png" alt="brandlogo" class="logo-default" />
-        <img src="img/04_Logo/logo1.png" alt="brandlogo hover" class="logo-hover" />
+        <img ngSrc="img/04_Logo/logo2.png" width="45" height="45" priority [attr.alt]="'common.logoAlt' | translate" class="logo-default" />
+        <img ngSrc="img/04_Logo/logo1.png" width="45" height="45" priority [attr.alt]="'common.logoHoverAlt' | translate" class="logo-hover" />
       </a>
     </li>
     @for (link of currentNavLinks(); track link.label; let i = $index) {
@@ -47,7 +51,7 @@
         <a [routerLink]="['/']" [fragment]="link.fragment" (click)="closeMenu()">{{
           link.label
         }}</a>
-        <img [src]="link.img" alt="hover bild" />
+        <img [ngSrc]="link.img" width="316" height="126" alt="" aria-hidden="true" />
       </li>
     }
     <li class="language">

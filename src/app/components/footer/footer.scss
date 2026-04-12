@@ -80,6 +80,8 @@ $footer-social-padding: 10px 25px;
 
         .legal-hover-img {
           position: absolute;
+          width: auto;
+          max-width: none;
           height: 55px;
           top: -5px;
           left: 50%;
@@ -127,7 +129,7 @@ $footer-social-padding: 10px 25px;
 
       .footer-social-icon {
         width: $footer-icon-size;
-        height: $footer-icon-size;
+        height: auto;
         display: block;
         object-fit: contain;
         opacity: 0;

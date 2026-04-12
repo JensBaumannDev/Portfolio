@@ -7,7 +7,8 @@
           <h2>{{ 'projects.headline' | translate }}</h2>
           <img
             class="draw-line"
-            src="img/00_Hand-drawn-lines/03_Portfolio/Color_option 3.png"
+            ngSrc="img/00_Hand-drawn-lines/03_Portfolio/Color_option 3.png"
+            width="1089" height="128"
             alt=""
           />
         </div>
@@ -17,14 +18,14 @@
       <div class="featured-section__right">
         <div class="mockup-container">
           <div class="float-wrapper">
-            <img [src]="projects[0].image" alt="Join Laptop" class="laptop-img" />
+            <img [ngSrc]="projects[0].image" width="560" height="338" [attr.alt]="'projects.laptopAlt' | translate" class="laptop-img" />
           </div>
           <div class="img-overlay">
             <button class="btn-pill btn-push">
               {{ 'projects.check' | translate }}
             </button>
           </div>
-          <img src="img/06_projects/Sticker.png" alt="Featured" class="sticker-img" />
+          <img ngSrc="img/06_projects/Sticker.png" width="100" height="100" [attr.alt]="'projects.stickerAlt' | translate" class="sticker-img" />
         </div>
         <div class="featured-info">
           <h3>{{ projects[0].title }}</h3>
@@ -39,7 +40,7 @@
       @for (project of projects.slice(1); track project.title) {
         <div class="project-card">
           <div class="project-card__img">
-            <img [src]="project.image" [alt]="project.title" />
+            <img [ngSrc]="project.image" fill [attr.alt]="project.title" style="object-fit: contain;" />
             <div class="img-overlay">
               <button class="btn-pill btn-push">
                 {{ 'projects.check' | translate }}

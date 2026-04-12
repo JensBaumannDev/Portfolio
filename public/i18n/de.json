@@ -47,6 +47,7 @@
     "texttop": "Ich freue mich darauf, von dir zu hören! Sag mir gerne, für welche Rolle du mich in deinem Team siehst. Mit meiner Erfahrung, meiner Begeisterung für moderne Webtechnologien und meinem stetigen Lernwillen bin ich überzeugt, einen echten Mehrwert zu bieten.",
     "textbottom": "Ich bin offen für neue Projekte und Herausforderungen und bringe neben technischem Know-how auch Teamgeist und Kreativität mit.",
     "form": {
+      "stickerAlt": "Dekorativer runder Sticker",
       "nameLabel": "Wie lautet dein Name?",
       "nameErrorRequired": "Ups! Dein Name fehlt.",
       "nameErrorLength": "Dein Name muss mindestens 4 Zeichen lang sein!",
@@ -98,7 +99,20 @@
     "testimonial1": "Jens ist ein engagierter Entwickler, der immer einen Schritt weiter geht. Seine technische Expertise war eine enorme Bereicherung für unser Projekt.",
     "testimonial2": "Die Zusammenarbeit mit Jens war eine fantastische Erfahrung. Er hat ein einzigartiges Talent, komplexe Probleme mit elegantem Code zu lösen.",
     "testimonial3": "Sehr empfehlenswert! Jens ist ein verlässlicher Profi, der sowohl Kreativität als auch technische Präzision in das Team einbringt.",
-    "profile": "Profil"
+    "profile": "Profil",
+    "arrowAlt": "Blauer dekorativer Pfeil",
+    "social": {
+      "linkedin": "LinkedIn Profil ansehen"
+    }
+  },
+  "common": {
+    "logoAlt": "Markenlogo",
+    "logoHoverAlt": "Markenlogo Hover-Effekt",
+    "social": {
+      "github": "GitHub Profil von Jens Baumann",
+      "linkedin": "LinkedIn Profil von Jens Baumann",
+      "email": "E-Mail an Jens Baumann senden"
+    }
   },
   "projects": {
     "subline": "MEINE PROJEKTE",
@@ -106,6 +120,8 @@
     "description": "Schauen Sie sich meine Projekte an und interagieren Sie mit ihnen. Hier zeige ich meinen Ansatz für reaktionsschnelle, benutzerfreundliche Projekte mit effizientem Code.",
     "featured": "Hervorgehobenes Projekt",
     "check": "Details ansehen",
+    "laptopAlt": "Laptop mit Join Projekt",
+    "stickerAlt": "Hervorgehobenes Projekt Sticker",
     "join": {
       "description": "Auf dem Kanban-System basierender Aufgabenmanager. Erstellen und organisieren Sie Aufgaben mit Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu."
     },

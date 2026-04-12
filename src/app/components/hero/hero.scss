@@ -7,11 +7,21 @@
   position: relative;
   display: grid;
   grid-template-rows: auto 1fr;
-  background-image: url('../../../../public/img/01_Background/Design_Size_Relation/01_Hero.png');
   min-height: 100svh;
   height: 100svh;
-  background-position: bottom;
-  background-size: cover;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  img {
+    object-fit: cover;
+    object-position: bottom;
+  }
 }
 
 .hero-container-inner {
@@ -60,11 +70,16 @@
   flex: 0 0 auto;
   margin-bottom: 24px;
   transform: rotate(10deg);
-  background-image: url('../../../../public/img/05_Profil/profilepicture_small.png');
   filter: grayscale(100%);
-  background-position: bottom;
-  background-size: cover;
   width: 250px;
+  height: 300px; // Maintain height
+  overflow: hidden;
+
+  .profile-img {
+    object-fit: cover;
+    object-position: bottom;
+    z-index: -1;
+  }
 
   &:hover {
     filter: grayscale(0%);

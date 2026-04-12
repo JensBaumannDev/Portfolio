@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { Footer } from '../footer/footer';
+import { NgOptimizedImage } from '@angular/common';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { forbiddenNameValidator } from './validator';
 
 @Component({
   selector: 'app-contact-me',
   standalone: true,
-  imports: [TranslatePipe, Footer, ReactiveFormsModule],
+  imports: [TranslatePipe, Footer, ReactiveFormsModule, NgOptimizedImage],
   templateUrl: './contact-me.html',
   styleUrl: './contact-me.scss',
 })

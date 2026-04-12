@@ -8,12 +8,13 @@ import {
 } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslatePipe } from '@ngx-translate/core';
+import { NgOptimizedImage } from '@angular/common';
 import { SOCIAL_LINKS } from '../social-links/social-links.data';
 
 @Component({
   selector: 'app-navigation',
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, TranslatePipe, NgOptimizedImage],
   templateUrl: './navigation.html',
   styleUrl: './navigation.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

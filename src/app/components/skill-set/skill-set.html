@@ -1,4 +1,7 @@
 <section id="skills" class="skills-container">
+  <div class="skills-background">
+    <img ngSrc="img/01_Background/Img_Original_Size/Skills_BG.png" fill alt="" aria-hidden="true" />
+  </div>
   <div class="skills-content">
     <div class="top-content">
       <div class="top-content__headline">
@@ -11,9 +14,9 @@
         </div>
         <div class="top-content__img">
           @if (isMobile()) {
-          <img src="img/02_Ripped_Paper/1B.Mobile.png" [attr.alt]="'skills.cardImgAltMobile' | translate" />
+          <img ngSrc="img/02_Ripped_Paper/1B.Mobile.png" width="343" height="212" [attr.alt]="'skills.cardImgAltMobile' | translate" />
           } @else {
-          <img src="img/02_Ripped_Paper/1.Skills_description.png" [attr.alt]="'skills.cardImgAlt' | translate" />
+          <img ngSrc="img/02_Ripped_Paper/1.Skills_description.png" width="600" height="114" [attr.alt]="'skills.cardImgAlt' | translate" />
           }
           <p class="top-content__img-text">{{ 'skills.cardtext' | translate }}</p>
         </div>
@@ -23,14 +26,14 @@
       <div class="skill-icons">
         @for (skill of skills; track skill.name) {
         <div class="skill-icons__item">
-          <img [src]="skill.icon" [attr.alt]="'skills.iconAlt.' + skill.name | translate" />
+          <img [ngSrc]="skill.icon" width="61" height="61" [attr.alt]="'skills.iconAlt.' + skill.name | translate" />
           <span>{{ skill.name }}</span>
         </div>
         }
         <div class="pull-picture" (click)="triggerPeel()" style="cursor: pointer">
           <button class="pull-picture__a" [class.peel-a]="peeled() === 'out'" [class.peel-back]="peeled() === 'in'">
-            <img class="pull-picture__b-arrow" src="img/03_Stickers/Arrow.png"
-              [attr.alt]="'skills.arrowAlt' | translate" />
+            <img class="pull-picture__b-arrow" ngSrc="img/03_Stickers/Arrow.png" width="40" height="31"
+               [attr.alt]="'skills.arrowAlt' | translate" />
             <p>{{ 'skills.buttonpull' | translate }}</p>
           </button>
           <button class="pull-picture__c">
@@ -39,7 +42,7 @@
               <div class="pull-picture__c-icons">
                 @for (skill of interestedSkills; track skill.name) {
                 <div class="pull-picture__c-icon">
-                  <img [src]="skill.icon" [attr.alt]="'skills.iconAlt.' + skill.name | translate" />
+                  <img [ngSrc]="skill.icon" width="60" height="60" [attr.alt]="'skills.iconAlt.' + skill.name | translate" />
                   <span>{{ skill.name }}</span>
                 </div>
                 }

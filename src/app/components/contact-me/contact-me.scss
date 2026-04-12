@@ -59,8 +59,9 @@
     pointer-events: none;
 
     img {
-      width: 100%;
-      height: auto;
+      width: auto;
+      max-width: none;
+      height: 25px; // Keeping it consistent, but auto width
     }
   }
 }

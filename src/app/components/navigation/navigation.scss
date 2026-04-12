@@ -72,6 +72,8 @@ $nav-burger-transition: 220ms ease;
 
   img {
     position: absolute;
+    width: auto;
+    max-width: none;
     height: 45px;
     top: 0;
     left: 50%;

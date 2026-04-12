@@ -1,7 +1,7 @@
 @use 'sass:math';
 @use '../../../../src/styles/abstracts/' as *;
 
-$colleagues-card-ratio: math.div(500, 300);
+$colleagues-card-ratio: math.div(800, 525);
 $colleagues-transition: 0.3s;
 $colleagues-padding-top: 144px;
 $colleagues-padding-mobile: 80px;
@@ -124,7 +124,7 @@ $colleagues-padding-mobile: 80px;
 
           .linkedin-icon {
             width: clamp(14px, 1.2vw, 18px);
-            height: clamp(14px, 1.2vw, 18px);
+            height: auto;
             object-fit: contain;
             filter: brightness(0);
             transition: filter $colleagues-transition;
@@ -257,7 +257,7 @@ $colleagues-padding-mobile: 80px;
     &__card3 {
       width: 100%;
       max-width: 500px;
-      aspect-ratio: math.div(5, 3);
+      aspect-ratio: $colleagues-card-ratio;
       margin: 0;
 
       .card-text-content .testimonial-text {

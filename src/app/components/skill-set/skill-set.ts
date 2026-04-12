@@ -1,11 +1,11 @@
 import { Component, signal, OnInit, OnDestroy, NgZone, inject } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
-
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-skill-set',
   standalone: true,
-  imports: [TranslatePipe],
+  imports: [TranslatePipe, NgOptimizedImage],
   templateUrl: './skill-set.html',
   styleUrl: './skill-set.scss',
 })

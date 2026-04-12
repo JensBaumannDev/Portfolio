@@ -12,12 +12,13 @@ import {
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { NgOptimizedImage } from '@angular/common';
 import { Navigation } from '../navigation/navigation';
 import { SOCIAL_LINKS } from '../social-links/social-links.data';
 
 @Component({
   selector: 'app-hero',
-  imports: [Navigation, TranslatePipe, RouterLink],
+  imports: [Navigation, TranslatePipe, RouterLink, NgOptimizedImage],
   templateUrl: './hero.html',
   styleUrl: './hero.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

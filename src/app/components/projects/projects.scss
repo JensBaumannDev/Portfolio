@@ -48,7 +48,8 @@ $project-overlay-bg: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
       top: 100%;
       margin-top: 4px;
       left: 0;
-      width: 260px;
+      width: auto;
+      max-width: none;
       height: 20px;
     }
   }
@@ -211,7 +212,9 @@ $project-overlay-bg: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
         font-size: 40px;
       }
       .draw-line {
-        width: 180px;
+        width: auto;
+        max-width: none;
+        height: 15px;
       }
     }
 

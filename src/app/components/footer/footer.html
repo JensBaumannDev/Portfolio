@@ -4,8 +4,8 @@
       <div class="footer-content-left-row">
         <div class="footer-logo">
           <a routerLink="/">
-            <img src="img/04_Logo/logo2.png" alt="brandlogo" class="logo-default" />
-            <img src="img/04_Logo/logo1.png" alt="brandlogo hover" class="logo-hover" />
+            <img ngSrc="img/04_Logo/logo2.png" width="45" height="45" [attr.alt]="'common.logoAlt' | translate" class="logo-default" />
+            <img ngSrc="img/04_Logo/logo1.png" width="45" height="45" [attr.alt]="'common.logoHoverAlt' | translate" class="logo-hover" />
           </a>
         </div>
         <div class="footer-copyright">
@@ -15,7 +15,8 @@
       <div class="footer-link">
         <a [routerLink]="['/legal-notice']">
           <img
-            src="img/00_Hand-drawn-lines/00_Header/Color_option_3/3.png"
+            ngSrc="img/00_Hand-drawn-lines/00_Header/Color_option_3/3.png"
+            width="150" height="60"
             alt=""
             class="legal-hover-img"
           />
@@ -25,15 +26,15 @@
     </div>
     <div class="footer-link-social">
       <div class="footer-link-social__github">
-        <img class="footer-social-icon" src="icons/socials/github.png" alt="GitHub" />
+        <img class="footer-social-icon" ngSrc="icons/socials/github.png" width="24" height="24" [attr.alt]="'common.social.github' | translate" />
         <a target="_blank" href="https://github.com/JensBaumannDev">GitHub</a>
       </div>
       <div class="footer-link-social__linkedin">
-        <img class="footer-social-icon" src="icons/socials/linkedin.png" alt="LinkedIn" />
+        <img class="footer-social-icon" ngSrc="icons/socials/linkedin.png" width="24" height="24" [attr.alt]="'common.social.linkedin' | translate" />
         <a target="_blank" href="https://www.linkedin.com/in/jens-baumann-7a6866315/">LinkedIn</a>
       </div>
       <div class="footer-link-social__email">
-        <img class="footer-social-icon" src="icons/socials/mail.png" alt="Email" />
+        <img class="footer-social-icon" ngSrc="icons/socials/mail.png" width="24" height="20" [attr.alt]="'common.social.email' | translate" />
         <a href="mailto:baumannjems@outlook.de">Email</a>
       </div>
     </div>

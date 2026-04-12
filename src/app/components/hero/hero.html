@@ -1,4 +1,7 @@
 <section class="hero-container">
+  <div class="hero-background">
+    <img ngSrc="img/01_Background/Design_Size_Relation/01_Hero.png" fill priority alt="" aria-hidden="true" />
+  </div>
     <app-navigation></app-navigation>
     <div class="hero-container-inner">
         <div class="title-wrapper">
@@ -26,7 +29,8 @@
                     </div>
                     <div class="hero-top__right" (mouseenter)="setRightHoverState(true)"
                         (mouseleave)="setRightHoverState(false)">
-                        <img src="img/03_Stickers/Polaroid_Frame.png" [attr.alt]="'hero.profileImgAlt' | translate">
+                        <img ngSrc="img/05_Profil/profilepicture_small.png" fill priority alt="" class="profile-img">
+                        <img ngSrc="img/03_Stickers/Polaroid_Frame.png" width="250" height="300" priority [attr.alt]="'hero.profileImgAlt' | translate">
                         <span>{{ isRightHovered() ? 'Jens :D' : 'Jens :)' }}</span>
                     </div>
                 </div>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
+import { NgOptimizedImage } from '@angular/common';
 
 interface Project {
   title: string;
@@ -13,7 +14,7 @@ interface Project {
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [TranslatePipe],
+  imports: [TranslatePipe, NgOptimizedImage],
   templateUrl: './projects.html',
   styleUrl: './projects.scss',
 })

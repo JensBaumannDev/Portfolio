@@ -10,12 +10,23 @@ $skill-icon-size: 72px;
 /* #region LAYOUT */
 
 .skills-container {
-  background-image: url('../../../../public/img/01_Background/Img_Original_Size/Skills_BG.png');
-  background-position: bottom;
-  background-size: cover;
+  position: relative;
   height: auto;
+  overflow: hidden;
   content-visibility: auto;
   contain-intrinsic-size: 1000px;
+}
+
+.skills-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  img {
+    object-fit: cover;
+    object-position: bottom;
+  }
 }
 
 .skills-content {

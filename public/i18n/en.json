@@ -47,6 +47,7 @@
     "texttop": "I look forward to hearing from you! Let me know what role you see me in within your team. With my experience, passion for modern web technologies, and constant willingness to learn, I am confident that I can provide real added value.",
     "textbottom": "I am open to new projects and challenges and bring not only technical expertise but also team spirit and creativity.",
     "form": {
+      "stickerAlt": "Decorative round sticker",
       "nameLabel": "What's your name?",
       "nameErrorRequired": "Oops! it seems your name is missing",
       "nameErrorLength": "Your name must be at least 4 characters long!",
@@ -98,7 +99,20 @@
     "testimonial1": "Jens is a dedicated developer who always goes the extra mile. His technical expertise was a huge asset to our project.",
     "testimonial2": "Collaborating with Jens was a fantastic experience. He has a unique talent for solving complex problems with elegant code.",
     "testimonial3": "Highly recommended! Jens is a reliable professional who brings both creativity and technical precision to the team.",
-    "profile": "Profile"
+    "profile": "Profile",
+    "arrowAlt": "Blue decorative arrow",
+    "social": {
+      "linkedin": "View LinkedIn profile"
+    }
+  },
+  "common": {
+    "logoAlt": "Brand logo",
+    "logoHoverAlt": "Brand logo hover effect",
+    "social": {
+      "github": "GitHub profile of Jens Baumann",
+      "linkedin": "LinkedIn profile of Jens Baumann",
+      "email": "Send email to Jens Baumann"
+    }
   },
   "projects": {
     "subline": "MY CRAFT",
@@ -106,6 +120,8 @@
     "description": "Encourage people to take a look and interact with your projects. Highlight your approach to creating responsive, user-friendly projects with efficient code.",
     "featured": "Featured Project",
     "check": "Check all details",
+    "laptopAlt": "Laptop with Join project",
+    "stickerAlt": "Featured project sticker",
     "join": {
       "description": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories."
     },

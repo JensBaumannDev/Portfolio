@@ -1,11 +1,12 @@
 import { Component, signal, OnInit, OnDestroy, NgZone, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-about-me',
   standalone: true,
-  imports: [TranslatePipe, RouterLink],
+  imports: [TranslatePipe, RouterLink, NgOptimizedImage],
   templateUrl: './about-me.html',
   styleUrl: './about-me.scss',
 })
