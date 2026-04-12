@@ -22,10 +22,10 @@ $skill-icon-size: 72px;
   inset: 0;
   z-index: -1;
   pointer-events: none;
-
   img {
     object-fit: cover;
     object-position: bottom;
+    transform: scale(1.05);
   }
 }
 
@@ -273,15 +273,27 @@ $skill-icon-size: 72px;
 /* #region ANIMATIONS */
 
 @keyframes peel-a {
-  0% { clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 100% 100%, 0% 100%); }
-  50% { clip-path: polygon(0% 0%, 0% 0%, 100% 100%, 100% 100%, 0% 100%); }
-  100% { clip-path: polygon(0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%); }
+  0% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  50% {
+    clip-path: polygon(0% 0%, 0% 0%, 100% 100%, 100% 100%, 0% 100%);
+  }
+  100% {
+    clip-path: polygon(0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%);
+  }
 }
 
 @keyframes peel-back {
-  0% { clip-path: polygon(0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%); }
-  50% { clip-path: polygon(0% 0%, 0% 0%, 100% 100%, 100% 100%, 0% 100%); }
-  100% { clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 100% 100%, 0% 100%); }
+  0% {
+    clip-path: polygon(0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%);
+  }
+  50% {
+    clip-path: polygon(0% 0%, 0% 0%, 100% 100%, 100% 100%, 0% 100%);
+  }
+  100% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
 }
 
 .peel-a {
@@ -395,4 +407,3 @@ $skill-icon-size: 72px;
 }
 
 /* #endregion */
-
