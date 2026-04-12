@@ -99,5 +99,21 @@
     "testimonial2": "Collaborating with Jens was a fantastic experience. He has a unique talent for solving complex problems with elegant code.",
     "testimonial3": "Highly recommended! Jens is a reliable professional who brings both creativity and technical precision to the team.",
     "profile": "Profile"
+  },
+  "projects": {
+    "subline": "MY CRAFT",
+    "headline": "Projects",
+    "description": "Encourage people to take a look and interact with your projects. Highlight your approach to creating responsive, user-friendly projects with efficient code.",
+    "featured": "Featured Project",
+    "check": "Check all details",
+    "join": {
+      "description": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories."
+    },
+    "pollo": {
+      "description": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen."
+    },
+    "pokedex": {
+      "description": "A simple library based on the PokeAPI to find and view your favorite Pokemon with all their stats."
+    }
   }
 }
