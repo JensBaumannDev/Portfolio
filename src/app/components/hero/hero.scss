@@ -192,9 +192,6 @@
   gap: 6px;
   padding-left: 16px;
   padding-right: 16px;
-  @media (min-width: 768px) {
-    padding-left: max(75px, calc((100% - 1440px) / 2));
-  }
   padding-bottom: 48px;
   box-sizing: border-box;
   color: $primary-bg-color;
@@ -226,6 +223,12 @@
 /* #endregion */
 
 /* #region RESPONSIVE */
+
+@media (min-width: 768px) {
+  .social-media {
+    padding-left: max(75px, calc((100% - 1440px) / 2));
+  }
+}
 
 // special sizes for centered contend
 @media (max-width: 1379px) {

@@ -1,4 +1,4 @@
-import { Component, signal, OnInit, OnDestroy, NgZone } from '@angular/core';
+import { Component, signal, OnInit, OnDestroy, NgZone, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 
@@ -10,13 +10,12 @@ import { TranslatePipe } from '@ngx-translate/core';
   styleUrl: './about-me.scss',
 })
 export class AboutMe implements OnInit, OnDestroy {
+  private readonly ngZone = inject(NgZone);
   isMobile = signal(false);
 
   private mobileQuery!: MediaQueryList;
   private listener = (e: MediaQueryListEvent) =>
     this.ngZone.run(() => this.isMobile.set(e.matches));
-
-  constructor(private ngZone: NgZone) {}
 
   ngOnInit() {
     this.mobileQuery = window.matchMedia('(max-width: 768px)');
@@ -26,9 +25,5 @@ export class AboutMe implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.mobileQuery.removeEventListener('change', this.listener);
-  }
-
-  isMobileView() {
-    return this.isMobile();
   }
 }

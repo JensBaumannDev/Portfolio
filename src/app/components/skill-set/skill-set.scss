@@ -1,5 +1,11 @@
+@use 'sass:math';
 @use '../../../../src/styles/abstracts/' as *;
 @use '../../../../src/styles/components/' as *;
+
+$skills-padding-desktop: 170px 120px 400px;
+$skills-padding-tablet: 80px 24px 200px;
+$skills-padding-mobile: 60px 12px 150px;
+$skill-icon-size: 72px;
 
 /* #region LAYOUT */
 
@@ -15,8 +21,7 @@
 .skills-content {
   @include maxWidth();
   @include flex($flex-direction: column);
-
-  padding: 170px 120px 400px;
+  padding: $skills-padding-desktop;
 }
 
 /* #endregion */
@@ -98,7 +103,7 @@
 
 .skill-icons {
   display: grid;
-  grid-template-columns: repeat(5, 72px) 200px;
+  grid-template-columns: repeat(5, $skill-icon-size) 200px;
   grid-column-gap: 80px;
   grid-row-gap: 50px;
   align-items: end;
@@ -118,8 +123,8 @@
     height: 100%;
 
     & > img {
-      width: 72px;
-      height: 72px;
+      width: $skill-icon-size;
+      height: $skill-icon-size;
       filter: grayscale(1);
       transition:
         filter 0.1s ease,
@@ -138,11 +143,6 @@
       color: $primary-bg-color;
     }
   }
-}
-
-.bottom-content {
-  @include flex($flex-direction: row, $align-items: flex-end, $justify-content: flex-end);
-  gap: 50px;
 }
 
 .pull-picture {
@@ -197,8 +197,7 @@
       width: 100%;
       height: 100%;
       text-align: center;
-      left: 0px;
-      top: 0px;
+      inset: 0;
       pointer-events: none;
       padding-top: 25%;
       line-height: 1.1;
@@ -213,8 +212,7 @@
   &__c-content {
     @include flex($align-items: center, $justify-content: center, $flex-direction: column);
     position: absolute;
-    left: 0;
-    top: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     text-align: center;
@@ -259,33 +257,20 @@
   }
 }
 
-
 /* #endregion */
 
 /* #region ANIMATIONS */
 
 @keyframes peel-a {
-  0% {
-    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 100% 100%, 0% 100%);
-  }
-  50% {
-    clip-path: polygon(0% 0%, 0% 0%, 100% 100%, 100% 100%, 0% 100%);
-  }
-  100% {
-    clip-path: polygon(0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%);
-  }
+  0% { clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 100% 100%, 0% 100%); }
+  50% { clip-path: polygon(0% 0%, 0% 0%, 100% 100%, 100% 100%, 0% 100%); }
+  100% { clip-path: polygon(0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%); }
 }
 
 @keyframes peel-back {
-  0% {
-    clip-path: polygon(0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%);
-  }
-  50% {
-    clip-path: polygon(0% 0%, 0% 0%, 100% 100%, 100% 100%, 0% 100%);
-  }
-  100% {
-    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 100% 100%, 0% 100%);
-  }
+  0% { clip-path: polygon(0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%); }
+  50% { clip-path: polygon(0% 0%, 0% 0%, 100% 100%, 100% 100%, 0% 100%); }
+  100% { clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 100% 100%, 0% 100%); }
 }
 
 .peel-a {
@@ -303,7 +288,7 @@
 
 @media (max-width: 1180px) {
   .skills-content {
-    padding: 80px 24px 200px;
+    padding: $skills-padding-tablet;
     align-items: center;
   }
 
@@ -313,15 +298,9 @@
 }
 
 @media (max-width: 1024px) {
-  .skills-content {
-    padding: 80px 24px 200px;
-    align-items: center;
-  }
-
   .top-content {
     flex-direction: column;
     gap: 24px;
-    width: 100%;
     align-items: center;
 
     &__headline {
@@ -338,15 +317,7 @@
     }
   }
 
-  .pull-picture {
-    position: relative;
-    transform: none;
-    rotate: 8deg;
-  }
-
   .bottom-content {
-    flex-direction: row;
-    align-items: flex-end;
     justify-content: center;
     gap: 70px;
   }
@@ -364,11 +335,7 @@
     .pull-picture {
       grid-column: 2 / 4;
       grid-row: 4;
-      rotate: 8deg;
       width: clamp(140px, 20vw, 200px);
-      height: auto;
-      transform: none;
-      position: relative;
     }
   }
 }
@@ -387,7 +354,7 @@
 
 @media (max-width: 370px) {
   .skills-content {
-    padding: 60px 12px 150px;
+    padding: $skills-padding-mobile;
   }
 
   .top-content {
@@ -398,12 +365,6 @@
     gap: 16px;
     margin-top: 24px;
     flex-direction: column;
-  }
-
-  .pull-picture {
-    position: relative;
-    transform: translateY(0);
-    margin: 40px auto 0;
   }
 
   .skill-icons {
@@ -423,3 +384,4 @@
 }
 
 /* #endregion */
+

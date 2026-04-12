@@ -99,4 +99,13 @@
     }
   }
 }
+@media (max-width: 334px) {
+  .legal-hero {
+    &__headline {
+      h2 {
+        font-size: 30px;
+      }
+    }
+  }
+}
 /* #endregion */

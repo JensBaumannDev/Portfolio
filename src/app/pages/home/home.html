@@ -1,8 +1,23 @@
 <div class="fade-in-page">
     <app-hero></app-hero>
-    <app-about-me></app-about-me>
-    <app-skill-set></app-skill-set>
-    <app-projects></app-projects>
-    <app-colleagues-thoughts></app-colleagues-thoughts>
-    <app-contact-me></app-contact-me>
+    
+    @defer (on viewport) {
+        <app-about-me></app-about-me>
+    } @placeholder { <div></div> }
+    
+    @defer (on viewport) {
+        <app-skill-set></app-skill-set>
+    } @placeholder { <div></div> }
+    
+    @defer (on viewport) {
+        <app-projects></app-projects>
+    } @placeholder { <div></div> }
+    
+    @defer (on viewport) {
+        <app-colleagues-thoughts></app-colleagues-thoughts>
+    } @placeholder { <div></div> }
+    
+    @defer (on viewport) {
+        <app-contact-me></app-contact-me>
+    } @placeholder { <div></div> }
 </div>

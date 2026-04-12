@@ -75,8 +75,8 @@ export class Navigation {
   );
 
   constructor() {
-    const initialLang = this.translate.getCurrentLang() || 'de';
-    const normalizedLang = initialLang.toUpperCase() === 'EN' ? 'EN' : 'DE';
+    const initialLang = (this.translate.getBrowserLang() || 'de').toUpperCase();
+    const normalizedLang = initialLang === 'EN' ? 'EN' : 'DE';
     this.activeLanguageCode.set(normalizedLang);
     this.translate.use(normalizedLang.toLowerCase());
   }
@@ -86,10 +86,6 @@ export class Navigation {
     if (this.isMenuOpen()) {
       this.closeMenu();
     }
-  }
-
-  get activeLangCode(): string {
-    return this.activeLanguageCode();
   }
 
   toggleMenu(): void {

@@ -2,7 +2,7 @@
   <ng-template #languageSwitcherTemplate>
     <span
       class="language__item"
-      [class.language__item--active]="activeLangCode === 'EN'"
+      [class.language__item--active]="activeLanguageCode() === 'EN'"
       (click)="setLanguage('EN')"
     >
       <span class="language__label">EN</span>
@@ -14,8 +14,8 @@
     </span>
     <div
       class="toggle"
-      [class.toggle--en]="activeLangCode === 'EN'"
-      [class.toggle--de]="activeLangCode === 'DE'"
+      [class.toggle--en]="activeLanguageCode() === 'EN'"
+      [class.toggle--de]="activeLanguageCode() === 'DE'"
       (click)="toggleLanguage()"
     >
       <div class="toggle__line"></div>
@@ -23,7 +23,7 @@
     </div>
     <span
       class="language__item"
-      [class.language__item--active]="activeLangCode === 'DE'"
+      [class.language__item--active]="activeLanguageCode() === 'DE'"
       (click)="setLanguage('DE')"
     >
       <span class="language__label">DE</span>

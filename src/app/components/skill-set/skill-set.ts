@@ -1,4 +1,4 @@
-import { Component, signal, OnInit, OnDestroy, NgZone } from '@angular/core';
+import { Component, signal, OnInit, OnDestroy, NgZone, inject } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 
 
@@ -28,13 +28,12 @@ export class SkillSet implements OnInit, OnDestroy {
     { name: 'Django', icon: 'icons/skills/django.svg' },
   ];
 
+  private readonly ngZone = inject(NgZone);
   isMobile = signal(false);
   peeled = signal<false | 'out' | 'in'>(false);
   private mobileQuery!: MediaQueryList;
   private listener = (e: MediaQueryListEvent) =>
     this.ngZone.run(() => this.isMobile.set(e.matches));
-
-  constructor(private ngZone: NgZone) {}
 
   ngOnInit() {
     this.mobileQuery = window.matchMedia('(max-width: 1024px)');
@@ -53,9 +52,5 @@ export class SkillSet implements OnInit, OnDestroy {
       this.peeled.set('in');
       setTimeout(() => this.ngZone.run(() => this.peeled.set(false)), 400);
     }
-  }
-
-  isMobileView() {
-    return this.isMobile();
   }
 }

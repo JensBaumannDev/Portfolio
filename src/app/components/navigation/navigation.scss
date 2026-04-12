@@ -1,17 +1,18 @@
 @use '../../../styles/abstracts/' as *;
 
+$nav-height: 80px;
+$nav-logo-size: 50px;
+$nav-logo-size-mobile: 48px;
+$nav-transition: 0.3s ease-in-out;
+$nav-burger-transition: 220ms ease;
+
 /* #region DESKTOP NAV */
 
 .navigation {
   position: relative;
   width: 100%;
-  height: 80px;
-  padding-left: 16px;
-  padding-right: 16px;
-  @media (min-width: 768px) {
-    padding-left: max(75px, calc((100% - 1440px) / 2));
-    padding-right: max(75px, calc((100% - 1440px) / 2));
-  }
+  height: $nav-height;
+  padding-inline: 16px;
   box-sizing: border-box;
   @include flex($justify-content: space-between, $align-items: center);
 
@@ -23,34 +24,32 @@
 
     .logo-container {
       position: relative;
-      width: 50px;
-      height: 50px;
+      width: $nav-logo-size;
+      height: $nav-logo-size;
 
       a {
         display: block;
-        width: 100%;
-        height: 100%;
+        inset: 0;
+        position: absolute;
         text-decoration: none;
       }
 
       img {
-        width: 50px;
+        width: $nav-logo-size;
         height: auto;
         position: absolute;
-        top: 0;
-        left: 0;
+        inset: 0;
         cursor: pointer;
+        transition: opacity $nav-transition;
       }
 
       .logo-hover {
         opacity: 0;
         pointer-events: none;
       }
-
       &:hover .logo-default {
         opacity: 0;
       }
-
       &:hover .logo-hover {
         opacity: 1;
       }
@@ -84,7 +83,6 @@
   &.nav-hover0:hover img {
     animation: revealFromTop 0.4s ease-out forwards;
   }
-
   &:not(.nav-hover0):hover img {
     animation: revealFromLeft 0.4s ease-out forwards;
   }
@@ -100,9 +98,8 @@
     cursor: pointer;
     font-size: 16px;
     color: $primary-bg-color;
-    transition: color 0.3s ease;
+    transition: color $nav-transition;
     @include flex($align-items: center);
-    overflow: visible;
 
     .language__hover-img {
       position: absolute;
@@ -116,24 +113,11 @@
       transition: clip-path 0.4s ease-out;
     }
 
-    &:not(.language__item--active):hover {
-      color: $primary-bg-color;
-
-      .language__hover-img {
-        clip-path: inset(0 0 0 0);
-      }
+    &:not(.language__item--active):hover .language__hover-img {
+      clip-path: inset(0 0 0 0);
     }
-
     &--active {
       color: $highlight1;
-
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 100%;
-      }
     }
   }
 }
@@ -147,11 +131,11 @@
 
   &__circle {
     background-color: $highlight2;
-    min-width: 17px;
-    min-height: 17px;
+    width: 17px;
+    height: 17px;
     top: 50%;
     left: 0;
-    border-radius: 15px;
+    border-radius: 50%;
     border: 1px solid white;
     position: absolute;
     transform: translateY(-50%) translateX(0);
@@ -173,7 +157,6 @@
   &.toggle--en .toggle__circle {
     transform: translateY(-50%) translateX(0);
   }
-
   &.toggle--de .toggle__circle {
     transform: translateY(-50%) translateX(25px);
   }
@@ -204,19 +187,18 @@
     border-radius: 999px;
     background-color: $primary-bg-color;
     transition:
-      transform 220ms ease,
-      opacity 220ms ease;
+      transform $nav-burger-transition,
+      opacity $nav-burger-transition;
   }
 
   &--open {
     .burger-button__line:nth-child(1) {
       transform: translateY(9px) rotate(45deg);
     }
-
     .burger-button__line:nth-child(2) {
       opacity: 0;
+      transform: scale(0);
     }
-
     .burger-button__line:nth-child(3) {
       transform: translateY(-9px) rotate(-45deg);
     }
@@ -239,7 +221,6 @@
   from {
     clip-path: inset(0 0 100% 0);
   }
-
   to {
     clip-path: inset(0 0 0 0);
   }
@@ -249,7 +230,6 @@
   from {
     clip-path: inset(0 100% 0 0);
   }
-
   to {
     clip-path: inset(0 0 0 0);
   }
@@ -260,7 +240,6 @@
     clip-path: inset(0 0 100% 0);
     opacity: 0;
   }
-
   to {
     clip-path: inset(0 0 0 0);
     opacity: 1;
@@ -269,39 +248,37 @@
 
 /* #endregion */
 
-/* #region RESPONSIVE (<= 768px) */
+/* #region RESPONSIVE */
+
+@media (min-width: 768px) {
+  .navigation {
+    padding-inline: max(75px, calc((100% - 1440px) / 2));
+  }
+}
 
 @media (max-width: $breakpoint-mobile) {
   .navigation {
-    position: relative;
-    height: 80px;
+    height: $nav-height;
     padding-top: 24px;
-    padding-left: 16px;
-    padding-right: 16px;
-    box-sizing: border-box;
+    padding-inline: 16px;
     z-index: 20;
 
     &--menu-open::after {
       content: '';
       position: absolute;
       top: 78px;
-      left: 0;
-      right: 0;
+      inset-inline: 0;
       border-bottom: 1px dotted rgba(248, 249, 250, 0.35);
       z-index: 22;
     }
 
     ul {
-      position: relative;
       z-index: 25;
-      align-items: center;
-
       .logo-container {
-        width: 48px;
-        height: 48px;
-
+        width: $nav-logo-size-mobile;
+        height: $nav-logo-size-mobile;
         img {
-          width: 48px;
+          width: 100%;
         }
       }
     }
@@ -321,7 +298,8 @@
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
+    width: 100%;
+    height: 85%;
     z-index: 21;
     @include flex(
       $flex-direction: column,
@@ -342,19 +320,20 @@
       visibility 0.3s;
 
     &--open {
+      display: flex;
       opacity: 1;
       visibility: visible;
       pointer-events: auto;
       clip-path: inset(0 0 0 0);
     }
 
-    &__content {
+    &__content,
+    &__links {
       @include flex($flex-direction: column, $align-items: center);
       width: 100%;
     }
 
     &__links {
-      @include flex($flex-direction: column, $align-items: center);
       gap: 42px;
     }
 

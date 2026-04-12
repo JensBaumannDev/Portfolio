@@ -1,5 +1,26 @@
 @use '../../../styles/abstracts' as *;
 
+$project-radius: 20px;
+$project-transition: 0.4s ease-in-out;
+$project-overlay-bg: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+
+@mixin project-overlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 60%;
+  background: $project-overlay-bg;
+  @include flex(row, wrap, flex-end, flex-end);
+  padding: 40px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 0 0 $project-radius $project-radius;
+  z-index: 1;
+
+  button {
+    color: white;
+  }
+}
+
 .projects-container {
   padding: clamp(60px, 8vw, 120px) 0 0;
   color: $secondary-bg-color;
@@ -32,7 +53,7 @@
     }
   }
 
-  .featured-section__right {
+  &__right {
     max-width: 560px;
   }
 
@@ -40,7 +61,7 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-    border-radius: 20px;
+    border-radius: $project-radius;
     cursor: pointer;
     padding-bottom: 50px;
 
@@ -55,26 +76,11 @@
       height: auto;
       object-fit: contain;
       display: block;
-      transition: transform 0.4s ease-in-out;
+      transition: transform $project-transition;
     }
 
     .img-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 60%;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
-      @include flex(row, wrap, flex-end, flex-end);
-      padding: 40px;
-      opacity: 0;
-      transition: opacity 0.3s ease-in-out;
-      border-radius: 0 0 20px 20px;
-      z-index: 1;
-
-      button {
-        color: white;
-      }
+      @include project-overlay;
     }
 
     &:hover {
@@ -117,14 +123,11 @@
 }
 
 @keyframes float {
-  0% {
+  0%, 100% {
     transform: translateY(20px);
   }
   50% {
     transform: translateY(45px);
-  }
-  100% {
-    transform: translateY(20px);
   }
 }
 
@@ -141,7 +144,7 @@
       width: 100%;
       aspect-ratio: 560 / 400;
       overflow: hidden;
-      border-radius: 20px;
+      border-radius: $project-radius;
       margin-bottom: 30px;
       cursor: pointer;
 
@@ -150,25 +153,12 @@
         height: 100%;
         object-fit: cover;
         display: block;
-        transition: transform 0.4s ease-in-out;
+        transition: transform $project-transition;
       }
 
       .img-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 60%;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
-        @include flex(row, wrap, flex-end, flex-end);
-        padding: 40px;
-        opacity: 0;
-        transition: opacity 0.3s ease-in-out;
-        border-radius: 0 0 20px 20px;
-
-        button {
-          color: white;
-        }
+        @include project-overlay;
+        inset: auto 0 0 0;
       }
 
       &:hover {
@@ -193,7 +183,7 @@
 /* #region Responsive */
 @media (min-width: 1024px) {
   .projects-content {
-    padding: 0 120px;
+    padding-inline: 120px;
   }
 }
 
@@ -203,14 +193,14 @@
   }
 
   .projects-content {
-    padding: 0 16px;
+    padding-inline: 16px;
   }
 
   .featured-section {
     grid-template-columns: 1fr;
     margin-bottom: 60px;
 
-    .featured-section__left {
+    &__left {
       max-width: 560px;
       margin: 0 auto 40px;
     }
@@ -225,13 +215,13 @@
       }
     }
 
-    .featured-section__right {
+    &__right {
       max-width: 560px;
-      margin: 0 auto;
+      margin-inline: auto;
     }
 
     .mockup-container {
-      margin: 0 auto;
+      margin-inline: auto;
     }
 
     .featured-info {
@@ -249,7 +239,7 @@
     gap: 60px;
 
     .project-card {
-      margin: 0 auto;
+      margin-inline: auto;
 
       &__img {
         margin-bottom: 24px;
@@ -270,3 +260,4 @@
   }
 }
 /* #endregion */
+
