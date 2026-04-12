@@ -176,6 +176,11 @@
     .info-content {
         &__headline {
             margin-bottom: 32px;
+
+            h2 {
+                font-size: 48px;
+            }
+
             img {
                 max-width: 200px;
             }

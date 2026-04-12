@@ -63,4 +63,9 @@ export class Navigation {
     this.activeLanguageCode.set(langCode);
     this.translate.use(langCode.toLowerCase());
   }
+
+  toggleLanguage(): void {
+    const nextLang = this.activeLanguageCode() === 'EN' ? 'DE' : 'EN';
+    this.setLanguage(nextLang);
+  }
 }

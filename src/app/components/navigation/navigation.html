@@ -16,9 +16,10 @@
       class="toggle"
       [class.toggle--en]="activeLangCode === 'EN'"
       [class.toggle--de]="activeLangCode === 'DE'"
+      (click)="toggleLanguage()"
     >
       <div class="toggle__line"></div>
-      <button type="button" class="toggle__circle" aria-hidden="true" tabindex="-1"></button>
+      <div class="toggle__circle" aria-hidden="true"></div>
     </div>
     <span
       class="language__item"
