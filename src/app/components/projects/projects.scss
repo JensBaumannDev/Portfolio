@@ -1,13 +1,13 @@
 @use '../../../styles/abstracts' as *;
 
 .projects-container {
-  padding-top: clamp(60px, 8vw, 120px);
-  padding-bottom: 0;
-  color: #000;
+  padding: clamp(60px, 8vw, 120px) 0 0;
+  color: $secondary-bg-color;
 }
 
 .projects-content {
   @include maxWidth;
+  padding: 0 80px;
 }
 
 .featured-section {
@@ -20,8 +20,7 @@
   .headline-wrapper {
     position: relative;
     display: inline-block;
-    margin-top: 16px;
-    margin-bottom: 70px;
+    margin: 16px 0 70px;
 
     .draw-line {
       position: absolute;
@@ -94,8 +93,8 @@
       position: absolute;
       top: 70%;
       left: 0;
-      width: 150px;
-      height: 150px;
+      width: clamp(100px, 32vw, 150px);
+      height: clamp(100px, 32vw, 150px);
       transform: translateY(-50%);
       z-index: 2;
     }
@@ -108,6 +107,9 @@
     }
     p {
       max-width: 100%;
+    }
+    .mobile-button-wrapper {
+      display: none;
     }
   }
 }
@@ -180,19 +182,89 @@
     h3 {
       margin-bottom: 16px;
     }
+    .mobile-button-wrapper {
+      display: none;
+    }
   }
 }
 
 /* #region Responsive */
-@media (max-width: $breakpoint-tablet) {
-  .featured-section {
-    grid-template-columns: 1fr;
+@media (min-width: 1024px) {
+  .projects-content {
+    padding: 0 120px;
   }
 }
 
 @media (max-width: $breakpoint-mobile) {
+  .projects-container {
+    padding-top: 40px;
+  }
+
+  .projects-content {
+    padding: 0 16px;
+  }
+
+  .featured-section {
+    grid-template-columns: 1fr;
+    margin-bottom: 60px;
+
+    .featured-section__left {
+      max-width: 560px;
+      margin: 0 auto 40px;
+    }
+
+    .headline-wrapper {
+      margin-bottom: 40px;
+      h2 {
+        font-size: 40px;
+      }
+      .draw-line {
+        width: 180px;
+      }
+    }
+
+    .featured-section__right {
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .mockup-container {
+      margin: 0 auto;
+    }
+
+    .featured-info {
+      margin-top: 24px;
+      .mobile-button-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 24px;
+      }
+    }
+  }
+
   .projects-grid {
     grid-template-columns: 1fr;
+    gap: 60px;
+
+    .project-card {
+      margin: 0 auto;
+
+      &__img {
+        margin-bottom: 24px;
+        .img-overlay {
+          display: none;
+        }
+        &:hover img {
+          transform: none;
+        }
+      }
+
+      .mobile-button-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 24px;
+      }
+    }
   }
 }
 /* #endregion */
