@@ -3,11 +3,22 @@
 /* #region General & Layout */
 .contact-container {
   @include flex($flex-direction: column);
-  background-image: url(../../../../public/img/01_Background/Design_Size_Relation/06_Contact.png);
-  background-position: top;
-  background-size: cover;
+  position: relative;
+  overflow: hidden;
   content-visibility: auto;
   contain-intrinsic-size: 900px;
+}
+
+.contact-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  img {
+    object-fit: cover;
+    object-position: top;
+  }
 }
 
 .contact-content {
