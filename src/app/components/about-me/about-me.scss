@@ -3,10 +3,15 @@
 /* #region LAYOUT */
 
 .about-container {
-    @include flex($flex-direction: row, $flex-wrap: nowrap, $align-items: center, $justify-content: center);
-    @include maxWidth();
-    padding: clamp(64px, 10vw, 144px) 0;
-    gap: clamp(32px, 5.5vw, 80px);
+  @include flex(
+    $flex-direction: row,
+    $flex-wrap: nowrap,
+    $align-items: center,
+    $justify-content: center
+  );
+  @include maxWidth();
+  padding: clamp(64px, 10vw, 144px) 0;
+  gap: clamp(32px, 5.5vw, 80px);
 }
 
 /* #endregion */
@@ -14,72 +19,72 @@
 /* #region CARDS */
 
 .card-content {
-    @include flex($flex-direction: column, $align-items: center);
+  @include flex($flex-direction: column, $align-items: center);
 
-    &__collor1,
-    &__collor2,
-    &__color3 {
-        position: relative;
-        width: clamp(260px, 38.9vw, 560px);
-        color: $primary-bg-color;
-        font-size: clamp(14px, 1.67vw, 24px);
+  &__collor1,
+  &__collor2,
+  &__color3 {
+    position: relative;
+    width: clamp(260px, 38.9vw, 560px);
+    color: $primary-bg-color;
+    font-size: clamp(14px, 1.67vw, 24px);
 
-        >img {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        .card-label {
-            @include flex($flex-wrap: nowrap, $align-items: center);
-            gap: 8px;
-            position: absolute;
-            bottom: 50%;
-            left: 50%;
-            transform: translateX(-50%);
-            white-space: nowrap;
-
-            img {
-                width: clamp(14px, 2vw, 36px);
-                height: auto;
-            }
-
-            p {
-                margin: 0;
-            }
-        }
+    > img {
+      display: block;
+      width: 100%;
+      height: auto;
     }
 
-    &__collor1 {
-        transform: rotate(-4deg);
-        z-index: 3;
+    .card-label {
+      @include flex($flex-wrap: nowrap, $align-items: center);
+      gap: 8px;
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
 
-        .card-label {
-            bottom: 45%;
-            transform: translateX(-50%) rotate(-1deg);
-        }
+      img {
+        width: clamp(14px, 2vw, 36px);
+        height: auto;
+      }
+
+      p {
+        margin: 0;
+      }
     }
+  }
 
-    &__collor2 {
-        transform: rotate(0deg);
-        margin-top: -7%;
-        z-index: 2;
+  &__collor1 {
+    transform: rotate(-4deg);
+    z-index: 3;
 
-        .card-label {
-            bottom: 40%;
-        }
+    .card-label {
+      bottom: 45%;
+      transform: translateX(-50%) rotate(-1deg);
     }
+  }
 
-    &__color3 {
-        transform: rotate(4deg);
-        margin-top: -7%;
-        z-index: 1;
+  &__collor2 {
+    transform: rotate(0deg);
+    margin-top: -7%;
+    z-index: 2;
 
-        .card-label {
-            bottom: 40%;
-            transform: translateX(-50%) rotate(3deg);
-        }
+    .card-label {
+      bottom: 40%;
     }
+  }
+
+  &__color3 {
+    transform: rotate(4deg);
+    margin-top: -7%;
+    z-index: 1;
+
+    .card-label {
+      bottom: 40%;
+      transform: translateX(-50%) rotate(3deg);
+    }
+  }
 }
 
 /* #endregion */
@@ -87,28 +92,28 @@
 /* #region INFO CONTENT */
 
 .info-content {
-    width: clamp(260px, 38.9vw, 560px);
+  width: clamp(260px, 38.9vw, 560px);
 
-    &__head {
-        margin-bottom: 16px;
+  &__head {
+    margin-bottom: 16px;
+  }
+
+  &__headline {
+    text-align: left;
+    margin-bottom: 48px;
+
+    img {
+      max-width: 100%;
+      width: 300px;
+      height: auto;
     }
+  }
 
-    &__headline {
-        text-align: left;
-        margin-bottom: 48px;
-
-        img {
-            max-width: 100%;
-            width: 300px;
-            height: auto;
-        }
-    }
-
-    div:last-child {
-        display: flex;
-        justify-content: flex-end;
-        margin-top: 48px;
-    }
+  div:last-child {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 48px;
+  }
 }
 
 /* #endregion */
@@ -116,79 +121,102 @@
 /* #region RESPONSIVE (768px)*/
 
 @media (max-width: $breakpoint-mobile) {
-    .about-container {
-        flex-direction: column;
-        padding: 64px 24px;
-        gap: 44px;
+  .about-container {
+    flex-direction: column;
+    padding: 64px 24px;
+    gap: 44px;
+  }
+
+  .card-content {
+    order: 2;
+    width: 100%;
+    margin-top: 44px;
+
+    img {
+      width: 100%;
     }
 
-    .card-content {
-        order: 2;
+    &__collor1,
+    &__collor2,
+    &__color3 {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    &__collor1 {
+      .card-label {
+        bottom: 52%;
+      }
+    }
+
+    &__collor2 {
+      margin-top: -40px;
+      .card-label {
+        bottom: 45%;
+      }
+    }
+
+
+    &__color3 {
+      margin-top: -40px;
+      .card-label {
+        bottom: 50%;
+      }
+    }
+  }
+
+
+  .info-content {
+    order: 1;
+    width: 100%;
+
+    &__headline {
+      img {
+        max-width: 240px;
         width: 100%;
-        margin-top: 44px;
-
-        img {
-            width: 100%;
-        }
-
-        &__collor1,
-        &__collor2,
-        &__color3 {
-           width: 100%;
-           max-width: 400px;
-        }
-
-        &__collor2 {
-            margin-top: -40px;
-        }
-
-        &__color3 {
-            margin-top: -40px;
-        }
+      }
     }
+  }
+}
 
-    .info-content {
-        order: 1;
-        width: 100%;
-
-        &__headline {
-            img {
-                max-width: 240px;
-                width: 100%;
-            }
-        }
+@media (max-width: 420px) {
+  .card-content {
+    &__collor2,
+    &__color3 {
+      margin-top: -20px;
     }
+  }
 }
 
 @media (max-width: 360px) {
-    .about-container {
-        padding: 48px 20px;
+  .about-container {
+    padding: 48px 20px;
+  }
+
+  .card-content {
+    &__collor1,
+    &__collor2,
+    &__color3 {
+      font-size: 13px;
     }
+  }
 
-    .card-content {
-        &__collor1,
-        &__collor2,
-        &__color3 {
-            font-size: 13px;
-        }
+  .info-content {
+    &__headline {
+      margin-bottom: 32px;
+
+      h2 {
+        font-size: 48px;
+      }
+
+      img {
+        max-width: 200px;
+      }
     }
-
-    .info-content {
-        &__headline {
-            margin-bottom: 32px;
-
-            h2 {
-                font-size: 48px;
-            }
-
-            img {
-                max-width: 200px;
-            }
-        }
-        div:last-child {
-            margin-top: 32px;
-        }
+    div:last-child {
+      margin-top: 32px;
     }
+  }
 }
 
 /* #endregion */

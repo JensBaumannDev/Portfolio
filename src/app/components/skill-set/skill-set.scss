@@ -150,26 +150,27 @@
   display: grid;
   grid-template-areas: 'stack';
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: clamp(140px, 15vw, 200px);
+  aspect-ratio: 1 / 1;
+  height: auto;
   padding-bottom: 0;
 
   &__b-arrow {
     position: absolute;
     left: 50%;
-    top: 30px;
+    top: 15%;
     transform: translateX(-50%);
-    width: 60px;
+    width: 30%;
     height: auto;
-    z-index: 3;
+    z-index: 4;
     pointer-events: none;
   }
 
   &__a,
   &__c {
     grid-area: stack;
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
     border: none;
     cursor: pointer;
     background-repeat: no-repeat;
@@ -190,7 +191,7 @@
       position: absolute;
       font-family: 'Kalam-Regular', 'Kalam', cursive;
       font-weight: 400;
-      font-size: 40px;
+      font-size: clamp(24px, 3vw, 40px);
       color: $primary-bg-color;
       margin: 0;
       width: 100%;
@@ -199,7 +200,7 @@
       left: 0px;
       top: 0px;
       pointer-events: none;
-      padding-top: 60px;
+      padding-top: 25%;
       line-height: 1.1;
     }
   }
@@ -210,7 +211,7 @@
   }
 
   &__c-content {
-    @include flex($align-items: center, $justify-content: flex-start, $flex-direction: column);
+    @include flex($align-items: center, $justify-content: center, $flex-direction: column);
     position: absolute;
     left: 0;
     top: 0;
@@ -222,9 +223,11 @@
     opacity: 0;
     transition: opacity 0.4s ease;
     line-height: 1.1;
+    box-sizing: border-box;
+    padding: 10%;
 
     & > p {
-      margin-top: 40px;
+      font-size: clamp(10px, 1.2vw, 16px);
       margin-bottom: 8px;
     }
 
@@ -235,25 +238,27 @@
 
   &__c-icons {
     @include flex($align-items: center, $justify-content: center);
-    gap: 16px;
+    gap: 8%;
+    width: 100%;
   }
 
   &__c-icon {
     @include flex($align-items: center, $justify-content: center, $flex-direction: column);
-    gap: 5px;
+    gap: 4px;
 
     img {
-      width: 40px;
-      height: 40px;
+      width: clamp(20px, 3vw, 40px);
+      height: auto;
       object-fit: contain;
     }
 
     span {
-      font-size: 14px;
+      font-size: clamp(8px, 1vw, 14px);
       color: white;
     }
   }
 }
+
 
 /* #endregion */
 

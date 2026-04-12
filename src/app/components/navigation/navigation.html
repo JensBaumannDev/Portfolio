@@ -70,41 +70,43 @@
     </li>
   </ul>
 
-  @if (isMenuOpen()) {
-    <div id="mobile-navigation-panel" class="mobile-menu">
-      <div class="mobile-menu__content">
-        <div class="mobile-menu__links">
-          @for (link of currentNavLinks(); track link.label) {
-            <a
-              [routerLink]="['/']"
-              [fragment]="link.fragment"
-              class="mobile-menu__link"
-              (click)="closeMenu()"
-              >{{ link.label }}</a
-            >
-          }
-        </div>
-
-        <div class="mobile-menu__language language language--mobile">
-          <ng-container [ngTemplateOutlet]="languageSwitcherTemplate"></ng-container>
-        </div>
-      </div>
-
-      <div class="mobile-menu__socials">
-        @for (social of socialLinks; track social.label) {
+  <div
+    id="mobile-navigation-panel"
+    class="mobile-menu"
+    [class.mobile-menu--open]="isMenuOpen()"
+  >
+    <div class="mobile-menu__content">
+      <div class="mobile-menu__links">
+        @for (link of currentNavLinks(); track link.label) {
           <a
-            [href]="social.href"
-            class="mobile-menu__social-link"
-            [attr.target]="social.isExternal ? '_blank' : null"
-            [attr.rel]="social.isExternal ? 'noreferrer' : null"
-            [attr.aria-label]="social.label"
+            [routerLink]="['/']"
+            [fragment]="link.fragment"
+            class="mobile-menu__link"
+            (click)="closeMenu()"
+            >{{ link.label }}</a
           >
-            <svg [attr.viewBox]="social.viewBox ?? '0 0 24 24'" aria-hidden="true">
-              <path [attr.d]="social.path" />
-            </svg>
-          </a>
         }
       </div>
+
+      <div class="mobile-menu__language language language--mobile">
+        <ng-container [ngTemplateOutlet]="languageSwitcherTemplate"></ng-container>
+      </div>
     </div>
-  }
+
+    <div class="mobile-menu__socials">
+      @for (social of socialLinks; track social.label) {
+        <a
+          [href]="social.href"
+          class="mobile-menu__social-link"
+          [attr.target]="social.isExternal ? '_blank' : null"
+          [attr.rel]="social.isExternal ? 'noreferrer' : null"
+          [attr.aria-label]="social.label"
+        >
+          <svg [attr.viewBox]="social.viewBox ?? '0 0 24 24'" aria-hidden="true">
+            <path [attr.d]="social.path" />
+          </svg>
+        </a>
+      }
+    </div>
+  </div>
 </nav>

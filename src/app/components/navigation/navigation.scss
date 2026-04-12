@@ -332,7 +332,21 @@
     padding: 140px 28px 100px;
     background: url('../../../../public/img/01_Background/Design_Size_Relation/01_Hero.png') top
       center / cover no-repeat;
-    animation: slideDown 0.2s ease-out forwards;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    clip-path: inset(0 0 100% 0);
+    transition:
+      opacity 0.3s ease-in-out,
+      clip-path 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 0.3s;
+
+    &--open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      clip-path: inset(0 0 0 0);
+    }
 
     &__content {
       @include flex($flex-direction: column, $align-items: center);
