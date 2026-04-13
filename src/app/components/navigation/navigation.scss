@@ -1,8 +1,8 @@
 @use '../../../styles/abstracts/' as *;
 
 $nav-height: 80px;
-$nav-logo-size: 50px;
-$nav-logo-size-mobile: 48px;
+$nav-logo-size: 80px;
+$nav-logo-size-mobile: 80px;
 $nav-transition: 0.3s ease-in-out;
 $nav-burger-transition: 220ms ease;
 
@@ -21,53 +21,57 @@ $nav-burger-transition: 220ms ease;
     list-style: none;
     width: 100%;
     padding: 0;
+    flex-wrap: nowrap;
+    gap: 10px;
 
     .logo-container {
       position: relative;
       width: $nav-logo-size;
-      height: $nav-logo-size;
+      height: $nav-height;
 
       a {
         display: block;
-        inset: 0;
         position: absolute;
-        text-decoration: none;
-      }
-
-      img {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         width: $nav-logo-size;
-        height: auto;
-        position: absolute;
-        inset: 0;
-        cursor: pointer;
-        transition: opacity $nav-transition;
+        height: $nav-logo-size;
+        text-decoration: none;
+        z-index: 2;
       }
 
-      .logo-hover {
-        opacity: 0;
-        pointer-events: none;
-      }
-      &:hover .logo-default {
-        opacity: 0;
-      }
-      &:hover .logo-hover {
-        opacity: 1;
+      .logo {
+        --logo-base-transform: translate(-50%, -50%);
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
       }
     }
   }
 }
+
 
 .nav-item {
   position: relative;
 
   a {
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 10px 15px;
     display: inline-block;
     font-weight: 700;
     font-size: 18px;
     color: $primary-bg-color;
     cursor: pointer;
+    white-space: nowrap;
+
+    @media (max-width: 1024px) {
+      padding-inline: 10px;
+    }
   }
 
   img {
@@ -254,21 +258,27 @@ $nav-burger-transition: 220ms ease;
 
 @media (min-width: 768px) {
   .navigation {
-    padding-inline: max(75px, calc((100% - 1440px) / 2));
+    padding-inline: max(24px, calc((100% - 1440px) / 2));
+
+    @media (min-width: 1200px) {
+      padding-inline: max(75px, calc((100% - 1440px) / 2));
+    }
   }
 }
 
 @media (max-width: $breakpoint-mobile) {
   .navigation {
-    height: $nav-height;
-    padding-top: 24px;
+    height: auto;
+    padding-block: 12px;
+    min-height: 80px;
     padding-inline: 16px;
     z-index: 20;
 
     &--menu-open::after {
       content: '';
       position: absolute;
-      top: 78px;
+      bottom: 0;
+      top: auto;
       inset-inline: 0;
       border-bottom: 1px dotted rgba(248, 249, 250, 0.35);
       z-index: 22;
@@ -279,8 +289,25 @@ $nav-burger-transition: 220ms ease;
       .logo-container {
         width: $nav-logo-size-mobile;
         height: $nav-logo-size-mobile;
-        img {
+        @include flex($align-items: center, $justify-content: center);
+
+        a {
+          position: relative;
+          transform: none;
+          top: auto;
+          left: auto;
           width: 100%;
+          height: 100%;
+        }
+
+        img,
+        .logo {
+          width: 100%;
+          height: auto;
+          position: relative;
+          top: auto;
+          left: auto;
+          --logo-base-transform: none;
         }
       }
     }
@@ -310,8 +337,8 @@ $nav-burger-transition: 220ms ease;
       $flex-wrap: nowrap
     );
     padding: 140px 28px 100px;
-    background: url('../../../../public/img/01_Background/Design_Size_Relation/webp/01_Hero.webp') top
-      center / cover no-repeat;
+    background: url('../../../../public/img/01_Background/Design_Size_Relation/webp/01_Hero.webp')
+      top center / cover no-repeat;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;

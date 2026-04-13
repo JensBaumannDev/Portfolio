@@ -8,7 +8,8 @@
       <span class="language__label">EN</span>
       <img
         ngSrc="img/00_Hand-drawn-lines/00_Header/Color_option_3/Toggle.png"
-        width="35" height="35"
+        width="35"
+        height="35"
         alt=""
         aria-hidden="true"
         class="language__hover-img"
@@ -31,7 +32,8 @@
       <span class="language__label">DE</span>
       <img
         ngSrc="img/00_Hand-drawn-lines/00_Header/Color_option_3/Toggle.png"
-        width="35" height="35"
+        width="35"
+        height="35"
         alt=""
         aria-hidden="true"
         class="language__hover-img"
@@ -42,8 +44,13 @@
   <ul>
     <li class="logo-container">
       <a routerLink="/" (click)="closeMenu()">
-        <img ngSrc="img/04_Logo/logo2.png" width="45" height="45" priority [attr.alt]="'common.logoAlt' | translate" class="logo-default" />
-        <img ngSrc="img/04_Logo/logo1.png" width="45" height="45" priority [attr.alt]="'common.logoHoverAlt' | translate" class="logo-hover" />
+        <img
+          src="img/04_Logo/jb-logo.png"
+          width="54"
+          height="80"
+          alt="Jens Baumann Logo"
+          class="logo premium-logo"
+        />
       </a>
     </li>
     @for (link of currentNavLinks(); track link.label; let i = $index) {
@@ -74,11 +81,7 @@
     </li>
   </ul>
 
-  <div
-    id="mobile-navigation-panel"
-    class="mobile-menu"
-    [class.mobile-menu--open]="isMenuOpen()"
-  >
+  <div id="mobile-navigation-panel" class="mobile-menu" [class.mobile-menu--open]="isMenuOpen()">
     <div class="mobile-menu__content">
       <div class="mobile-menu__links">
         @for (link of currentNavLinks(); track link.label) {

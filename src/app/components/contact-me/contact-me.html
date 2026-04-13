@@ -1,13 +1,19 @@
 <section id="contact" class="contact-container">
   <div class="contact-background">
-    <img ngSrc="img/01_Background/Design_Size_Relation/webp/06_Contact.webp" fill alt="" aria-hidden="true" />
+    <img
+      ngSrc="img/01_Background/Design_Size_Relation/webp/06_Contact.webp"
+      fill
+      alt=""
+      aria-hidden="true"
+    />
   </div>
   <div class="contact-content">
     <div class="contact-headline">
       <img
         class="mobile-sticker"
         ngSrc="img/03_Stickers/00_Round/08_Color_option_3-C2.png"
-        width="100" height="100"
+        width="100"
+        height="100"
         [attr.alt]="'contact.form.stickerAlt' | translate"
       />
       <p class="headline-intro-text">{{ 'contact.subline' | translate }}</p>
@@ -15,14 +21,21 @@
       <p>{{ 'contact.texttop' | translate }}</p>
       <p>{{ 'contact.textbottom' | translate }}</p>
       <div class="desktop-arrow">
-        <img class="draw-line" ngSrc="img/00_Hand-drawn-lines/05_Contact/Color_option_3.png" width="500" height="81" alt="" />
+        <img
+          class="draw-line"
+          ngSrc="img/00_Hand-drawn-lines/05_Contact/Color_option_3.png"
+          width="500"
+          height="81"
+          alt=""
+        />
       </div>
     </div>
     <div class="contact-form">
       <img
         class="desktop-sticker"
         ngSrc="img/03_Stickers/00_Round/08_Color_option_3-C2.png"
-        width="100" height="100"
+        width="100"
+        height="100"
         [attr.alt]="'contact.form.stickerAlt' | translate"
       />
       <form [formGroup]="userform" (ngSubmit)="formSubmit()">
@@ -121,7 +134,8 @@
             <img
               class="draw-line"
               ngSrc="img/00_Hand-drawn-lines/05_Contact/Color_option_3.png"
-              width="500" height="81"
+              width="500"
+              height="81"
               [attr.alt]="'contact.arrowAlt' | translate"
             />
           </div>

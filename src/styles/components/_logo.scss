@@ -1,0 +1,27 @@
+@use '../abstracts/' as *;
+
+.premium-logo {
+  --logo-base-transform: translate(0, 0);
+  cursor: pointer;
+  transform: var(--logo-base-transform);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  object-fit: contain;
+
+  &:hover {
+    transform: var(--logo-base-transform) scale(1.2) rotate(5deg);
+    animation: logoPulse 0.8s infinite alternate ease-in-out;
+  }
+
+  &:active {
+    transform: var(--logo-base-transform) scale(0.95);
+  }
+}
+
+@keyframes logoPulse {
+  from {
+    filter: drop-shadow(0 0 2px rgba($highlight3, 0.8));
+  }
+  to {
+    filter: drop-shadow(0 0 2px $highlight3) drop-shadow(0 0 3px rgba($highlight3, 0.8));
+  }
+}
