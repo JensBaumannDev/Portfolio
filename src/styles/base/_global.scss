@@ -7,26 +7,25 @@ body {
   min-height: 100dvh;
   font-size: rem(18);
   font-weight: 400;
-  overflow-x: hidden;
   cursor: default;
-  user-select: none;
 }
 
 * {
   cursor: inherit;
 }
 
-a, button, input, textarea, [contenteditable], .selectable {
+a,
+button,
+input,
+textarea,
+[contenteditable],
+.selectable {
   cursor: auto;
-  user-select: auto;
 }
 
-a, button {
+a,
+button {
   cursor: pointer;
-}
-
-html {
-  overflow-x: hidden;
 }
 
 /* #region ANIMATIONS */
