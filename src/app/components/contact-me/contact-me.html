@@ -42,51 +42,53 @@
         <div class="form-name field-container">
           <p
             class="form-headline"
-            [class.label-error]="userform.get('name')?.invalid && userform.get('name')?.touched"
+            [class.label-error]="userform.controls.name.invalid && userform.controls.name.touched"
           >
             {{ 'contact.form.nameLabel' | translate }}
           </p>
           <input
             id="name"
             type="text"
+            (focus)="markPrivacyAsTouched()"
             formControlName="name"
             [placeholder]="
-              userform.get('name')?.invalid &&
-              userform.get('name')?.touched &&
-              !userform.get('name')?.value
+              userform.controls.name.invalid &&
+              userform.controls.name.touched &&
+              !userform.controls.name.value
                 ? ('contact.form.nameErrorRequired' | translate)
                 : ('contact.form.namePlaceholder' | translate)
             "
-            [class.input-error]="userform.get('name')?.invalid && userform.get('name')?.touched"
+            [class.input-error]="userform.controls.name.invalid && userform.controls.name.touched"
           />
-          @if (userform.get('name')?.hasError('minlength') && userform.get('name')?.touched) {
+          @if (userform.controls.name.hasError('minlength') && userform.controls.name.touched) {
             <span class="error-message">{{ 'contact.form.nameErrorLength' | translate }}</span>
           }
         </div>
         <div class="form-email field-container">
           <p
             class="form-headline"
-            [class.label-error]="userform.get('email')?.invalid && userform.get('email')?.touched"
+            [class.label-error]="userform.controls.email.invalid && userform.controls.email.touched"
           >
             {{ 'contact.form.emailLabel' | translate }}
           </p>
           <input
             id="email"
             type="text"
+            (focus)="markPrivacyAsTouched()"
             formControlName="email"
             [placeholder]="
-              userform.get('email')?.invalid &&
-              userform.get('email')?.touched &&
-              !userform.get('email')?.value
+              userform.controls.email.invalid &&
+              userform.controls.email.touched &&
+              !userform.controls.email.value
                 ? ('contact.form.emailErrorRequired' | translate)
                 : ('contact.form.emailPlaceholder' | translate)
             "
-            [class.input-error]="userform.get('email')?.invalid && userform.get('email')?.touched"
+            [class.input-error]="userform.controls.email.invalid && userform.controls.email.touched"
           />
           @if (
-            userform.get('email')?.hasError('email') &&
-            userform.get('email')?.touched &&
-            userform.get('email')?.value
+            userform.controls.email.hasError('email') &&
+            userform.controls.email.touched &&
+            userform.controls.email.value
           ) {
             <span class="error-message">{{ 'contact.form.emailErrorFormat' | translate }}</span>
           }
@@ -95,7 +97,7 @@
           <p
             class="form-headline"
             [class.label-error]="
-              userform.get('request')?.invalid && userform.get('request')?.touched
+              userform.controls.request.invalid && userform.controls.request.touched
             "
           >
             {{ 'contact.form.requestLabel' | translate }}
@@ -103,16 +105,17 @@
           <input
             id="request"
             type="text"
+            (focus)="markPrivacyAsTouched()"
             formControlName="request"
             [placeholder]="
-              userform.get('request')?.invalid &&
-              userform.get('request')?.touched &&
-              !userform.get('request')?.value
+              userform.controls.request.invalid &&
+              userform.controls.request.touched &&
+              !userform.controls.request.value
                 ? ('contact.form.requestErrorRequired' | translate)
                 : ('contact.form.requestPlaceholder' | translate)
             "
             [class.input-error]="
-              userform.get('request')?.invalid && userform.get('request')?.touched
+              userform.controls.request.invalid && userform.controls.request.touched
             "
           />
         </div>
@@ -125,7 +128,7 @@
               >{{ 'contact.form.privacyTextEnd' | translate }}</span
             >
           </label>
-          @if (userform.get('privacyPolicy')?.invalid && userform.get('privacyPolicy')?.touched) {
+          @if (userform.controls.privacyPolicy.invalid && userform.controls.privacyPolicy.touched) {
             <span class="privacy-error">{{ 'contact.form.privacyError' | translate }}</span>
           }
         </div>

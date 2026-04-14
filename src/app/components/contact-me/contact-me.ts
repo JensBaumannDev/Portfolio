@@ -1,9 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { Footer } from '../footer/footer';
 import { NgOptimizedImage } from '@angular/common';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { forbiddenNameValidator } from './validator';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-me',
@@ -13,26 +12,39 @@ import { forbiddenNameValidator } from './validator';
   styleUrl: './contact-me.scss',
 })
 export class ContactMe {
-  userform = new FormGroup({
-    name: new FormControl('', {
-      validators: [Validators.required, Validators.minLength(4)],
-    }),
-    email: new FormControl('', {
-      validators: [Validators.required, Validators.email],
-    }),
-    request: new FormControl('', {
-      validators: [Validators.required, Validators.minLength(5)],
-    }),
-    privacyPolicy: new FormControl(false, {
-      validators: [Validators.requiredTrue],
-    }),
+  private readonly fb = inject(FormBuilder);
+
+  protected readonly userform = this.fb.group({
+    name: ['', { validators: [Validators.required, Validators.minLength(4)], nonNullable: true }],
+    email: ['', { validators: [Validators.required, Validators.email], nonNullable: true }],
+    request: [
+      '',
+      { validators: [Validators.required, Validators.minLength(5)], nonNullable: true },
+    ],
+    privacyPolicy: [false, { validators: [Validators.requiredTrue], nonNullable: true }],
   });
 
+  protected readonly isSubmitted = signal(false);
+
   formSubmit() {
-    this.userform.value;
+    if (this.userform.valid) {
+      const formData = this.userform.getRawValue();
+      console.log('Sending message:', formData);
+
+      this.isSubmitted.set(true);
+
+      setTimeout(() => {
+        this.formReset();
+      }, 5000);
+    }
+  }
+
+  markPrivacyAsTouched() {
+    this.userform.controls.privacyPolicy.markAsTouched();
   }
 
   formReset() {
     this.userform.reset();
+    this.isSubmitted.set(false);
   }
 }

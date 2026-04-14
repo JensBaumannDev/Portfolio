@@ -165,7 +165,7 @@
       border-bottom-color: #555;
       color: $highlight3;
       &::placeholder {
-        color: $highlight3;
+        color: #ff4d4d;
       }
     }
   }
@@ -174,7 +174,7 @@
     position: absolute;
     bottom: 30px;
     right: 16px;
-    color: $highlight3;
+    color: $highlight2;
     font-size: clamp(10px, 3vw, 12px);
     pointer-events: none;
   }
@@ -229,6 +229,12 @@
           line-height: 1;
         }
       }
+    }
+
+    .privacy-error {
+      display: block;
+      color: $highlight3;
+      margin-top: 4px;
     }
   }
 
