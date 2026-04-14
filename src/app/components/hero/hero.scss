@@ -1,6 +1,5 @@
 @use '../../../styles/abstracts' as *;
 
-
 /* #region LAYOUT */
 
 .hero-container {
@@ -245,7 +244,6 @@
   }
 }
 
-// special sizes for centered contend
 @media (max-width: 1379px) {
   .hero-title {
     padding: 64px 190px 64px 190px;
@@ -258,7 +256,6 @@
   }
 }
 
-// Tablet (1024px)
 @media (max-width: $breakpoint-tablet) {
   .hero-title {
     padding: 0 200px 0 200px;
@@ -289,7 +286,6 @@
   }
 }
 
-// Mobile (768px)
 @media (max-width: $breakpoint-mobile) {
   .hero-container {
     height: auto;
@@ -360,7 +356,6 @@
   }
 }
 
-// Mobile S (480px)
 @media (max-width: 480px) {
   .title-wrapper {
     padding: 84px 16px 100px;

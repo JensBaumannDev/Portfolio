@@ -1,10 +1,13 @@
 @use '../../../../src/styles/abstracts/' as *;
 
+/* #region Variables */
 $footer-logo-size: 80px;
 $footer-icon-size: 24px;
 $footer-transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 $footer-social-padding: 10px 25px;
+/* #endregion */
 
+/* #region Layout */
 .footer-container {
   --footer-main-color: #{$primary-bg-color};
 
@@ -24,7 +27,11 @@ $footer-social-padding: 10px 25px;
     @include flex($justify-content: space-between, $align-items: flex-end);
     width: 100%;
   }
+}
+/* #endregion */
 
+/* #region Content Left */
+.footer-container {
   .footer-content-left {
     width: 25%;
 
@@ -90,7 +97,11 @@ $footer-social-padding: 10px 25px;
       }
     }
   }
+}
+/* #endregion */
 
+/* #region Content Social */
+.footer-container {
   .footer-link-social {
     @include flex($justify-content: space-between);
     flex: 1;
@@ -158,6 +169,7 @@ $footer-social-padding: 10px 25px;
     z-index: 1;
   }
 }
+/* #endregion */
 
 /* #region Responsive */
 @media (max-width: 1025px) {
@@ -217,4 +229,3 @@ $footer-social-padding: 10px 25px;
   100% { transform: rotate(360deg); }
 }
 /* #endregion */
-

@@ -5,16 +5,17 @@ import {
   inject,
   signal,
   HostListener,
+  output,
 } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { TranslateService, TranslatePipe } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 import { NgOptimizedImage } from '@angular/common';
 import { SOCIAL_LINKS } from '../social-links/social-links.data';
 
 @Component({
   selector: 'app-navigation',
-  imports: [RouterModule, CommonModule, TranslatePipe, NgOptimizedImage],
+  imports: [RouterModule, CommonModule, NgOptimizedImage],
   templateUrl: './navigation.html',
   styleUrl: './navigation.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -105,5 +106,12 @@ export class Navigation {
   toggleLanguage(): void {
     const nextLang = this.activeLanguageCode() === 'EN' ? 'DE' : 'EN';
     this.setLanguage(nextLang);
+  }
+
+  readonly linkClicked = output<void>();
+
+  onLinkClick(): void {
+    this.closeMenu();
+    this.linkClicked.emit();
   }
 }

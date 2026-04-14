@@ -43,7 +43,7 @@
 
   <ul>
     <li class="logo-container">
-      <a routerLink="/" (click)="closeMenu()">
+      <a routerLink="/" (click)="onLinkClick()">
         <img
           src="img/04_Logo/jb-logo.png"
           width="54"
@@ -55,7 +55,7 @@
     </li>
     @for (link of currentNavLinks(); track link.label; let i = $index) {
       <li class="nav-item nav-hover{{ i }}">
-        <a [routerLink]="['/']" [fragment]="link.fragment" (click)="closeMenu()">{{
+        <a [routerLink]="['/']" [fragment]="link.fragment" (click)="onLinkClick()">{{
           link.label
         }}</a>
         <img [ngSrc]="link.img" width="316" height="126" alt="" aria-hidden="true" />
@@ -89,7 +89,7 @@
             [routerLink]="['/']"
             [fragment]="link.fragment"
             class="mobile-menu__link"
-            (click)="closeMenu()"
+            (click)="onLinkClick()"
             >{{ link.label }}</a
           >
         }
