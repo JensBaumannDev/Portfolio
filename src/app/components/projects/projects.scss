@@ -1,5 +1,6 @@
 @use '../../../styles/abstracts' as *;
 
+/* #region Variables & Mixins */
 $project-radius: 20px;
 $project-transition: 0.4s ease-in-out;
 $project-overlay-bg: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
@@ -20,7 +21,9 @@ $project-overlay-bg: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
     color: white;
   }
 }
+/* #endregion */
 
+/* #region Main Structure */
 .projects-container {
   padding: clamp(60px, 8vw, 120px) 0 0;
   color: $secondary-bg-color;
@@ -30,7 +33,9 @@ $project-overlay-bg: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
   @include maxWidth;
   padding: 0 80px;
 }
+/* #endregion */
 
+/* #region Featured Section */
 .featured-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -48,8 +53,7 @@ $project-overlay-bg: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
       top: 100%;
       margin-top: 4px;
       left: 0;
-      width: auto;
-      max-width: none;
+      width: 100%;
       height: 20px;
     }
   }
@@ -131,7 +135,9 @@ $project-overlay-bg: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
     transform: translateY(45px);
   }
 }
+/* #endregion */
 
+/* #region Projects Grid */
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -180,6 +186,7 @@ $project-overlay-bg: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
     }
   }
 }
+/* #endregion */
 
 /* #region Responsive */
 @media (min-width: 1024px) {
@@ -221,6 +228,9 @@ $project-overlay-bg: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
     &__right {
       max-width: 560px;
       margin-inline: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .mockup-container {
@@ -263,4 +273,3 @@ $project-overlay-bg: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
   }
 }
 /* #endregion */
-

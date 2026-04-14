@@ -8,7 +8,8 @@
           <img
             class="draw-line"
             ngSrc="img/00_Hand-drawn-lines/03_Portfolio/Color_option 3.png"
-            width="1089" height="128"
+            width="1089"
+            height="128"
             alt=""
           />
         </div>
@@ -18,20 +19,34 @@
       <div class="featured-section__right">
         <div class="mockup-container">
           <div class="float-wrapper">
-            <img [ngSrc]="projects[0].image" width="560" height="338" [attr.alt]="'projects.laptopAlt' | translate" class="laptop-img" />
+            <img
+              [ngSrc]="projects[0].image"
+              width="560"
+              height="338"
+              [attr.alt]="'projects.laptopAlt' | translate"
+              class="laptop-img"
+            />
           </div>
           <div class="img-overlay">
-            <button class="btn-pill btn-push">
+            <button class="btn-pill btn-push" (click)="openDialog(projects[0])">
               {{ 'projects.check' | translate }}
             </button>
           </div>
-          <img ngSrc="img/06_projects/Sticker.png" width="100" height="100" [attr.alt]="'projects.stickerAlt' | translate" class="sticker-img" />
+          <img
+            ngSrc="img/06_projects/Sticker.png"
+            width="100"
+            height="100"
+            [attr.alt]="'projects.stickerAlt' | translate"
+            class="sticker-img"
+          />
         </div>
         <div class="featured-info">
           <h3>{{ projects[0].title }}</h3>
           <p>{{ projects[0].descriptionKey | translate }}</p>
           <div class="mobile-button-wrapper">
-            <button class="btn-pill btn-push btn-push--dark">{{ 'projects.check' | translate }}</button>
+            <button class="btn-pill btn-push btn-push--dark" (click)="openDialog(projects[0])">
+              {{ 'projects.check' | translate }}
+            </button>
           </div>
         </div>
       </div>
@@ -40,9 +55,13 @@
       @for (project of projects.slice(1); track project.title) {
         <div class="project-card">
           <div class="project-card__img">
-            <img [ngSrc]="project.image" fill [attr.alt]="project.title" style="object-fit: contain;" />
+            <img
+              [ngSrc]="project.image"
+              fill
+              [attr.alt]="project.title"
+            />
             <div class="img-overlay">
-              <button class="btn-pill btn-push">
+              <button class="btn-pill btn-push" (click)="openDialog(project)">
                 {{ 'projects.check' | translate }}
               </button>
             </div>
@@ -51,7 +70,9 @@
             <h3>{{ project.title }}</h3>
             <p>{{ project.descriptionKey | translate }}</p>
             <div class="mobile-button-wrapper">
-              <button class="btn-pill btn-push btn-push--dark">{{ 'projects.check' | translate }}</button>
+              <button class="btn-pill btn-push btn-push--dark" (click)="openDialog(project)">
+                {{ 'projects.check' | translate }}
+              </button>
             </div>
           </div>
         </div>
@@ -59,3 +80,13 @@
     </div>
   </div>
 </section>
+
+@if (selectedProject) {
+  <app-project-dialog
+    [project]="selectedProject"
+    (close)="closeDialog()"
+    (next)="nextProject()"
+    (prev)="prevProject()"
+  >
+  </app-project-dialog>
+}

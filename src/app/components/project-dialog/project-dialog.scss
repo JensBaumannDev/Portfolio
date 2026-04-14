@@ -1,0 +1,418 @@
+@use '../../../styles/abstracts/' as *;
+
+/* #region DIALOG STRUCTURE */
+.dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba($secondary-bg-color, 0.9);
+  z-index: 10000;
+  @include flex($align-items: center, $justify-content: center);
+  overflow-x: hidden;
+}
+
+.dialog-content {
+  position: relative;
+  width: 1440px;
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: #f4f4f4;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to right, #f4f4f4 45%, $secondary-bg-color 45%);
+  background-size: 25px 25px, 25px 25px, 100% 100%;
+}
+
+.dialog-body {
+  flex: 1;
+  z-index: 10;
+  position: relative;
+  display: flex;
+  overflow-y: auto;
+  background: transparent;
+}
+/* #endregion */
+
+/* #region DIALOG HEADER */
+.dialog-header {
+  width: 100%;
+  padding: 15px 0;
+  z-index: 100;
+  position: relative;
+  background: transparent;
+
+  .dialog-content & ::ng-deep .navigation {
+    background: transparent;
+    padding-inline: 72px;
+
+    .nav-item a,
+    .language__item,
+    .language__label,
+    .social-icon svg {
+      color: $primary-bg-color;
+      fill: $primary-bg-color;
+    }
+
+    .nav-hover0 a,
+    .nav-hover1 a {
+      color: $secondary-bg-color;
+    }
+
+    .language__item--active .language__label {
+      color: $highlight1;
+    }
+
+    .logo {
+      color: $secondary-bg-color;
+    }
+
+    .toggle__line,
+    .toggle__circle {
+      border-color: $primary-bg-color;
+      color: $primary-bg-color;
+    }
+  }
+}
+/* #endregion */
+
+/* #region COLUMN LEFT (LIGHT CONTENT) */
+.column-left {
+  flex: 0 0 45%;
+  padding: 40px 60px 80px 120px;
+  display: flex;
+  flex-direction: column;
+  color: $secondary-bg-color;
+  background: transparent;
+
+  .go-back--desktop {
+    color: $secondary-bg-color;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 50px;
+    margin-left: -48px;
+    @include flex($align-items: center);
+    gap: 8px;
+  }
+
+  .title-container {
+    margin-bottom: 48px;
+    position: relative;
+    width: fit-content;
+
+    .project-title {
+      font-size: 56px;
+      margin: 0;
+      line-height: 0.9;
+    }
+
+    .title-underline {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: auto;
+      margin-top: 4px;
+    }
+  }
+
+  .info-section {
+    margin-bottom: 30px;
+    h3 {
+      color: inherit;
+      margin-bottom: 12px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+      color: inherit;
+    }
+  }
+
+  .duration {
+    margin-top: 32px;
+    font-size: 18px;
+  }
+
+  .tech-stack-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 35px;
+    span {
+      font-weight: 500;
+      font-size: 16px;
+    }
+  }
+}
+/* #endregion */
+
+/* #region COLUMN RIGHT (DARK CONTENT) */
+.column-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 120px;
+  background: transparent;
+  color: $primary-bg-color;
+
+  .image-showcase {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .image-wrapper {
+      position: relative;
+      display: inline-block;
+      line-height: 0;
+
+      .sticker-img {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(50%, -50%);
+        width: 120px;
+        z-index: 5;
+      }
+
+      .main-screenshot {
+        display: block;
+        width: 560px;
+        height: 400px;
+        object-fit: cover;
+        max-width: 100%;
+        border-radius: 20px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+
+  .button-footer {
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .action-buttons {
+    @include flex($justify-content: flex-end);
+    gap: 20px;
+  }
+
+  .navigation-links {
+    @include flex($justify-content: flex-end);
+    
+    .go-back--mobile {
+      display: none;
+    }
+
+    .next-project {
+      @include flex($align-items: center);
+      color: $primary-bg-color;
+      font-weight: 700;
+      gap: 8px;
+      cursor: pointer;
+      margin-right: -50px;
+    }
+  }
+}
+/* #endregion */
+
+/* #region RESPONSIVE */
+@media (max-width: 1150px) {
+  .column-left {
+    padding-left: 60px;
+
+    .go-back--desktop {
+      margin-left: 12px;
+    }
+
+    .duration {
+      margin-top: 16px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .dialog-overlay {
+    display: block;
+    overflow-y: auto;
+  }
+
+  .dialog-content {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 100vh;
+    margin: 0;
+    border-radius: 0;
+    overflow: visible;
+    background-color: #f4f4f4;
+    background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 25px 25px;
+
+    .dialog-header {
+      background: transparent;
+      
+      ::ng-deep .navigation {
+        .nav-item a,
+        .language__item:not(.language__item--active),
+        .language__label,
+        .social-icon svg {
+          color: $secondary-bg-color;
+          fill: $secondary-bg-color;
+        }
+
+        .language__item--active .language__label {
+          color: $highlight1;
+        }
+
+        .burger-button__line {
+          background-color: $secondary-bg-color;
+        }
+
+        .burger-button--open .burger-button__line {
+          background-color: $primary-bg-color;
+        }
+
+        &.navigation--menu-open {
+          .language__item:not(.language__item--active),
+          .language__label {
+            color: $primary-bg-color;
+          }
+
+          .language__item--active,
+          .language__item--active .language__label {
+            color: $highlight1;
+          }
+        }
+
+        .toggle__line,
+        .toggle__circle {
+          border-color: $secondary-bg-color;
+          color: $secondary-bg-color;
+        }
+      }
+    }
+  }
+
+  .dialog-body {
+    flex-direction: column;
+  }
+
+  .column-left {
+    flex: none;
+    width: 100%;
+    padding: 40px 60px;
+    background: transparent;
+  }
+
+  .column-right {
+    flex: none;
+    width: 100%;
+    padding: 40px 72px 60px;
+    background: $secondary-bg-color;
+    
+    .image-showcase {
+      padding: 40px 0;
+    }
+    
+    .button-footer {
+      gap: 50px;
+    }
+    
+    .action-buttons {
+      justify-content: center;
+    }
+    
+    .navigation-links {
+      justify-content: flex-end;
+
+      .next-project {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .dialog-content .dialog-header {
+    padding: 0;
+    
+    ::ng-deep .navigation {
+      padding-inline: 16px;
+      padding-block: 16px;
+      min-height: auto;
+    }
+  }
+
+  .column-left {
+    padding: 40px 24px;
+    background: transparent;
+    
+    .go-back--desktop {
+      display: none;
+    }
+  }
+
+  .column-right {
+    padding: 40px 24px 60px;
+
+    .navigation-links {
+      justify-content: space-between;
+
+      .go-back--mobile {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: $primary-bg-color;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      
+      .next-project {
+        margin-right: 0;
+      }
+    }
+
+    .button-footer {
+      padding-top: 32px;
+      gap: 50px;
+    }
+
+    .image-showcase {
+      padding: 0;
+    }
+
+    .sticker-img {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .column-left {
+    .title-container {
+      .project-title {
+        font-size: 44px;
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .column-right {
+    .navigation-links {
+      .go-back--mobile,
+      .next-project {
+        font-size: 14px;
+        gap: 4px;
+      }
+    }
+  }
+}
+/* #endregion */

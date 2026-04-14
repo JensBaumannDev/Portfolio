@@ -1,0 +1,116 @@
+<div class="dialog-overlay" (click)="onClose()">
+  <div class="dialog-content" (click)="$event.stopPropagation()">
+    <div class="dialog-header">
+      <app-navigation (linkClicked)="onClose()"></app-navigation>
+    </div>
+
+    @if (project) {
+      <div class="dialog-body">
+        <div class="column-left">
+          <div class="go-back--desktop" (click)="onClose()">
+            <img
+              ngSrc="img/00_Hand-drawn-lines/03_Portfolio/Breadcrumbs/Breadcrumb_arrow_3.png"
+              width="24"
+              height="24"
+              alt=""
+            />
+            {{ 'projects.goBack' | translate }}
+          </div>
+
+          <div class="title-container">
+            <h2 class="project-title">{{ project.title }}</h2>
+            <img
+              class="title-underline draw-line"
+              ngSrc="img/00_Hand-drawn-lines/03_Portfolio/Blue_line.png"
+              width="100"
+              height="10"
+              alt=""
+              priority
+            />
+          </div>
+
+          <div class="info-section">
+            <h3>{{ 'projects.descriptionTitle' | translate }}</h3>
+            <p>{{ project.descriptionKey | translate }}</p>
+          </div>
+
+          <div class="info-section">
+            <h3>{{ 'projects.implementationTitle' | translate }}</h3>
+            <p>{{ project.implementationKey | translate }}</p>
+          </div>
+
+          <div class="duration">
+            <strong>{{ 'projects.durationLabel' | translate }}</strong> {{ project.durationKey | translate }}
+          </div>
+
+          <div class="tech-stack-row">
+            @for (tech of project.technologies; track tech) {
+              <span>{{ tech }}</span>
+            }
+          </div>
+        </div>
+
+        <div class="column-right">
+          <div class="image-showcase">
+            <div class="image-wrapper">
+              <img
+                class="main-screenshot"
+                [ngSrc]="project.detailImage || project.image"
+                width="560"
+                height="400"
+                [attr.alt]="project.title"
+              />
+
+              @if (project.title === 'Join') {
+                <img
+                  class="sticker-img"
+                  ngSrc="img/06_projects/Sticker.png"
+                  width="120"
+                  height="120"
+                  alt="Join Sticker"
+                />
+              } @else if (project.title === 'El Pollo Loco' || project.title === 'Pokedex') {
+                <img
+                  class="sticker-img"
+                  ngSrc="img/03_Stickers/00_Round/06_Color_option_3-A.png"
+                  width="120"
+                  height="120"
+                  alt="Color Option Sticker"
+                />
+              }
+            </div>
+          </div>
+
+          <div class="button-footer">
+            <div class="action-buttons">
+              <a class="btn-pill btn-push" [href]="project.githubLink" target="_blank">{{ 'projects.githubBtn' | translate }}</a>
+              <a class="btn-pill btn-push" [href]="project.liveLink" target="_blank">{{ 'projects.liveBtn' | translate }}</a>
+            </div>
+
+            <div class="navigation-links">
+              <div class="go-back--mobile" (click)="onClose()">
+                <img
+                  ngSrc="img/00_Hand-drawn-lines/03_Portfolio/Breadcrumbs/Breadcrumb_arrow_3.png"
+                  width="24"
+                  height="24"
+                  alt=""
+                />
+                {{ 'projects.goBack' | translate }}
+              </div>
+
+              <div class="next-project" (click)="onNext()">
+                {{ 'projects.nextProject' | translate }}
+                <img
+                  ngSrc="img/00_Hand-drawn-lines/03_Portfolio/Breadcrumbs/Next_project_arrow_3.png"
+                  width="24"
+                  height="24"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

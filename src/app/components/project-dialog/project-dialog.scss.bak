@@ -1,0 +1,271 @@
+@use '../../../styles/abstracts/' as *;
+
+.dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba($secondary-bg-color, 0.9);
+  z-index: 10000;
+  @include flex($align-items: center, $justify-content: center);
+  overflow-x: hidden;
+}
+
+.dialog-content {
+  position: relative;
+  width: 1440px;
+  height: 800px;
+  max-width: 100vw;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: linear-gradient(to right, #f4f4f4 45%, $secondary-bg-color 45%);
+}
+
+.dialog-header {
+  width: 100%;
+  padding: 15px 0;
+  z-index: 100;
+  position: relative;
+  background: transparent;
+
+  ::ng-deep .navigation {
+    background: transparent;
+
+    .nav-item a,
+    .language__item,
+    .language__label,
+    .social-icon svg {
+      color: $primary-bg-color;
+      fill: $primary-bg-color;
+    }
+
+    .nav-hover0 a,
+    .nav-hover1 a {
+      color: $secondary-bg-color;
+    }
+
+    .logo {
+      color: $secondary-bg-color;
+    }
+
+    .toggle__line,
+    .toggle__circle {
+      border-color: $primary-bg-color;
+      color: $primary-bg-color;
+    }
+  }
+}
+
+.dialog-body {
+  flex: 1;
+  z-index: 10;
+  position: relative;
+  display: flex;
+  overflow-y: auto;
+  background: transparent;
+}
+
+.column-left {
+  flex: 0 0 45%;
+  padding: 40px 60px 80px 80px;
+  display: flex;
+  flex-direction: column;
+  color: $secondary-bg-color;
+  background: transparent;
+}
+
+.column-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 120px;
+  background: transparent;
+
+  .image-showcase {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .image-wrapper {
+      position: relative;
+      display: inline-block;
+      line-height: 0;
+
+      .sticker-img {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(50%, -50%);
+        width: 120px;
+        z-index: 5;
+      }
+
+      .main-screenshot {
+        display: block;
+        width: 560px;
+        height: 400px; // Festes Format für alle Bilder
+        object-fit: cover; // Verhindert Verzerrung
+        max-width: 100%;
+        border-radius: 20px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+
+  .button-footer {
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .action-buttons {
+    @include flex($justify-content: flex-end);
+    gap: 20px;
+    a {
+      padding: 12px 24px;
+      border: 2px solid $primary-bg-color;
+      border-radius: 40px;
+      color: $primary-bg-color;
+      text-decoration: none;
+      font-weight: 700;
+      &:hover {
+        background: $primary-bg-color;
+        color: $secondary-bg-color;
+      }
+    }
+  }
+
+  .navigation-links {
+    @include flex($justify-content: flex-end);
+    .next-project {
+      @include flex($align-items: center);
+      color: $primary-bg-color;
+      font-weight: 700;
+      gap: 12px;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .dialog-content {
+    background: #f4f4f4;
+  }
+
+  .dialog-header {
+    background: #f4f4f4;
+    ::ng-deep .navigation {
+      .nav-item a,
+      .language__item,
+      .language__label,
+      .social-icon svg {
+        color: $secondary-bg-color;
+        fill: $secondary-bg-color;
+      }
+      .toggle__line,
+      .toggle__circle {
+        border-color: $secondary-bg-color;
+        color: $secondary-bg-color;
+      }
+    }
+  }
+
+  .dialog-overlay {
+    display: block;
+    overflow-y: auto;
+  }
+
+  .dialog-content {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0;
+    overflow: visible;
+  }
+
+  .dialog-body {
+    flex-direction: column;
+  }
+
+  .column-left {
+    flex: none;
+    width: 100%;
+    padding: 40px 24px;
+    background: #f4f4f4;
+  }
+
+  .column-right {
+    flex: none;
+    width: 100%;
+    padding: 40px 24px 60px;
+    background: $secondary-bg-color;
+    .image-showcase {
+      padding: 40px 0;
+    }
+    .button-footer {
+      gap: 40px;
+    }
+    .action-buttons {
+      justify-content: center;
+    }
+    .navigation-links {
+      justify-content: center;
+    }
+  }
+}
+
+.title-container {
+  margin-bottom: 40px;
+  .project-title {
+    font-size: 56px;
+    margin: 0;
+    line-height: 0.9;
+  }
+  .title-underline {
+    width: 100%;
+    height: auto;
+    margin-top: 4px;
+  }
+}
+
+.info-section {
+  margin-bottom: 30px;
+  h3 {
+    color: inherit;
+    margin-bottom: 12px;
+  }
+  p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: inherit;
+  }
+}
+
+.duration {
+  margin-top: 32px;
+  font-size: 18px;
+}
+
+.tech-stack-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+  span {
+    font-weight: 500;
+    font-size: 16px;
+  }
+}
+
+.go-back--desktop {
+  color: $secondary-bg-color;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 50px;
+  @include flex($align-items: center);
+  gap: 15px;
+}
