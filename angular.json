@@ -45,6 +45,11 @@
                 "output": "/i18n"
               },
               {
+                "glob": "sendMail.php",
+                "input": "public",
+                "output": "/"
+              },
+              {
                 "glob": "favicon.ico",
                 "input": "public",
                 "output": "/"

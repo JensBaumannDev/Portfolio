@@ -12,7 +12,7 @@
     "cardImgAlt3": "Dekorative Zettelkarte Homeoffice"
   },
   "hero": {
-    "buttonText": "Kontakiere mich",
+    "buttonText": "Kontaktiere mich",
     "nameDefault": "Hello World",
     "nameHover": "Ich bin Jens Baumann",
     "profileImgAlt": "Profilbild von Jens Baumann"
@@ -51,10 +51,10 @@
       "nameLabel": "Wie lautet dein Name?",
       "nameErrorRequired": "Ups! Dein Name fehlt.",
       "nameErrorLength": "Dein Name muss mindestens 4 Zeichen lang sein!",
-      "namePlaceholder": "Deine Name kommt hier hin",
-      "emailLabel": "Wie lautet deine Email-Adresse?",
-      "emailErrorRequired": "Hoppla! Wir benötigen deine Email.",
-      "emailErrorFormat": "Bitte nutze ein gültiges Email-Format!",
+      "namePlaceholder": "Dein Name kommt hier hin",
+      "emailLabel": "Wie lautet deine E-Mail-Adresse?",
+      "emailErrorRequired": "Hoppla! Wir benötigen deine E-Mail.",
+      "emailErrorFormat": "Bitte nutze ein gültiges E-Mail-Format!",
       "emailPlaceholder": "deine.email@email.com",
       "requestLabel": "Wie kann ich helfen?",
       "requestErrorRequired": "Was kann ich für dich entwickeln?",
@@ -63,7 +63,8 @@
       "privacyLink": "Datenschutzerklärung",
       "privacyTextEnd": " gelesen und stimme der Verarbeitung meiner Daten zu.",
       "privacyError": "Bitte akzeptiere die Datenschutzerklärung.",
-      "submitBtn": "Senden"
+      "submitBtn": "Senden",
+      "successMessage": "Vielen Dank! Deine Nachricht wurde erfolgreich versendet."
     }
   },
   "footer": {

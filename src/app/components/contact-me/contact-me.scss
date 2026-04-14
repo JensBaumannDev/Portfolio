@@ -66,13 +66,15 @@
     position: absolute;
     bottom: rem(72);
     right: 0;
-    width: clamp(rem(200), 25vw, rem(320));
+    width: clamp(rem(180), 20vw, rem(280));
+    height: auto;
     pointer-events: none;
 
     img {
-      width: auto;
-      max-width: none;
-      height: rem(25);
+      width: 100%;
+      height: auto;
+      max-height: rem(45);
+      object-fit: contain;
     }
   }
 }
@@ -258,6 +260,21 @@
     height: auto;
     z-index: 10;
     pointer-events: none;
+  }
+
+  .success-message-container {
+    @include flex($flex-direction: column, $justify-content: center, $align-items: center);
+    height: 100%;
+    min-height: rem(400);
+    text-align: center;
+    gap: rem(32);
+
+    p {
+      font-size: clamp(rem(20), 3vw, rem(28));
+      line-height: 1.4;
+      color: $highlight1;
+      max-width: rem(400);
+    }
   }
 }
 /* #endregion */

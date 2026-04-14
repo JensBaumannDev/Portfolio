@@ -14,7 +14,7 @@
   "hero": {
     "buttonText": "Get in touch",
     "nameDefault": "Hello World",
-    "nameHover": "I'am Jens Baumann",
+    "nameHover": "I'm Jens Baumann",
     "profileImgAlt": "Profile picture of Jens Baumann"
   },
   "skills": {
@@ -49,11 +49,11 @@
     "form": {
       "stickerAlt": "Decorative round sticker",
       "nameLabel": "What's your name?",
-      "nameErrorRequired": "Oops! it seems your name is missing",
+      "nameErrorRequired": "Oops! It seems your name is missing",
       "nameErrorLength": "Your name must be at least 4 characters long!",
       "namePlaceholder": "Your name goes here",
       "emailLabel": "What's your email?",
-      "emailErrorRequired": "Hoppla! your email is required",
+      "emailErrorRequired": "Oops! Your email is required",
       "emailErrorFormat": "Please use a valid email format!",
       "emailPlaceholder": "youremail@email.com",
       "requestLabel": "How can I help you?",
@@ -63,7 +63,8 @@
       "privacyLink": "privacy policy",
       "privacyTextEnd": " and agree to the processing of my data as outlined.",
       "privacyError": "Please accept the privacy policy.",
-      "submitBtn": "Send message"
+      "submitBtn": "Send message",
+      "successMessage": "Thank you! Your message has been sent successfully."
     }
   },
   "footer": {
