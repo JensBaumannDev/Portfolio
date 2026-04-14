@@ -2,7 +2,7 @@
 @use '../../../../src/styles/abstracts/' as *;
 
 /* #region Variables */
-$colleagues-card-ratio: 800 / 525;
+$colleagues-card-ratio: math.div(800, 525);
 $colleagues-transition: 0.3s;
 $colleagues-padding-top: rem(144);
 /* #endregion */
