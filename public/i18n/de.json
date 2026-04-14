@@ -96,10 +96,11 @@
   "colleagues": {
     "intro": "WAS ANDERE SAGEN:",
     "headline": "Meinungen von Kollegen",
-    "testimonial1": "Jens ist ein engagierter Entwickler, der immer einen Schritt weiter geht. Seine technische Expertise war eine enorme Bereicherung für unser Projekt.",
-    "testimonial2": "Die Zusammenarbeit mit Jens war eine fantastische Erfahrung. Er hat ein einzigartiges Talent, komplexe Probleme mit elegantem Code zu lösen.",
+    "testimonial1": "Jens ist ein engagierter Entwickler mit Gespür für modernes Design und saubere Umsetzung. Besonders stark ist er im präzisen Styling und der technischen UI-Umsetzung. Er übernimmt Verantwortung und ist im Team stets hilfsbereit.",
+    "testimonial2": "Jens ist ein engagierter Teamplayer mit großer Ausdauer. Ob fachlich oder bei kniffligen Problemen: Er bleibt zielstrebig und ist ein Gewinn für jedes Team.",
     "testimonial3": "Sehr empfehlenswert! Jens ist ein verlässlicher Profi, der sowohl Kreativität als auch technische Präzision in das Team einbringt.",
     "profile": "Profil",
+    "website": "Website",
     "arrowAlt": "Blauer dekorativer Pfeil",
     "social": {
       "linkedin": "LinkedIn Profil ansehen"
@@ -122,14 +123,27 @@
     "check": "Details ansehen",
     "laptopAlt": "Laptop mit Join Projekt",
     "stickerAlt": "Hervorgehobenes Projekt Sticker",
+    "goBack": "Zurück",
+    "nextProject": "Nächstes Projekt",
+    "descriptionTitle": "Beschreibung",
+    "implementationTitle": "Umsetzung",
+    "durationLabel": "Dauer:",
+    "githubBtn": "GitHub",
+    "liveBtn": "Live Test",
     "join": {
-      "description": "Auf dem Kanban-System basierender Aufgabenmanager. Erstellen und organisieren Sie Aufgaben mit Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu."
+      "description": "Auf dem Kanban-System basierender Aufgabenmanager. Erstellen und organisieren Sie Aufgaben mit Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.",
+      "implementation": "Dieses Projekt ist mein kommendes Highlight. Es wird aktuell als umfangreiche Gruppenarbeit entwickelt und wird bald hier in vollem Umfang zu finden sein.",
+      "duration": "5 Wochen"
     },
     "pollo": {
-      "description": "Ein Lauf- und Wurfspiel, das auf einem objektorientierten Ansatz basiert. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen die verrückte Henne zu kämpfen."
+      "description": "Ein Lauf- und Wurfspiel, das auf einem objektorientierten Ansatz basiert. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen die verrückte Henne zu kämpfen.",
+      "implementation": "Ein 2D-Platformer-Spiel, entwickelt mit objektorientierter Programmierung (OOP) in JavaScript. Features sind Gravitationsphysik, Kollisionserkennung und Sprite-Animationen.",
+      "duration": "3 Wochen"
     },
     "pokedex": {
-      "description": "Eine einfache Bibliothek basierend auf der PokeAPI, um deine Lieblings-Pokemon mit all ihren Werten zu finden und anzuzeigen."
+      "description": "Eine einfache Bibliothek basierend auf der PokeAPI, um deine Lieblings-Pokemon mit all ihren Werten zu finden und anzuzeigen.",
+      "implementation": "Entwickelt mit modernem JavaScript und der offiziellen PokeAPI. Der Fokus liegt auf effizientem Datenabruf, Filterung und responsivem UI-Design.",
+      "duration": "2 Wochen"
     }
   }
 }

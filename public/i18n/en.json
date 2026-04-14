@@ -96,10 +96,11 @@
   "colleagues": {
     "intro": "IN THEIR WORDS:",
     "headline": "Colleagues' Thoughts",
-    "testimonial1": "Jens is a dedicated developer who always goes the extra mile. His technical expertise was a huge asset to our project.",
-    "testimonial2": "Collaborating with Jens was a fantastic experience. He has a unique talent for solving complex problems with elegant code.",
+    "testimonial1": "Jens is a dedicated developer with a sense for modern design and clean implementation. He is particularly strong in precise styling and technical UI implementation. He takes on responsibility and is always helpful within the team.",
+    "testimonial2": "Jens is a dedicated team player with great perseverance. Whether technical or tricky problems: he stays focused and is an asset to any team.",
     "testimonial3": "Highly recommended! Jens is a reliable professional who brings both creativity and technical precision to the team.",
     "profile": "Profile",
+    "website": "Website",
     "arrowAlt": "Blue decorative arrow",
     "social": {
       "linkedin": "View LinkedIn profile"
@@ -119,17 +120,30 @@
     "headline": "Projects",
     "description": "Encourage people to take a look and interact with your projects. Highlight your approach to creating responsive, user-friendly projects with efficient code.",
     "featured": "Featured Project",
-    "check": "Check all details",
+    "check": "Project details",
     "laptopAlt": "Laptop with Join project",
     "stickerAlt": "Featured project sticker",
+    "goBack": "Go Back",
+    "nextProject": "Next Project",
+    "descriptionTitle": "Description",
+    "implementationTitle": "Implementation Details",
+    "durationLabel": "Duration:",
+    "githubBtn": "GitHub",
+    "liveBtn": "Live Test",
     "join": {
-      "description": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories."
+      "description": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
+      "implementation": "This project is my upcoming highlight. It is currently being developed as an extensive group project and will soon be available here in its full version.",
+      "duration": "5 weeks"
     },
     "pollo": {
-      "description": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen."
+      "description": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
+      "implementation": "A 2D platformer game developed using Object-Oriented Programming (OOP) in JavaScript. Features include gravity physics, collision detection, and sprite animations.",
+      "duration": "3 weeks"
     },
     "pokedex": {
-      "description": "A simple library based on the PokeAPI to find and view your favorite Pokemon with all their stats."
+      "description": "A simple library based on the PokeAPI to find and view your favorite Pokemon with all their stats.",
+      "implementation": "Developed using modern JavaScript and the official PokeAPI. Focuses on efficient data fetching, filtering, and responsive UI design.",
+      "duration": "2 weeks"
     }
   }
 }
