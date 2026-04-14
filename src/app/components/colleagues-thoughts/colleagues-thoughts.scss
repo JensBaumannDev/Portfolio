@@ -83,17 +83,18 @@ $colleagues-padding-top: 144px;
       inset: 0;
       width: 100%;
       height: 100%;
-      padding: 8% 10% 8% 10%;
+      padding: 7% 9% 7% 9%;
       box-sizing: border-box;
       @include flex($flex-direction: column, $justify-content: space-between);
       pointer-events: none;
 
       .testimonial-text {
         font-size: clamp(11px, 4.2cqw, 18px);
-        line-height: 1.35;
+        line-height: 1.25;
         margin: 0;
         text-align: left;
         color: $secondary-bg-color;
+        overflow: hidden;
       }
 
       .card-footer {
@@ -113,12 +114,14 @@ $colleagues-padding-top: 144px;
             font-weight: 700;
             font-size: clamp(12px, 4.8cqw, 20px);
             color: var(--author-text-color);
+            white-space: nowrap;
           }
           .author-title {
             font-weight: 500;
             font-size: clamp(10px, 3.8cqw, 16px);
             color: var(--author-text-color);
             opacity: 0.8;
+            white-space: nowrap;
           }
         }
 
@@ -138,7 +141,7 @@ $colleagues-padding-top: 144px;
           }
 
           span {
-            font-size: clamp(10px, 4.2cqw, 18px);
+            font-size: clamp(9px, 3.8cqw, 16px);
             font-weight: 500;
           }
 
