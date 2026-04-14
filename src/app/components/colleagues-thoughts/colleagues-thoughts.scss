@@ -11,7 +11,7 @@ $colleagues-padding-top: rem(144);
 .colleagues-content {
   @include maxWidth();
   margin: 0 auto;
-  padding-inline: rem(120);
+  padding: 0 rem(120);
   @include flex($flex-direction: column, $align-items: center);
 }
 /* #endregion */
@@ -43,28 +43,41 @@ $colleagues-padding-top: rem(144);
 
 /* #region Cards Section */
 .colleagues-bottom {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1.587fr;
+  display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: rem(50);
+  flex-wrap: wrap;
+  margin-top: rem(80);
   padding-bottom: $colleagues-padding-top;
-  width: 95%;
-  max-width: rem(1130);
+  width: 100%;
+  position: relative;
+  overflow: visible;
 
   &__card1,
   &__card2,
   &__card3 {
-    grid-row: 1;
     position: relative;
-    container-type: inline-size;
+    overflow: hidden;
+    width: rem(510);
+    height: rem(320);
+    flex-shrink: 0;
     --author-text-color: #{$secondary-bg-color};
-    aspect-ratio: $colleagues-card-ratio;
 
-    img:not(.line-overlay) {
+    img:not(.line-overlay):not(.linkedin-icon) {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: contain;
+      z-index: 0;
+    }
+
+    .card-bg-desktop {
+      display: block;
+    }
+
+    .card-bg-mobile {
+      display: none;
     }
 
     .line-overlay {
@@ -83,13 +96,13 @@ $colleagues-padding-top: rem(144);
       inset: 0;
       width: 100%;
       height: 100%;
-      padding: 7% 9% 7% 9%;
+      padding: rem(30) rem(40);
       box-sizing: border-box;
       @include flex($flex-direction: column, $justify-content: space-between);
       pointer-events: none;
 
       .testimonial-text {
-        font-size: clamp(rem(11), 4.2cqw, rem(18));
+        font-size: rem(18);
         line-height: 1.25;
         margin: 0;
         text-align: left;
@@ -112,13 +125,13 @@ $colleagues-padding-top: rem(144);
           }
           .author-name {
             font-weight: 700;
-            font-size: clamp(rem(12), 4.8cqw, rem(20));
+            font-size: rem(18);
             color: var(--author-text-color);
             white-space: nowrap;
           }
           .author-title {
             font-weight: 500;
-            font-size: clamp(rem(10), 3.8cqw, rem(16));
+            font-size: rem(16);
             color: var(--author-text-color);
             opacity: 0.8;
             white-space: nowrap;
@@ -134,21 +147,21 @@ $colleagues-padding-top: rem(144);
           transition: color $colleagues-transition;
 
           .linkedin-icon {
-            width: clamp(rem(14), 1.2vw, rem(18));
+            width: rem(18);
             height: auto;
             filter: brightness(0);
             transition: filter $colleagues-transition;
           }
 
           span {
-            font-size: clamp(rem(9), 3.8cqw, rem(16));
+            font-size: rem(16);
             font-weight: 500;
           }
 
           &:hover {
-            color: $primary-bg-color !important;
+            color: $primary-bg-color;
             .linkedin-icon {
-              filter: brightness(0) invert(1) !important;
+              filter: brightness(0) invert(1);
             }
           }
         }
@@ -156,7 +169,7 @@ $colleagues-padding-top: rem(144);
     }
 
     &:hover {
-      z-index: 10;
+      z-index: 100;
       filter: drop-shadow(0px 0px rem(5) rgba($secondary-bg-color, 0.5));
       --author-text-color: #{$primary-bg-color};
       .line-overlay {
@@ -166,110 +179,190 @@ $colleagues-padding-top: rem(144);
   }
 
   &__card1 {
-    grid-column: 1;
     transform: rotate(-4deg);
-    width: 158.7%;
+    margin-right: calc((1530px - 100%) / -2);
+    z-index: 3;
   }
   &__card2 {
-    grid-column: 2;
-    z-index: 2;
-    transform: translateY(rem(32));
-    width: 158.7%;
-    --author-text-color: #{$primary-bg-color};
-    .line-overlay {
-      opacity: 0.35;
-    }
-    .card-text-content .card-footer .linkedin-profile .linkedin-icon {
-      filter: brightness(0);
-    }
-  }
-
-  &:hover &__card2:not(:hover) {
-    --author-text-color: #{$secondary-bg-color};
-    .line-overlay {
-      opacity: 0;
-    }
+    z-index: 5;
+    transform: translateY(rem(40));
   }
 
   &__card3 {
-    grid-column: 3;
     transform: rotate(4deg);
-    width: 100%;
+    margin-left: calc((1530px - 100%) / -2);
+    z-index: 3;
   }
 }
 /* #endregion */
 
 /* #region Responsive */
-@media (max-width: 1220px) {
+@media (max-width: 1320px) {
   .colleagues-bottom {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: rem(48) 0;
-    max-width: 100%;
-    width: 100%;
+    flex-wrap: wrap;
+    gap: rem(20) 0;
+    justify-content: center;
 
-    &__card1,
-    &__card2,
-    &__card3 {
-      width: 100%;
-      margin: 0;
-    }
     &__card1 {
-      grid-column: 1;
-      grid-row: 1;
-      transform: rotate(-4deg);
+      margin-right: rem(-60);
+      transform: rotate(-2deg);
+      z-index: 3;
     }
+
     &__card2 {
-      grid-column: 2;
-      grid-row: 1;
-      transform: translateY(0);
-      .line-overlay {
-        opacity: 0.5;
-      }
+      margin-left: rem(-60);
+      transform: translateY(rem(20));
+      z-index: 15;
     }
+
     &__card3 {
-      grid-column: 1 / span 2;
-      grid-row: 2;
-      width: 50%;
-      margin: rem(-100) auto 0;
-      transform: rotate(4deg);
+      margin-top: rem(-80);
+      margin-left: rem(0);
+      transform: rotate(2deg);
+      z-index: 10;
     }
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1155px) {
   .colleagues-content {
-    padding-inline: 16px;
+    padding-inline: 0;
+  }
+
+  .colleagues-top {
+    padding-right: 120px;
   }
 
   .colleagues-bottom {
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    padding-inline: 16px;
     gap: 0;
 
     &__card1,
     &__card2,
     &__card3 {
-      width: 100%;
-      max-width: rem(450);
       margin: 0;
-      aspect-ratio: 800 / 525;
+      overflow: visible;
+      filter: drop-shadow(0px 0px rem(5) rgba($secondary-bg-color, 0.5));
+    }
+
+    &__card1 {
+      transform: rotate(-2deg);
+      z-index: 10;
+    }
+
+    &__card2 {
+      margin-top: rem(-10);
+      transform: rotate(1deg);
+      z-index: 5;
+    }
+
+    &__card3 {
+      margin-top: rem(-10);
+      transform: rotate(-1deg);
+      z-index: 1;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .colleagues-top {
+    padding-right: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .colleagues-top {
+    padding-right: 16px;
+  }
+
+  .colleagues-content .colleagues-bottom {
+    flex-direction: column;
+    gap: rem(40);
+    align-items: center;
+
+    &__card1,
+    &__card2,
+    &__card3 {
+      width: rem(330);
+      height: rem(390);
+      margin: 0;
+      position: relative;
+      overflow: visible;
+      filter: drop-shadow(0px 0px rem(5) rgba($secondary-bg-color, 0.5));
+
+      .card-bg-desktop {
+        display: none;
+      }
+
+      .card-bg-mobile {
+        display: block;
+        width: rem(330);
+        height: rem(390);
+        object-fit: fill;
+        z-index: 0;
+      }
+
+      .line-overlay {
+        display: none;
+      }
 
       .card-text-content {
-        padding: 6% 8% 8% 8%;
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        padding: rem(64) rem(32) rem(48) rem(32);
+        @include flex(
+          $flex-direction: column,
+          $justify-content: space-between,
+          $align-items: flex-start
+        );
+        pointer-events: none;
+
+        .testimonial-text {
+          font-size: rem(15);
+          line-height: 1.4;
+          text-align: left;
+          color: $secondary-bg-color;
+        }
 
         .card-footer {
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: flex-end;
+          @include flex(
+            $flex-direction: row,
+            $justify-content: space-between,
+            $align-items: flex-end
+          );
           width: 100%;
+          gap: rem(8);
+
+          .author-info {
+            text-align: left;
+            .author-name {
+              font-size: rem(16);
+              font-weight: 700;
+              color: $secondary-bg-color;
+            }
+            .author-title {
+              display: block;
+              font-size: rem(13);
+              color: $secondary-bg-color;
+              opacity: 0.8;
+            }
+          }
 
           .linkedin-profile {
-            margin-top: 0;
+            @include flex($align-items: center);
+            gap: rem(6);
+            pointer-events: auto;
+            color: $secondary-bg-color;
+            text-decoration: none;
+
+            .linkedin-icon {
+              width: rem(20);
+              height: rem(20);
+            }
+
             span {
-              display: inline;
+              font-size: rem(14);
             }
           }
         }
@@ -277,28 +370,107 @@ $colleagues-padding-top: rem(144);
     }
 
     &__card1 {
-      transform: rotate(-4deg);
+      transform: rotate(4deg);
       z-index: 3;
     }
     &__card2 {
       transform: rotate(0deg);
-      margin-top: rem(-10);
+      margin-top: rem(-60);
       z-index: 2;
     }
     &__card3 {
-      transform: rotate(4deg);
-      margin-top: rem(-10);
+      transform: rotate(-4deg);
+      margin-top: rem(-60);
       z-index: 1;
     }
   }
 }
 
-@media (max-width: 450px) {
-  h2 {
-    font-size: rem(40);
+@media (max-width: 400px) {
+  .colleagues-top h2 {
+    font-size: rem(48);
   }
-  .colleagues-bottom {
-    padding-inline: 8px;
+
+  .colleagues-content .colleagues-bottom {
+    flex-direction: column;
+    gap: 0;
+
+    &__card1,
+    &__card2,
+    &__card3 {
+      width: calc(100% - rem(32));
+      height: auto;
+      aspect-ratio: 330 / 390;
+      transform: none;
+      margin-top: rem(-4);
+      padding: 0;
+      overflow: visible;
+
+      &.colleagues-bottom__card1 {
+        margin-top: 0;
+        transform: rotate(-3deg);
+      }
+
+      &.colleagues-bottom__card2 {
+        transform: rotate(2deg);
+      }
+
+      &.colleagues-bottom__card3 {
+        transform: rotate(-2deg);
+      }
+
+      img.card-bg-mobile {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+      }
+
+      .card-text-content {
+        padding: rem(24);
+
+        .testimonial-text {
+          font-size: clamp(rem(16), 0.5rem + 2.5vw, rem(18));
+          line-height: 1.4;
+        }
+
+        .card-footer {
+          @include flex(
+            $flex-direction: row,
+            $justify-content: space-between,
+            $align-items: flex-end
+          );
+          width: 100%;
+          gap: rem(8);
+
+          .author-info {
+            .author-name {
+              font-size: clamp(rem(16), 0.5rem + 2.5vw, rem(18));
+            }
+            .author-title {
+              font-size: clamp(rem(16), 0.5rem + 2.5vw, rem(18));
+              opacity: 0.8;
+            }
+          }
+          .linkedin-profile {
+            span {
+              font-size: clamp(rem(16), 0.5rem + 2.5vw, rem(18));
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 330px) {
+  .colleagues-content .colleagues-bottom {
+    &__card1,
+    &__card2,
+    &__card3 {
+      .card-text-content {
+        padding: rem(16);
+      }
+    }
   }
 }
 /* #endregion */

@@ -4,7 +4,7 @@
     "headline": "About me",
     "text": "Hey, I'm Jens! I'm a passionate frontend developer who loves turning ideas into real digital experiences. I see every challenge as a chance to think more efficiently and find elegant solutions. Curiosity drives me — whether it's new technologies, cleaner code, or more thoughtful design. Let's collaborate and build something remarkable together!",
     "buttonText": "Let's talk",
-    "cardtext1": "Based in Emden, Ostfriesland",
+    "cardtext1": "Based in Emden",
     "cardtext2": "Open to office presence",
     "cardtext3": "Open for home office",
     "cardImgAlt1": "Decorative torn paper card location",
@@ -101,7 +101,7 @@
     "testimonial2": "Jens is a dedicated team player with great perseverance. Whether technical or tricky problems: he stays focused and is an asset to any team.",
     "testimonial3": "I can highly recommend Jens – a strong full-stack developer who delivers clean code and always finds great solutions. The collaboration is absolutely relaxed, reliable, and uncomplicated. I would work with him again at any time!",
     "profile": "Profile",
-    "website": "Website",
+    "website": "Page",
     "arrowAlt": "Blue decorative arrow",
     "social": {
       "linkedin": "View LinkedIn profile"

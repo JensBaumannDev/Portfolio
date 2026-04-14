@@ -126,7 +126,7 @@
   }
 
   .form-headline {
-    font-size: clamp(rem(14), 4vw, rem(18));
+    font-size: clamp(rem(16), 4vw, rem(18));
     padding-left: rem(16);
     transition: color 0.2s;
     &.label-error {
@@ -138,7 +138,7 @@
     width: 100%;
     padding: rem(8) rem(16) rem(16) rem(16);
     margin-bottom: rem(16);
-    font-size: clamp(rem(14), 4vw, rem(18));
+    font-size: clamp(rem(16), 4vw, rem(18));
     background: transparent;
     border: none;
     border-bottom: rem(2) solid $highlight1;
@@ -177,7 +177,7 @@
     bottom: rem(30);
     right: rem(16);
     color: $highlight2;
-    font-size: clamp(rem(10), 3vw, rem(12));
+    font-size: rem(16);
     pointer-events: none;
   }
 

@@ -93,7 +93,7 @@ $skill-icon-size: rem(72);
       left: 50%;
       transform: translate(-50%, -50%);
       width: 95%;
-      font-size: clamp(rem(6), 2vw, rem(18));
+      font-size: clamp(rem(16), 2vw, rem(18));
       z-index: 2;
       color: $secondary-bg-color;
       min-height: rem(24);
@@ -236,7 +236,7 @@ $skill-icon-size: rem(72);
     padding: 10%;
 
     & > p {
-      font-size: clamp(rem(10), 1.2vw, rem(16));
+      font-size: rem(16);
       margin-bottom: rem(8);
     }
 
@@ -262,7 +262,7 @@ $skill-icon-size: rem(72);
     }
 
     span {
-      font-size: clamp(rem(8), 1vw, rem(14));
+      font-size: rem(16);
       color: white;
     }
   }

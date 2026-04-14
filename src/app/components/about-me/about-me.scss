@@ -29,7 +29,7 @@
     grid-template-areas: 'card-stack';
     width: clamp(rem(260), 38.9vw, rem(560));
     color: $primary-bg-color;
-    font-size: clamp(rem(14), 1.67vw, rem(24));
+    font-size: clamp(rem(16), 1.67vw, rem(24));
 
     > img {
       grid-area: card-stack;
@@ -149,7 +149,6 @@
     }
   }
 
-
   .info-content {
     order: 1;
     width: 100%;
@@ -173,7 +172,6 @@
 }
 
 @media (max-width: 360px) {
-
   .about-container {
     padding: rem(48) rem(20);
   }
@@ -182,7 +180,7 @@
     &__collor1,
     &__collor2,
     &__color3 {
-      font-size: rem(13);
+      font-size: rem(16);
     }
   }
 

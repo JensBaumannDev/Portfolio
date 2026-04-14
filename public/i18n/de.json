@@ -4,7 +4,7 @@
     "headline": "Über mich",
     "text": "Hey, ich bin Jens! Ich bin leidenschaftlicher Frontend-Entwickler und begeistert davon, aus Ideen echte digitale Erlebnisse zu machen. Jede Herausforderung sehe ich als Chance, effizienter und eleganter zu denken. Neugier treibt mich an – ob neue Technologien, besserer Code oder durchdachteres Design. Lass uns gemeinsam etwas Großartiges bauen!",
     "buttonText": "Lass uns schnacken",
-    "cardtext1": "Wohnhaft in Emden, Ostfriesland",
+    "cardtext1": "Wohnhaft in Emden",
     "cardtext2": "Offen für Büropräsenz",
     "cardtext3": "Offen für Homeoffice",
     "cardImgAlt1": "Dekorative Zettelkarte Standort",
@@ -101,7 +101,7 @@
     "testimonial2": "Jens ist ein engagierter Teamplayer mit großer Ausdauer. Ob fachlich oder bei kniffligen Problemen: Er bleibt zielstrebig und ist ein Gewinn für jedes Team.",
     "testimonial3": "Ich kann Jens nur empfehlen – ein starker Fullstack Developer, der sauberen Code liefert und immer gute Lösungen findet. Die Zusammenarbeit ist absolut entspannt, zuverlässig und unkompliziert. Ich würde jederzeit wieder mit ihm arbeiten!",
     "profile": "Profil",
-    "website": "Website",
+    "website": "Seite",
     "arrowAlt": "Blauer dekorativer Pfeil",
     "social": {
       "linkedin": "LinkedIn Profil ansehen"

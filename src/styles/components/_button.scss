@@ -1,66 +1,71 @@
 @use '../abstracts' as *;
 
 .btn-pill {
-	@include flex($justify-content: flex-start, $align-items: center);
-	display: inline-flex;
-	position: relative;
-	font-size: clamp(rem(14), 1.1vw, rem(18));
-	border: rem(1) solid $primary-bg-color;
-	border-radius: rem(30);
-	box-sizing: border-box;
-	padding: clamp(rem(6), 0.6vw, rem(10)) clamp(rem(20), 1.6vw, rem(28));
-	width: fit-content;
-	max-width: 100%;
-	min-width: max-content;
-	overflow: visible;
-	transition: background-color 420ms ease;
-	background: transparent;
-	color: inherit;
-	cursor: pointer;
-	text-decoration: none;
+  @include flex($justify-content: flex-start, $align-items: center);
+  display: inline-flex;
+  position: relative;
+  font-size: rem(18);
+  font-weight: 500;
+  height: rem(40);
+  border: rem(1) solid $primary-bg-color;
+  border-radius: rem(20);
+  box-sizing: border-box;
+  padding: 0 rem(24);
+  width: fit-content;
+  max-width: 100%;
+  min-width: max-content;
+  overflow: visible;
+  transition: background-color 420ms ease;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
 
-	> * {
-		margin: 0;
-		line-height: 1;
-		white-space: nowrap;
-	}
-	&:disabled,
-	&[disabled],
-	&.is-disabled {
-		opacity: 0.5;
-		cursor: not-allowed;
-		pointer-events: none;
-	}
+  > * {
+    margin: 0;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  &:disabled,
+  &[disabled],
+  &.is-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
 
-	&--secondary {
-		border: rem(1) solid $secondary-bg-color;
-	}
+  &--secondary {
+    border: rem(1) solid $secondary-bg-color;
+  }
 }
 
 .btn-push {
-	box-shadow: rem(3) rem(6) rem(1) $primary-bg-color;
-	transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+  box-shadow: rem(3) rem(6) rem(1) $primary-bg-color;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
 
-	&:hover {
-		transform: translate(rem(3), rem(6));
-		box-shadow: 0 0 rem(1) $primary-bg-color;
-		background-color: $highlight3;
-	}
-	&:disabled,
-	&[disabled],
-	&.is-disabled {
-		opacity: 0.5;
-		cursor: not-allowed;
-		pointer-events: none;
-	}
+  &:hover {
+    transform: translate(rem(3), rem(6));
+    box-shadow: 0 0 rem(1) $primary-bg-color;
+    background-color: $highlight3;
+  }
+  &:disabled,
+  &[disabled],
+  &.is-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
 
-	&--dark {
-		border-color: $secondary-bg-color;
-		box-shadow: rem(3) rem(6) rem(1) $secondary-bg-color;
-		color: $secondary-bg-color;
+  &--dark {
+    border-color: $secondary-bg-color;
+    box-shadow: rem(3) rem(6) rem(1) $secondary-bg-color;
+    color: $secondary-bg-color;
 
-		&:hover {
-			box-shadow: 0 0 rem(1) $secondary-bg-color;
-		}
-	}
+    &:hover {
+      box-shadow: 0 0 rem(1) $secondary-bg-color;
+    }
+  }
 }
