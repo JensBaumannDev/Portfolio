@@ -43,6 +43,10 @@
   padding: 0 rem(280) 0 rem(220);
   box-sizing: border-box;
   color: $primary-bg-color;
+
+  h1 {
+    user-select: none;
+  }
 }
 
 .hero-top {
