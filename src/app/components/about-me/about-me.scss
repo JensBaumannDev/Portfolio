@@ -130,6 +130,12 @@
     width: 100%;
     margin-top: rem(44);
 
+    &__collor1,
+    &__collor2,
+    &__color3 {
+      width: clamp(rem(260), 73vw, rem(560));
+    }
+
     img {
       width: 100%;
     }
@@ -139,19 +145,20 @@
     }
 
     &__collor2 {
-      margin-top: rem(-40);
+      margin-top: -5vw;
       --label-offset: 0%;
     }
 
     &__color3 {
-      margin-top: rem(-30);
+      margin-top: -4vw;
       --label-offset: -3%;
     }
   }
 
   .info-content {
     order: 1;
-    width: 100%;
+    width: clamp(rem(260), 73vw, rem(560));
+    margin-inline: auto;
 
     &__headline {
       img {
@@ -162,14 +169,6 @@
   }
 }
 
-@media (max-width: 420px) {
-  .card-content {
-    &__collor2,
-    &__color3 {
-      margin-top: rem(-20);
-    }
-  }
-}
 
 @media (max-width: 360px) {
   .about-container {
