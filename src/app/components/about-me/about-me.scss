@@ -10,8 +10,8 @@
     $justify-content: center
   );
   @include maxWidth();
-  padding: clamp(64px, 10vw, 144px) 0;
-  gap: clamp(32px, 5.5vw, 80px);
+  padding: clamp(rem(64), 10vw, rem(144)) 0;
+  gap: clamp(rem(32), 5.5vw, rem(80));
 }
 
 /* #endregion */
@@ -27,9 +27,9 @@
     position: relative;
     display: grid;
     grid-template-areas: 'card-stack';
-    width: clamp(260px, 38.9vw, 560px);
+    width: clamp(rem(260), 38.9vw, rem(560));
     color: $primary-bg-color;
-    font-size: clamp(14px, 1.67vw, 24px);
+    font-size: clamp(rem(14), 1.67vw, rem(24));
 
     > img {
       grid-area: card-stack;
@@ -41,14 +41,14 @@
     .card-label {
       grid-area: card-stack;
       @include flex($justify-content: center, $align-items: center);
-      gap: 8px;
+      gap: rem(8);
       white-space: nowrap;
       pointer-events: none;
       z-index: 5;
       transform: translateY(var(--label-offset, 0));
 
       img {
-        width: clamp(14px, 2vw, 36px);
+        width: clamp(rem(14), 2vw, rem(36));
         height: auto;
       }
 
@@ -93,16 +93,16 @@
   width: clamp(260px, 38.9vw, 560px);
 
   &__head {
-    margin-bottom: 16px;
+    margin-bottom: rem(16);
   }
 
   &__headline {
     text-align: left;
-    margin-bottom: 48px;
+    margin-bottom: rem(48);
 
     img {
       max-width: 100%;
-      width: 300px;
+      width: rem(300);
       height: auto;
     }
   }
@@ -110,7 +110,7 @@
   div:last-child {
     display: flex;
     justify-content: flex-end;
-    margin-top: 48px;
+    margin-top: rem(48);
   }
 }
 
@@ -121,14 +121,14 @@
 @media (max-width: $breakpoint-mobile) {
   .about-container {
     flex-direction: column;
-    padding: 64px 24px;
-    gap: 44px;
+    padding: rem(64) rem(24);
+    gap: rem(44);
   }
 
   .card-content {
     order: 2;
     width: 100%;
-    margin-top: 44px;
+    margin-top: rem(44);
 
     img {
       width: 100%;
@@ -139,12 +139,12 @@
     }
 
     &__collor2 {
-      margin-top: -40px;
+      margin-top: rem(-40);
       --label-offset: 0%;
     }
 
     &__color3 {
-      margin-top: -30px;
+      margin-top: rem(-30);
       --label-offset: -3%;
     }
   }
@@ -156,7 +156,7 @@
 
     &__headline {
       img {
-        max-width: 240px;
+        max-width: rem(240);
         width: 100%;
       }
     }
@@ -167,7 +167,7 @@
   .card-content {
     &__collor2,
     &__color3 {
-      margin-top: -20px;
+      margin-top: rem(-20);
     }
   }
 }
@@ -175,31 +175,31 @@
 @media (max-width: 360px) {
 
   .about-container {
-    padding: 48px 20px;
+    padding: rem(48) rem(20);
   }
 
   .card-content {
     &__collor1,
     &__collor2,
     &__color3 {
-      font-size: 13px;
+      font-size: rem(13);
     }
   }
 
   .info-content {
     &__headline {
-      margin-bottom: 32px;
+      margin-bottom: rem(32);
 
       h2 {
-        font-size: 48px;
+        font-size: rem(48);
       }
 
       img {
-        max-width: 200px;
+        max-width: rem(200);
       }
     }
     div:last-child {
-      margin-top: 32px;
+      margin-top: rem(32);
     }
   }
 }

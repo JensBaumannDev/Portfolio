@@ -4,11 +4,11 @@
 	@include flex($justify-content: flex-start, $align-items: center);
 	display: inline-flex;
 	position: relative;
-	font-size: clamp(14px, 1.1vw, 18px);
-	border: 1px solid $primary-bg-color;
-	border-radius: 30px;
+	font-size: clamp(rem(14), 1.1vw, rem(18));
+	border: rem(1) solid $primary-bg-color;
+	border-radius: rem(30);
 	box-sizing: border-box;
-	padding: clamp(6px, 0.6vw, 10px) clamp(20px, 1.6vw, 28px);
+	padding: clamp(rem(6), 0.6vw, rem(10)) clamp(rem(20), 1.6vw, rem(28));
 	width: fit-content;
 	max-width: 100%;
 	min-width: max-content;
@@ -33,17 +33,17 @@
 	}
 
 	&--secondary {
-		border: 1px solid $secondary-bg-color;
+		border: rem(1) solid $secondary-bg-color;
 	}
 }
 
 .btn-push {
-	box-shadow: 3px 6px 1px $primary-bg-color;
+	box-shadow: rem(3) rem(6) rem(1) $primary-bg-color;
 	transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
 
 	&:hover {
-		transform: translate(3px, 6px);
-		box-shadow: 0 0 1px $primary-bg-color;
+		transform: translate(rem(3), rem(6));
+		box-shadow: 0 0 rem(1) $primary-bg-color;
 		background-color: $highlight3;
 	}
 	&:disabled,
@@ -56,11 +56,11 @@
 
 	&--dark {
 		border-color: $secondary-bg-color;
-		box-shadow: 3px 6px 1px $secondary-bg-color;
+		box-shadow: rem(3) rem(6) rem(1) $secondary-bg-color;
 		color: $secondary-bg-color;
 
 		&:hover {
-			box-shadow: 0 0 1px $secondary-bg-color;
+			box-shadow: 0 0 rem(1) $secondary-bg-color;
 		}
 	}
 }

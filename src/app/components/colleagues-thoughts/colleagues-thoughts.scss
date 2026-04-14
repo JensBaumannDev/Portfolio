@@ -4,14 +4,14 @@
 /* #region Variables */
 $colleagues-card-ratio: 800 / 525;
 $colleagues-transition: 0.3s;
-$colleagues-padding-top: 144px;
+$colleagues-padding-top: rem(144);
 /* #endregion */
 
 /* #region Main Structure */
 .colleagues-content {
   @include maxWidth();
   margin: 0 auto;
-  padding-inline: 120px;
+  padding-inline: rem(120);
   @include flex($flex-direction: column, $align-items: center);
 }
 /* #endregion */
@@ -21,7 +21,7 @@ $colleagues-padding-top: 144px;
   width: 100%;
   @include flex($justify-content: flex-end, $align-items: center);
   flex-wrap: wrap;
-  gap: 12px;
+  gap: rem(12);
   padding-top: $colleagues-padding-top;
 
   img {
@@ -47,10 +47,10 @@ $colleagues-padding-top: 144px;
   grid-template-columns: 1fr 1fr 1.587fr;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: rem(50);
   padding-bottom: $colleagues-padding-top;
   width: 95%;
-  max-width: 1130px;
+  max-width: rem(1130);
 
   &__card1,
   &__card2,
@@ -89,7 +89,7 @@ $colleagues-padding-top: 144px;
       pointer-events: none;
 
       .testimonial-text {
-        font-size: clamp(11px, 4.2cqw, 18px);
+        font-size: clamp(rem(11), 4.2cqw, rem(18));
         line-height: 1.25;
         margin: 0;
         text-align: left;
@@ -112,13 +112,13 @@ $colleagues-padding-top: 144px;
           }
           .author-name {
             font-weight: 700;
-            font-size: clamp(12px, 4.8cqw, 20px);
+            font-size: clamp(rem(12), 4.8cqw, rem(20));
             color: var(--author-text-color);
             white-space: nowrap;
           }
           .author-title {
             font-weight: 500;
-            font-size: clamp(10px, 3.8cqw, 16px);
+            font-size: clamp(rem(10), 3.8cqw, rem(16));
             color: var(--author-text-color);
             opacity: 0.8;
             white-space: nowrap;
@@ -127,21 +127,21 @@ $colleagues-padding-top: 144px;
 
         .linkedin-profile {
           @include flex($align-items: center);
-          gap: 8px;
+          gap: rem(8);
           color: $secondary-bg-color;
           text-decoration: none;
           pointer-events: auto;
           transition: color $colleagues-transition;
 
           .linkedin-icon {
-            width: clamp(14px, 1.2vw, 18px);
+            width: clamp(rem(14), 1.2vw, rem(18));
             height: auto;
             filter: brightness(0);
             transition: filter $colleagues-transition;
           }
 
           span {
-            font-size: clamp(9px, 3.8cqw, 16px);
+            font-size: clamp(rem(9), 3.8cqw, rem(16));
             font-weight: 500;
           }
 
@@ -157,7 +157,7 @@ $colleagues-padding-top: 144px;
 
     &:hover {
       z-index: 10;
-      filter: drop-shadow(0px 0px 5px rgba($secondary-bg-color, 0.5));
+      filter: drop-shadow(0px 0px rem(5) rgba($secondary-bg-color, 0.5));
       --author-text-color: #{$primary-bg-color};
       .line-overlay {
         opacity: 0.35;
@@ -173,7 +173,7 @@ $colleagues-padding-top: 144px;
   &__card2 {
     grid-column: 2;
     z-index: 2;
-    transform: translateY(32px);
+    transform: translateY(rem(32));
     width: 158.7%;
     --author-text-color: #{$primary-bg-color};
     .line-overlay {
@@ -204,7 +204,7 @@ $colleagues-padding-top: 144px;
   .colleagues-bottom {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
-    gap: 48px 0;
+    gap: rem(48) 0;
     max-width: 100%;
     width: 100%;
 
@@ -231,7 +231,7 @@ $colleagues-padding-top: 144px;
       grid-column: 1 / span 2;
       grid-row: 2;
       width: 50%;
-      margin: -100px auto 0;
+      margin: rem(-100) auto 0;
       transform: rotate(4deg);
     }
   }
@@ -253,7 +253,7 @@ $colleagues-padding-top: 144px;
     &__card2,
     &__card3 {
       width: 100%;
-      max-width: 450px;
+      max-width: rem(450);
       margin: 0;
       aspect-ratio: 800 / 525;
 
@@ -282,12 +282,12 @@ $colleagues-padding-top: 144px;
     }
     &__card2 {
       transform: rotate(0deg);
-      margin-top: -10px;
+      margin-top: rem(-10);
       z-index: 2;
     }
     &__card3 {
       transform: rotate(4deg);
-      margin-top: -10px;
+      margin-top: rem(-10);
       z-index: 1;
     }
   }
@@ -295,7 +295,7 @@ $colleagues-padding-top: 144px;
 
 @media (max-width: 450px) {
   h2 {
-    font-size: 40px;
+    font-size: rem(40);
   }
   .colleagues-bottom {
     padding-inline: 8px;

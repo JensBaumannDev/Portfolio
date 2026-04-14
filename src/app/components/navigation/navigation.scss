@@ -1,8 +1,8 @@
 @use '../../../styles/abstracts/' as *;
 
-$nav-height: 80px;
-$nav-logo-size: 80px;
-$nav-logo-size-mobile: 80px;
+$nav-height: rem(80);
+$nav-logo-size: rem(80);
+$nav-logo-size-mobile: rem(80);
 $nav-transition: 0.3s ease-in-out;
 $nav-burger-transition: 220ms ease;
 
@@ -12,7 +12,7 @@ $nav-burger-transition: 220ms ease;
   position: relative;
   width: 100%;
   height: $nav-height;
-  padding-inline: 16px;
+  padding-inline: rem(16);
   box-sizing: border-box;
   @include flex($justify-content: space-between, $align-items: center);
 
@@ -22,7 +22,7 @@ $nav-burger-transition: 220ms ease;
     width: 100%;
     padding: 0;
     flex-wrap: nowrap;
-    gap: 10px;
+    gap: rem(10);
 
     .logo-container {
       position: relative;
@@ -49,7 +49,7 @@ $nav-burger-transition: 220ms ease;
         max-height: 100%;
         position: absolute;
         top: 50%;
-        left: -8px;
+        left: rem(-8);
       }
     }
   }
@@ -61,16 +61,16 @@ $nav-burger-transition: 220ms ease;
 
   a {
     text-decoration: none;
-    padding: 10px 15px;
+    padding: rem(10) rem(15);
     display: inline-block;
     font-weight: 700;
-    font-size: 18px;
+    font-size: rem(18);
     color: $primary-bg-color;
     cursor: pointer;
     white-space: nowrap;
 
     @media (max-width: 1024px) {
-      padding-inline: 10px;
+      padding-inline: rem(10);
     }
   }
 
@@ -78,7 +78,7 @@ $nav-burger-transition: 220ms ease;
     position: absolute;
     width: auto;
     max-width: none;
-    height: 45px;
+    height: rem(45);
     top: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -96,13 +96,13 @@ $nav-burger-transition: 220ms ease;
 
 .language {
   @include flex();
-  gap: 12px;
+  gap: rem(12);
   font-weight: 600;
 
   &__item {
     position: relative;
     cursor: pointer;
-    font-size: 16px;
+    font-size: rem(16);
     color: $primary-bg-color;
     transition: color $nav-transition;
     @include flex($align-items: center);
@@ -111,7 +111,7 @@ $nav-burger-transition: 220ms ease;
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      min-width: 35px;
+      min-width: rem(35);
       height: auto;
       object-fit: contain;
       pointer-events: none;
@@ -130,19 +130,19 @@ $nav-burger-transition: 220ms ease;
 
 .toggle {
   position: relative;
-  width: 40px;
-  height: 24px;
+  width: rem(40);
+  height: rem(24);
   cursor: pointer;
   @include flex($align-items: center);
 
   &__circle {
     background-color: $highlight2;
-    width: 17px;
-    height: 17px;
+    width: rem(17);
+    height: rem(17);
     top: 50%;
     left: 0;
     border-radius: 50%;
-    border: 1px solid white;
+    border: rem(1) solid white;
     position: absolute;
     transform: translateY(-50%) translateX(0);
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -151,12 +151,12 @@ $nav-burger-transition: 220ms ease;
   &__line {
     position: absolute;
     background-color: $highlight3;
-    height: 8px;
-    width: 40px;
+    height: rem(8);
+    width: rem(40);
     top: 50%;
     left: 0;
-    border-radius: 15px;
-    border: 1px solid white;
+    border-radius: rem(15);
+    border: rem(1) solid white;
     transform: translateY(-50%);
   }
 
@@ -164,7 +164,7 @@ $nav-burger-transition: 220ms ease;
     transform: translateY(-50%) translateX(0);
   }
   &.toggle--de .toggle__circle {
-    transform: translateY(-50%) translateX(25px);
+    transform: translateY(-50%) translateX(rem(25));
   }
 }
 
@@ -178,18 +178,18 @@ $nav-burger-transition: 220ms ease;
 
 .burger-button {
   display: none;
-  width: 48px;
-  height: 48px;
+  width: rem(48);
+  height: rem(48);
   padding: 0;
   border: 0;
   background: transparent;
   cursor: pointer;
-  gap: 6px;
+  gap: rem(6);
 
   &__line {
     display: block;
-    width: 30px;
-    height: 3px;
+    width: rem(30);
+    height: rem(3);
     border-radius: 999px;
     background-color: $primary-bg-color;
     transition:
@@ -199,14 +199,14 @@ $nav-burger-transition: 220ms ease;
 
   &--open {
     .burger-button__line:nth-child(1) {
-      transform: translateY(9px) rotate(45deg);
+      transform: translateY(rem(9)) rotate(45deg);
     }
     .burger-button__line:nth-child(2) {
       opacity: 0;
       transform: scale(0);
     }
     .burger-button__line:nth-child(3) {
-      transform: translateY(-9px) rotate(-45deg);
+      transform: translateY(rem(-9)) rotate(-45deg);
     }
   }
 }
@@ -258,10 +258,10 @@ $nav-burger-transition: 220ms ease;
 
 @media (min-width: 768px) {
   .navigation {
-    padding-inline: max(24px, calc((100% - 1440px) / 2));
+    padding-inline: max(rem(24), calc((100% - rem(1440)) / 2));
 
     @media (min-width: 1200px) {
-      padding-inline: max(75px, calc((100% - 1440px) / 2));
+      padding-inline: max(rem(75), calc((100% - rem(1440)) / 2));
     }
   }
 }
@@ -269,9 +269,9 @@ $nav-burger-transition: 220ms ease;
 @media (max-width: $breakpoint-mobile) {
   .navigation {
     height: auto;
-    padding-block: 12px;
-    min-height: 80px;
-    padding-inline: 16px;
+    padding-block: rem(12);
+    min-height: rem(80);
+    padding-inline: rem(16);
     z-index: 20;
 
     &--menu-open::after {
@@ -280,7 +280,7 @@ $nav-burger-transition: 220ms ease;
       bottom: 0;
       top: auto;
       inset-inline: 0;
-      border-bottom: 1px dotted rgba(248, 249, 250, 0.35);
+      border-bottom: rem(1) dotted rgba(248, 249, 250, 0.35);
       z-index: 22;
     }
 
@@ -336,7 +336,7 @@ $nav-burger-transition: 220ms ease;
       $align-items: center,
       $flex-wrap: nowrap
     );
-    padding: 140px 28px 100px;
+    padding: rem(140) rem(28) rem(100);
     background: url('../../../../public/img/01_Background/Design_Size_Relation/webp/01_Hero.webp')
       top center / cover no-repeat;
     opacity: 0;
@@ -363,35 +363,35 @@ $nav-burger-transition: 220ms ease;
     }
 
     &__links {
-      gap: 42px;
+      gap: rem(42);
     }
 
     &__link {
       color: $primary-bg-color;
       text-decoration: none;
-      font-size: 22px;
+      font-size: rem(22);
       font-weight: 700;
       line-height: 1;
     }
 
     &__language {
       justify-content: center;
-      margin-top: 30px;
+      margin-top: rem(30);
     }
 
     &__socials {
       width: 100%;
       @include flex($align-items: center, $justify-content: center);
-      gap: 12px;
-      margin-top: 65px;
+      gap: rem(12);
+      margin-top: rem(65);
     }
 
     &__social-link {
-      width: 40px;
-      height: 40px;
+      width: rem(40);
+      height: rem(40);
       @include flex($align-items: center, $justify-content: center);
       border-radius: 50%;
-      border: 1px solid rgba(248, 249, 250, 0.9);
+      border: rem(1) solid rgba(248, 249, 250, 0.9);
       color: $primary-bg-color;
       text-decoration: none;
 

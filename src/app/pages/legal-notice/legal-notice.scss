@@ -4,7 +4,7 @@
 .legal-hero {
   position: relative;
   overflow: hidden;
-  height: 430px;
+  height: rem(430);
 
   &__background {
     position: absolute;
@@ -22,36 +22,36 @@
   &__headline {
     position: relative;
     @include maxWidth();
-    padding-top: 120px;
+    padding-top: rem(120);
     color: $primary-bg-color;
   }
 }
 
 .legal-content {
   @include maxWidth();
-  margin-top: 80px;
+  margin-top: rem(80);
 
   &__head {
-    margin-bottom: 24px;
+    margin-bottom: rem(24);
 
     & > h3,
     h4 {
       color: #3355ff;
-      margin-top: 8px;
+      margin-top: rem(8);
     }
   }
 }
 
 .legal-content p {
-  font-size: 16px;
+  font-size: rem(16);
 }
 
 .legal-content__bottom {
-  margin-bottom: 80px;
+  margin-bottom: rem(80);
 }
 
 .legal-content__bottom > div {
-  margin-bottom: 16px;
+  margin-bottom: rem(16);
 
   & > h4 {
     color: #3355ff;
@@ -61,16 +61,16 @@
 /* #region Responsive */
 @media (max-width: 1024px) {
   .legal-content {
-    padding: 0 16px;
+    padding: 0 rem(16);
   }
 
   .legal-hero {
-    height: 350px;
+    height: rem(350);
     &__headline {
-      padding-top: 100px;
+      padding-top: rem(100);
 
       h2 {
-        padding-left: 16px;
+        padding-left: rem(16);
       }
     }
   }
@@ -78,37 +78,37 @@
 
 @media (max-width: 768px) {
   .legal-hero {
-    height: 280px;
+    height: rem(280);
     &__headline {
-      padding-top: 60px;
+      padding-top: rem(60);
       h2 {
-        font-size: 40px;
+        font-size: rem(40);
       }
     }
   }
 
   .legal-content {
-    margin-top: 40px;
-    padding: 0 16px;
+    margin-top: rem(40);
+    padding: 0 rem(16);
   }
 }
 
 @media (max-width: 480px) {
   .legal-hero {
-    height: 220px;
+    height: rem(220);
     &__headline {
-      padding-top: 20px;
+      padding-top: rem(20);
       h2 {
-        font-size: 32px;
+        font-size: rem(32);
       }
     }
   }
 
   .legal-content {
-    margin-top: 32px;
+    margin-top: rem(32);
 
     p {
-      font-size: 15px;
+      font-size: rem(15);
     }
   }
 }
@@ -116,7 +116,7 @@
   .legal-hero {
     &__headline {
       h2 {
-        font-size: 30px;
+        font-size: rem(30);
       }
     }
   }

@@ -12,8 +12,8 @@
 
 .dialog-content {
   position: relative;
-  width: 1440px;
-  height: 900px;
+  width: rem(1440);
+  height: rem(900);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -22,7 +22,7 @@
     linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
     linear-gradient(to right, #f4f4f4 45%, $secondary-bg-color 45%);
-  background-size: 25px 25px, 25px 25px, 100% 100%;
+  background-size: rem(25) rem(25), rem(25) rem(25), 100% 100%;
 }
 
 .dialog-body {
@@ -38,14 +38,14 @@
 /* #region DIALOG HEADER */
 .dialog-header {
   width: 100%;
-  padding: 15px 0;
+  padding: rem(15) 0;
   z-index: 100;
   position: relative;
   background: transparent;
 
   .dialog-content & ::ng-deep .navigation {
     background: transparent;
-    padding-inline: 72px;
+    padding-inline: rem(72);
 
     .nav-item a,
     .language__item,
@@ -80,7 +80,7 @@
 /* #region COLUMN LEFT (LIGHT CONTENT) */
 .column-left {
   flex: 0 0 45%;
-  padding: 40px 60px 80px 120px;
+  padding: rem(40) rem(60) rem(80) rem(120);
   display: flex;
   flex-direction: column;
   color: $secondary-bg-color;
@@ -90,19 +90,19 @@
     color: $secondary-bg-color;
     font-weight: 700;
     cursor: pointer;
-    margin-bottom: 50px;
-    margin-left: -48px;
+    margin-bottom: rem(50);
+    margin-left: rem(-48);
     @include flex($align-items: center);
-    gap: 8px;
+    gap: rem(8);
   }
 
   .title-container {
-    margin-bottom: 48px;
+    margin-bottom: rem(48);
     position: relative;
     width: fit-content;
 
     .project-title {
-      font-size: 56px;
+      font-size: rem(56);
       margin: 0;
       line-height: 0.9;
     }
@@ -113,33 +113,33 @@
       left: 0;
       width: 100%;
       height: auto;
-      margin-top: 4px;
+      margin-top: rem(4);
     }
   }
 
   .info-section {
-    margin-bottom: 30px;
+    margin-bottom: rem(30);
     h3 {
       color: inherit;
-      margin-bottom: 12px;
+      margin-bottom: rem(12);
     }
     p {
-      font-size: 18px;
+      font-size: rem(18);
       line-height: 1.5;
       color: inherit;
     }
   }
 
   .duration {
-    margin-top: 32px;
-    font-size: 18px;
+    margin-top: rem(32);
+    font-size: rem(18);
   }
 
   .tech-stack-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 35px;
+    gap: rem(15);
+    margin-top: rem(35);
     span {
       font-weight: 500;
       font-size: 16px;
@@ -153,7 +153,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 120px;
+  padding: rem(120);
   background: transparent;
   color: $primary-bg-color;
 
@@ -173,32 +173,32 @@
         right: 0;
         top: 50%;
         transform: translate(50%, -50%);
-        width: 120px;
+        width: rem(120);
         z-index: 5;
       }
 
       .main-screenshot {
         display: block;
-        width: 560px;
-        height: 400px;
+        width: rem(560);
+        height: rem(400);
         object-fit: cover;
         max-width: 100%;
-        border-radius: 20px;
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        border-radius: rem(20);
+        box-shadow: 0 rem(20) rem(50) rgba(0, 0, 0, 0.5);
       }
     }
   }
 
   .button-footer {
-    padding-top: 40px;
+    padding-top: rem(40);
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: rem(50);
   }
 
   .action-buttons {
     @include flex($justify-content: flex-end);
-    gap: 20px;
+    gap: rem(20);
   }
 
   .navigation-links {
@@ -212,9 +212,9 @@
       @include flex($align-items: center);
       color: $primary-bg-color;
       font-weight: 700;
-      gap: 8px;
+      gap: rem(8);
       cursor: pointer;
-      margin-right: -50px;
+      margin-right: rem(-50);
     }
   }
 }
@@ -223,14 +223,14 @@
 /* #region RESPONSIVE */
 @media (max-width: 1150px) {
   .column-left {
-    padding-left: 60px;
+    padding-left: rem(60);
 
     .go-back--desktop {
-      margin-left: 12px;
+      margin-left: rem(12);
     }
 
     .duration {
-      margin-top: 16px;
+      margin-top: rem(16);
     }
   }
 }
@@ -253,7 +253,7 @@
     background-image: 
       linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
       linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-    background-size: 25px 25px;
+    background-size: rem(25) rem(25);
 
     .dialog-header {
       background: transparent;
@@ -307,22 +307,22 @@
   .column-left {
     flex: none;
     width: 100%;
-    padding: 40px 60px;
+    padding: rem(40) rem(60);
     background: transparent;
   }
 
   .column-right {
     flex: none;
     width: 100%;
-    padding: 40px 72px 60px;
+    padding: rem(40) rem(72) rem(60);
     background: $secondary-bg-color;
     
     .image-showcase {
-      padding: 40px 0;
+      padding: rem(40) 0;
     }
     
     .button-footer {
-      gap: 50px;
+      gap: rem(50);
     }
     
     .action-buttons {
@@ -344,14 +344,14 @@
     padding: 0;
     
     ::ng-deep .navigation {
-      padding-inline: 16px;
-      padding-block: 16px;
+      padding-inline: rem(16);
+      padding-block: rem(16);
       min-height: auto;
     }
   }
 
   .column-left {
-    padding: 40px 24px;
+    padding: rem(40) rem(24);
     background: transparent;
     
     .go-back--desktop {
@@ -398,7 +398,7 @@
   .column-left {
     .title-container {
       .project-title {
-        font-size: 44px;
+        font-size: rem(44);
       }
     }
   }
@@ -409,8 +409,8 @@
     .navigation-links {
       .go-back--mobile,
       .next-project {
-        font-size: 14px;
-        gap: 4px;
+        font-size: rem(14);
+        gap: rem(4);
       }
     }
   }

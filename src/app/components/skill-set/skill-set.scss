@@ -2,10 +2,10 @@
 @use '../../../../src/styles/abstracts/' as *;
 @use '../../../../src/styles/components/' as *;
 
-$skills-padding-desktop: 170px 120px 400px;
-$skills-padding-tablet: 80px 24px 200px;
-$skills-padding-mobile: 60px 12px 150px;
-$skill-icon-size: 72px;
+$skills-padding-desktop: rem(170) rem(120) rem(400);
+$skills-padding-tablet: rem(80) rem(24) rem(200);
+$skills-padding-mobile: rem(60) rem(12) rem(150);
+$skill-icon-size: rem(72);
 
 /* #region LAYOUT */
 
@@ -14,7 +14,7 @@ $skill-icon-size: 72px;
   height: auto;
   overflow: hidden;
   content-visibility: auto;
-  contain-intrinsic-size: 1000px;
+  contain-intrinsic-size: rem(1000);
 }
 
 .skills-background {
@@ -41,18 +41,18 @@ $skill-icon-size: 72px;
 
 .top-content {
   @include flex($flex-wrap: nowrap, $justify-content: flex-start, $align-items: center);
-  gap: 48px;
+  gap: rem(48);
   width: 100%;
 
   &__headline {
     color: $primary-bg-color;
     display: flex;
-    gap: 48px;
+    gap: rem(48);
   }
 
   &__headline-row {
     @include flex($flex-direction: column, $align-items: flex-end);
-    gap: 16px;
+    gap: rem(16);
 
     .headline-wrapper {
       position: relative;
@@ -78,7 +78,7 @@ $skill-icon-size: 72px;
   }
 
   &__img {
-    width: 650px;
+    width: rem(650);
     position: relative;
 
     img {
@@ -93,10 +93,10 @@ $skill-icon-size: 72px;
       left: 50%;
       transform: translate(-50%, -50%);
       width: 95%;
-      font-size: clamp(6px, 2vw, 18px);
+      font-size: clamp(rem(6), 2vw, rem(18));
       z-index: 2;
       color: $secondary-bg-color;
-      min-height: 24px;
+      min-height: rem(24);
       line-height: 0.9;
       text-align: left;
     }
@@ -109,17 +109,17 @@ $skill-icon-size: 72px;
 
 .bottom-content {
   @include flex($flex-direction: row, $align-items: flex-end, $justify-content: flex-end);
-  gap: 50px;
+  gap: rem(50);
 }
 
 .skill-icons {
   display: grid;
-  grid-template-columns: repeat(5, $skill-icon-size) 200px;
-  grid-column-gap: 80px;
-  grid-row-gap: 50px;
+  grid-template-columns: repeat(5, $skill-icon-size) rem(200);
+  grid-column-gap: rem(80);
+  grid-row-gap: rem(50);
   align-items: end;
   justify-content: end;
-  margin-top: 48px;
+  margin-top: rem(48);
   text-align: center;
 
   .pull-picture {
@@ -130,7 +130,7 @@ $skill-icon-size: 72px;
 
   &__item {
     @include flex($flex-direction: column, $align-items: center);
-    gap: 12px;
+    gap: rem(12);
     height: 100%;
 
     & > img {
@@ -149,7 +149,7 @@ $skill-icon-size: 72px;
     }
 
     & > span {
-      font-size: 18px;
+      font-size: rem(18);
       font-weight: 400;
       color: $primary-bg-color;
     }
@@ -161,7 +161,7 @@ $skill-icon-size: 72px;
   display: grid;
   grid-template-areas: 'stack';
   position: relative;
-  width: clamp(140px, 15vw, 200px);
+  width: clamp(rem(140), 15vw, rem(200));
   aspect-ratio: 1 / 1;
   height: auto;
   padding-bottom: 0;
@@ -202,7 +202,7 @@ $skill-icon-size: 72px;
       position: absolute;
       font-family: 'Kalam-Regular', 'Kalam', cursive;
       font-weight: 400;
-      font-size: clamp(24px, 3vw, 40px);
+      font-size: clamp(rem(24), 3vw, rem(40));
       color: $primary-bg-color;
       margin: 0;
       width: 100%;
@@ -236,8 +236,8 @@ $skill-icon-size: 72px;
     padding: 10%;
 
     & > p {
-      font-size: clamp(10px, 1.2vw, 16px);
-      margin-bottom: 8px;
+      font-size: clamp(rem(10), 1.2vw, rem(16));
+      margin-bottom: rem(8);
     }
 
     &--visible {
@@ -253,16 +253,16 @@ $skill-icon-size: 72px;
 
   &__c-icon {
     @include flex($align-items: center, $justify-content: center, $flex-direction: column);
-    gap: 4px;
+    gap: rem(4);
 
     img {
-      width: clamp(20px, 3vw, 40px);
+      width: clamp(rem(20), 3vw, rem(40));
       height: auto;
       object-fit: contain;
     }
 
     span {
-      font-size: clamp(8px, 1vw, 14px);
+      font-size: clamp(rem(8), 1vw, rem(14));
       color: white;
     }
   }
@@ -323,7 +323,7 @@ $skill-icon-size: 72px;
 @media (max-width: 1024px) {
   .top-content {
     flex-direction: column;
-    gap: 24px;
+    gap: rem(24);
     align-items: center;
 
     &__headline {
@@ -336,20 +336,20 @@ $skill-icon-size: 72px;
     max-width: 420px;
 
     & > p {
-      font-size: 18px;
+      font-size: rem(18);
     }
   }
 
   .bottom-content {
     justify-content: center;
-    gap: 70px;
+    gap: rem(70);
   }
 
   .skill-icons {
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
-    padding-bottom: 20px;
-    grid-column-gap: clamp(10px, 5vw, 70px);
+    padding-bottom: rem(20);
+    grid-column-gap: clamp(rem(10), 5vw, rem(70));
 
     &__item > img {
       filter: none;
@@ -358,7 +358,7 @@ $skill-icon-size: 72px;
     .pull-picture {
       grid-column: 2 / 4;
       grid-row: 4;
-      width: clamp(140px, 20vw, 200px);
+      width: clamp(rem(140), 20vw, rem(200));
     }
   }
 }
@@ -385,14 +385,14 @@ $skill-icon-size: 72px;
   }
 
   .bottom-content {
-    gap: 16px;
-    margin-top: 24px;
+    gap: rem(16);
+    margin-top: rem(24);
     flex-direction: column;
   }
 
   .skill-icons {
-    grid-column-gap: 10px;
-    grid-row-gap: 20px;
+    grid-column-gap: rem(10);
+    grid-row-gap: rem(20);
     justify-content: center;
     padding-bottom: 0px;
 
@@ -400,8 +400,8 @@ $skill-icon-size: 72px;
       grid-column: 1 / 4;
       grid-row: auto;
       justify-self: center;
-      margin-top: 40px;
-      transform: translateX(-15px);
+      margin-top: rem(40);
+      transform: translateX(rem(-15));
     }
   }
 }
