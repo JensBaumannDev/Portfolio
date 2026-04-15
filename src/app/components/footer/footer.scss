@@ -199,7 +199,7 @@ $footer-social-padding: rem(10) rem(25);
         @include flex($flex-direction: row, $justify-content: space-between, $align-items: center);
       }
       .footer-copyright { margin-left: auto; margin-top: 0; }
-      .footer-link { display: block; width: 100%; text-align: right; margin-top: 0; }
+      .footer-link { display: block; width: 100%; text-align: center; margin-top: rem(10); }
     }
     .footer-link-social {
       @include flex($justify-content: space-between);

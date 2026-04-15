@@ -68,9 +68,10 @@
     height: rem(350);
     &__headline {
       padding-top: rem(100);
+      padding-inline: rem(16);
 
       h2 {
-        padding-left: rem(16);
+        padding-inline: 0;
       }
     }
   }
@@ -112,11 +113,11 @@
     }
   }
 }
-@media (max-width: 334px) {
+@media (max-width: 350px) {
   .legal-hero {
     &__headline {
       h2 {
-        font-size: rem(30);
+        font-size: rem(28);
       }
     }
   }
