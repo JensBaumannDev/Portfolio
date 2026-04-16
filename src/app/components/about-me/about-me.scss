@@ -169,6 +169,11 @@
   }
 }
 
+@media (max-width: 420px) {
+  h2 {
+    font-size: rem(48);
+  }
+}
 
 @media (max-width: 360px) {
   .about-container {
