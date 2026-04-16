@@ -161,7 +161,7 @@ $skill-icon-size: rem(72);
   display: grid;
   grid-template-areas: 'stack';
   position: relative;
-  width: clamp(rem(140), 15vw, rem(200));
+  width: rem(200);
   aspect-ratio: 1 / 1;
   height: auto;
   padding-bottom: 0;
@@ -202,7 +202,7 @@ $skill-icon-size: rem(72);
       position: absolute;
       font-family: 'Kalam-Regular', 'Kalam', cursive;
       font-weight: 400;
-      font-size: clamp(rem(24), 3vw, rem(40));
+      font-size: rem(40);
       color: $primary-bg-color;
       margin: 0;
       width: 100%;
@@ -358,7 +358,7 @@ $skill-icon-size: rem(72);
     .pull-picture {
       grid-column: 2 / 4;
       grid-row: 4;
-      width: clamp(rem(140), 20vw, rem(200));
+      width: rem(200);
     }
   }
 }
@@ -399,6 +399,7 @@ $skill-icon-size: rem(72);
     .pull-picture {
       grid-column: 1 / 4;
       grid-row: auto;
+      width: rem(200);
       justify-self: center;
       margin-top: rem(40);
       transform: translateX(rem(-15));
