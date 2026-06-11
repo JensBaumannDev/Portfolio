@@ -56,7 +56,17 @@ export class Projects {
       image: 'img/06_projects/Laptop.png',
       detailImage: 'img/06_projects/join.png',
       githubLink: 'https://github.com/JensBaumannDev/Join',
-      liveLink: 'https://jens-baumann.developerakademie.net/join/index.html',
+      liveLink: 'https://jensbaumann.com/projects/join/',
+    },
+    {
+      title: 'DABubble',
+      technologies: ['Angular', 'TypeScript', 'Supabase', 'SCSS'],
+      descriptionKey: 'projects.dabubble.description',
+      implementationKey: 'projects.dabubble.implementation',
+      durationKey: 'projects.dabubble.duration',
+      image: 'img/06_projects/dabubble.png',
+      githubLink: 'https://github.com/JensBaumannDev/DABubble',
+      liveLink: 'https://jensbaumann.com/projects/dabubble/',
     },
     {
       title: 'El Pollo Loco',
