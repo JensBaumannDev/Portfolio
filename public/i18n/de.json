@@ -145,6 +145,11 @@
       "description": "Eine einfache Bibliothek basierend auf der PokeAPI, um deine Lieblings-Pokemon mit all ihren Werten zu finden und anzuzeigen.",
       "implementation": "Entwickelt mit modernem JavaScript und der offiziellen PokeAPI. Der Fokus liegt auf effizientem Datenabruf, Filterung und responsivem UI-Design.",
       "duration": "2 Wochen"
+    },
+    "dabubble": {
+      "description": "Ein interaktiver Echtzeit-Team-Chat im Stil von Slack. Ermöglicht schnelle und strukturierte Kommunikation in Channels, Direktnachrichten und Threads.",
+      "implementation": "Entwickelt mit Angular (Signals, standalone Komponenten), SCSS, TypeScript und Supabase (PostgreSQL, Realtime, Deno Edge Functions) für Echtzeit-Synchronisation, Status-Präsenz und Profilverwaltung.",
+      "duration": "2 Wochen"
     }
   }
 }
